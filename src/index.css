@@ -1,0 +1,74 @@
+/*  --------------------------------     Header   -------------------------------- */
+
+
+
+
+/*  --------------------------------     Footer   -------------------------------- */
+
+.header {
+    background: rgb(177, 175, 175);
+    color: black;
+    padding: 34px;
+    text-align: center;
+    height: 45px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header .img img {
+    height: 80%;
+    width: 150px;
+}
+
+.nav .search input {
+    padding-right: 300px;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 25px;
+    color: black;
+    font-size: 15px;
+}
+
+@media screen and (max-width:900px) {
+    .nav .search input {
+        padding-right: 100px;
+        padding-left: 5px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 2px solid black;
+        border-radius: 25px;
+        color: black;
+        font-size: 10px;
+    }
+}
+
+nav .login a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.footer {
+    background: rgb(177, 175, 175);
+    color: black;
+    padding: 34px;
+    text-align: center;
+    height: 50px;
+}
+
+.svg {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer .text {
+    margin-top: 1rem;
+    text-align: center;
+}
