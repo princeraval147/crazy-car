@@ -1,9 +1,41 @@
-/*  --------------------------------     Header   -------------------------------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 
+/*  --------------------------------     HEADER   -------------------------------- */
 
-/*  --------------------------------     Footer   -------------------------------- */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    margin: 0px;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    color: gray;
+}
+
+.link:hover {
+    color: black;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    transition: 0.5s;
+}
+
+
+/*  --------------------------------     FOOTER   -------------------------------- */
 
 .header {
     background: rgb(177, 175, 175);
@@ -71,4 +103,10 @@ nav .login a {
 .footer .text {
     margin-top: 1rem;
     text-align: center;
+}
+
+/*  --------------------------------     LOGIN   -------------------------------- */
+
+.login {
+    background: rgba(128, 128, 128, 0.164);
 }
