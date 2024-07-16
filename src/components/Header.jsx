@@ -14,12 +14,12 @@ const Header = () => {
     return (
         <>
             <div className="header">
-                <h1>CrazyCar</h1>
+                <NavLink to='/'>CrazyCar</NavLink>
                 <Autocomplete
                     disablePortal
                     id=""
                     options={Cars}
-                    sx={{ width: 200 }}
+                    sx={{ width: 250 }}
                     renderInput={(params) => <TextField {...params} label="Cars" />}
                 />
                 <ul className='links'>
