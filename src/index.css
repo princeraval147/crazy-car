@@ -4,10 +4,17 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background: #748D92;
+    color: black;
+    padding: 34px;
+    text-align: center;
+    height: 45px;
 }
 
 .logo {
     margin: 0px;
+    text-decoration: none;
+    color: #2E3944;
 }
 
 .links {
@@ -18,12 +25,12 @@
 
 .link {
     text-decoration: none;
-    color: gray;
+    color: #2E3944;
 }
 
 .link:hover {
     color: black;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     border-bottom: 2px solid black;
     transition: 0.5s;
 }
@@ -31,12 +38,12 @@
 
 /*  --------------------------------     FOOTER   -------------------------------- */
 
-.header {
-    background: rgb(177, 175, 175);
+.footer {
+    background: #D3D9D4;
     color: black;
-    padding: 34px;
+    padding: 24px;
     text-align: center;
-    height: 45px;
+    height: 100%;
 }
 
 .nav {
@@ -80,13 +87,6 @@ nav .login a {
 }
 
 
-.footer {
-    background: rgb(177, 175, 175);
-    color: black;
-    padding: 24px;
-    text-align: center;
-    height: 100%;
-}
 
 .svg {
     display: flex;
