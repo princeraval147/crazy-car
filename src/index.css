@@ -16,10 +16,6 @@
     font-size: 15px;
 }
 
-.inputFeild:active {
-    border: 2px solid red;
-}
-
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -131,6 +127,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 70px;
 }
 
 .form {
