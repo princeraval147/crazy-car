@@ -91,7 +91,7 @@ const SignUp = () => {
                     <div>
                         <button type="submit">Sign Up</button>
 
-                        <a href="#" className="">Forgot password?</a>
+                        <a href="#">Forgot password?</a>
                     </div>
                 </form>
             </div>

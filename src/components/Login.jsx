@@ -25,8 +25,7 @@ const Login = () => {
                         action="#"
                         onSubmit={handlerSubmit}
                     >
-                        {/* <div className=''> */}
-                        <label htmlFor="Email" className="">Your email</label>
+                        <label htmlFor="Email">Your email</label>
                         <input
                             id='Email'
                             name="Email"
@@ -40,9 +39,7 @@ const Login = () => {
                             placeholder="Enter Email"
                             required
                         />
-                        {/* </div> */}
-                        {/* <div> */}
-                        <label htmlFor="Pass" className="">Password</label>
+                        <label htmlFor="Pass">Password</label>
                         <input
                             onChange={e => setInput({
                                 ...input,
@@ -56,27 +53,25 @@ const Login = () => {
                             className="inputFeild"
                             required
                         />
-                        {/* </div> */}
                         <div className="rf">
                             <div className="remember">
-                                <div className="">
+                                <div>
                                     <input
                                         id="remember"
                                         aria-describedby="remember"
                                         type="checkbox"
-                                        className=""
                                         required="" />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label htmlFor="remember" className="">Remember me</label>
                                 </div>
                             </div>
-                            <a href="#" className="">Forgot password?</a>
+                            <a href="#">Forgot password?</a>
                         </div>
-                        <button type="submit" className="">Sign in</button>
-                        <p className="">
+                        <button type="submit">Sign in</button>
+                        <p>
                             Don't have an account yet?
-                            <NavLink to='/signUp' className=''> Sign Up</NavLink>
+                            <NavLink to='/signUp'> Sign Up</NavLink>
                         </p>
                     </form>
                 </div>

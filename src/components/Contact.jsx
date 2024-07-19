@@ -12,10 +12,10 @@ const Contact = () => {
         <>
             <div className="contactAll">
                 <div className="part1">
-                    <h1 className="">
+                    <h1 className="contactHeading">
                         Get in touch :
                     </h1>
-                    <p className="">
+                    <p className="contactText">
                         Fill in the form to start a conversation
                     </p>
                     <div className="contactDetail">
@@ -26,7 +26,6 @@ const Contact = () => {
                             strokeLinejoin="round"
                             strokeWidth="1.5"
                             viewBox="0 0 24 24"
-                            className=""
                             width="25"
                             height="25"
                         >
@@ -45,7 +44,7 @@ const Contact = () => {
                                 height="25"
                             />
                         </svg>
-                        <div className="">
+                        <div>
                             Surat, Gujarat, 123456
                         </div>
                     </div>
@@ -58,7 +57,6 @@ const Contact = () => {
                             strokeLinejoin="round"
                             strokeWidth="1.5"
                             viewBox="0 0 24 24"
-                            className="w-8 h-8 text-gray-500"
                             width="25"
                             height="25"
                         >
@@ -69,7 +67,7 @@ const Contact = () => {
                                 d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                             />
                         </svg>
-                        <div className="">
+                        <div>
                             +91 12345 67890
                         </div>
                     </div>
@@ -82,7 +80,6 @@ const Contact = () => {
                             strokeLinejoin="round"
                             strokeWidth="1.5"
                             viewBox="0 0 24 24"
-                            className="w-8 h-8 text-gray-500"
                             width="25"
                             height="25"
                         >
@@ -93,7 +90,7 @@ const Contact = () => {
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                             />
                         </svg>
-                        <div className="">
+                        <div>
                             crazycar@gmail.com
                         </div>
                     </div>
@@ -104,7 +101,7 @@ const Contact = () => {
                     onSubmit={handleSubmit}
                     method='POST'
                 >
-                    <div className="">
+                    <div>
                         <input
                             type="name"
                             name="name"
@@ -120,7 +117,7 @@ const Contact = () => {
                         />
                     </div>
 
-                    <div className="">
+                    <div>
                         <input
                             type="email"
                             name="email"
@@ -136,13 +133,14 @@ const Contact = () => {
                         />
                     </div>
 
-                    <div className="flex flex-col mt-2">
+                    <div>
                         <textarea
                             name="Message"
                             id="Message"
                             required
                             placeholder="Enter Your Message"
                             className="inputFeild"
+                            rows={5}
                         />
                         <ValidationError
                             prefix="Message"
@@ -153,7 +151,6 @@ const Contact = () => {
 
                     <button
                         type="submit"
-                        className=""
                         disabled={state.submitting}
                     >
                         Submit

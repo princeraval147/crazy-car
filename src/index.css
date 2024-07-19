@@ -16,6 +16,11 @@
     font-size: 15px;
 }
 
+input:focus {
+    background-color: yellow;
+    border: 2px solid red;
+}
+
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -99,6 +104,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-top: 40px;
 }
 
 /* .loginInput {
@@ -111,12 +117,14 @@
 .remember {
     display: flex;
     justify-items: start;
-    /* gap: 5px; */
+    gap: 5px;
 }
 
 .rf {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: 60px;
+    margin-bottom: 10px;
 }
 
 /*  --------------------------------     SIGNUP   -------------------------------- */
@@ -142,7 +150,6 @@
     -webkit-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
-    box-sizing: border-box;
 }
 
 .form label {
@@ -183,22 +190,30 @@
 .contactAll {
     display: flex;
     justify-content: space-evenly;
-    margin: 50px;
+    margin: 100px;
 }
 
 .part1 {
-    background: gray;
+    background-color: rgb(209 213 219);
     padding: 4rem 6rem;
-    border-radius: 70px 0px;
+    border-radius: 70px 4px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 0px;
+    gap: 25px;
 }
 
 .contactDetail {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 7px;
+}
+
+.contactHeading {
+    font-weight: 900;
+}
+
+.contactText {
+    font-weight: 600;
 }
 
 .contactForm {
