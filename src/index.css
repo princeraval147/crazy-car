@@ -1,3 +1,25 @@
+/*  --------------------------------     GLOBAL   -------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputFeild {
+    width: 350px;
+    font-weight: 500;
+    border: 2px solid rgba(0, 0, 0, 0.288);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.inputFeild:active {
+    border: 2px solid red;
+}
+
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -142,16 +164,6 @@
     font-size: 15px;
 } */
 
-.inputFeild {
-    width: 350px;
-    font-weight: 500;
-    border: 2px solid rgba(0, 0, 0, 0.288);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
-    font-size: 15px;
-}
-
 .form button {
     width: 110px;
     padding: 17px;
@@ -165,6 +177,38 @@
 .form div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  --------------------------------     CONTACT   -------------------------------- */
+
+.contactAll {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.part1 {
+    background: gray;
+    padding: 4rem 6rem;
+    border-radius: 70px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 0px;
+}
+
+.contactDetail {
+    display: flex;
+    gap: 10px;
+}
+
+.contactForm {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     justify-content: center;
     align-items: center;
 }
