@@ -68,7 +68,7 @@ const Login = () => {
                             </div>
                             <a href="#">Forgot password?</a>
                         </div>
-                        <button type="submit">Sign in</button>
+                        <button type="submit" className='Btn'>Sign in</button>
                         <p>
                             Don't have an account yet?
                             <NavLink to='/signUp'> Sign Up</NavLink>

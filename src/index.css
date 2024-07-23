@@ -6,6 +6,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .inputFeild {
     width: 350px;
     font-weight: 500;
@@ -16,6 +20,25 @@
     font-size: 15px;
 }
 
+.inputFeild:focus {
+    outline: none;
+    border: 2px solid #45A29E;
+}
+
+
+.Btn {
+    background: #66FCF1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.Btn:hover {
+    background: #45A29E;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -24,15 +47,11 @@
     align-items: center;
     background: #45A29E;
     color: black;
-    padding: 34px;
     text-align: center;
-    height: 45px;
 }
 
-.logo {
-    margin: 0px;
-    text-decoration: none;
-    color: #2E3944;
+.LogoImg {
+    height: 90px;
 }
 
 .links {
@@ -74,6 +93,18 @@
     margin-top: 1.5rem;
 }
 
+/*  --------------------------------     HOME   -------------------------------- */
+
+.homeContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url(/Img/CarPic.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 /*  --------------------------------     LOGIN   -------------------------------- */
 
 .login {
@@ -85,7 +116,7 @@
 
 .loginBox {
     border: 2px solid rgba(0, 0, 0, 0.288);
-    border-radius: 10px;
+    border-radius: 14px;
     -webkit-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
     box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
@@ -162,16 +193,6 @@
     padding: 15px;
     font-size: 15px;
 } */
-
-.form button {
-    width: 110px;
-    padding: 17px;
-    border: 2px solid rgba(0, 0, 0, 0.288);
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
 
 .form div {
     display: flex;

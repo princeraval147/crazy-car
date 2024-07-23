@@ -89,7 +89,7 @@ const SignUp = () => {
                         })}
                     />
                     <div>
-                        <button type="submit">Sign Up</button>
+                        <button type="submit" className='Btn'>Sign Up</button>
 
                         <a href="#">Forgot password?</a>
                     </div>
