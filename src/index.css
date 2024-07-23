@@ -16,11 +16,6 @@
     font-size: 15px;
 }
 
-input:focus {
-    background-color: yellow;
-    border: 2px solid red;
-}
-
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
