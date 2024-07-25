@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     margin: 0px;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,14 +28,15 @@ a {
 
 
 .Btn {
-    background: #66FCF1;
+    background: #45A29E;
+    font-weight: 600;
     padding: 15px;
     border: none;
     border-radius: 4px;
 }
 
 .Btn:hover {
-    background: #45A29E;
+    background: #66FCF1;
     border-radius: 7px;
     transition: 0.5s;
 }
