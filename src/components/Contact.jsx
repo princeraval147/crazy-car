@@ -3,7 +3,7 @@ import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
 
-    const [state, handleSubmit] = useForm("xqazarob");
+    const [state, handleSubmit] = useForm("xeojebgz");
     if (state.succeeded) {
         return <p>Thanks for joining!</p>;
     }
@@ -150,6 +150,7 @@ const Contact = () => {
                     </div>
 
                     <button
+                        className='Btn'
                         type="submit"
                         disabled={state.submitting}
                     >
