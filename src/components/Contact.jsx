@@ -5,7 +5,7 @@ const Contact = () => {
 
     const [state, handleSubmit] = useForm("xeojebgz");
     if (state.succeeded) {
-        return <p>Thanks for joining!</p>;
+        return <p style={{ height: "100vh" }}>Thanks for joining!</p>;
     }
 
     return (
