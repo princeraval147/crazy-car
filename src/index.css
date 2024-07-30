@@ -172,10 +172,11 @@ a {
 .homeContainer {
     height: 100vh;
     width: 100%;
-    background-image: url(/Img/CarPic.avif);
+    background-image: url(/Img/bgCar.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    color: white;
 }
 
 
