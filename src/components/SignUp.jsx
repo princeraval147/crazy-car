@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -88,9 +88,12 @@ const SignUp = () => {
                             [e.target.name]: e.target.value
                         })}
                     />
-                    <div>
-                        <button type="submit" className='Btn'>Sign Up</button>
-
+                    <button type="submit" className='Btn'>Sign Up</button>
+                    <div className='signupTxt'>
+                        <p>
+                            Already have an account?
+                            <NavLink to='/login' className='link'> Login</NavLink>
+                        </p>
                         <a href="#">Forgot password?</a>
                     </div>
                 </form>
