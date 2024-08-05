@@ -104,8 +104,7 @@ a {
 
 .wrap-input-18 .search>div:after {
     content: "";
-    background:
-        white;
+    background: white;
     width: 4px;
     height: 20px;
     position: absolute;
@@ -115,11 +114,9 @@ a {
 }
 
 .wrap-input-18 .search>div>input {
-    color:
-        white;
+    color: white;
     font-size: 16px;
-    background:
-        transparent;
+    background: transparent;
     width: 25px;
     height: 25px;
     padding: 20px;
@@ -130,8 +127,7 @@ a {
 }
 
 .wrap-input-18 .search>div>input::placeholder {
-    color:
-        #efefef;
+    color: #efefef;
     opacity: 0;
     transition: opacity 150ms ease-out;
 }
