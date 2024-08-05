@@ -46,7 +46,7 @@ const SignUp = () => {
 
                     <label htmlFor="userName">Username:</label>
                     <input
-                        className="inputField"
+                        className="inputFeild"
                         type="text"
                         id="userName"
                         placeholder="Enter Your Name"
@@ -56,7 +56,7 @@ const SignUp = () => {
 
                     <label htmlFor="email">Email:</label>
                     <input
-                        className="inputField"
+                        className="inputFeild"
                         type="email"
                         id="email"
                         placeholder="Enter Email Address"
@@ -66,7 +66,7 @@ const SignUp = () => {
 
                     <label htmlFor="password">Password:</label>
                     <input
-                        className="inputField"
+                        className="inputFeild"
                         type="password"
                         id="password"
                         placeholder="••••••••••••••••"
@@ -76,7 +76,7 @@ const SignUp = () => {
 
                     <label htmlFor="conformPassword">Confirm Password:</label>
                     <input
-                        className="inputField"
+                        className="inputFeild"
                         type="password"
                         id="conformPassword"
                         placeholder="Re-Enter Password"
@@ -85,7 +85,7 @@ const SignUp = () => {
                     {errors.conformPassword && <span className='error'>Confirm Password is required</span>}
 
                     <div>
-                        <button type="submit">Sign Up</button>
+                        <button type="submit" className='Btn'>Sign Up</button>
                         <a href="#">Forgot password?</a>
                     </div>
                 </form>

@@ -113,7 +113,7 @@ const Contact = () => {
                             id="name"
                             required
                             placeholder="Full Name"
-                            className="inputField"
+                            className="inputFeild"
                             {...register("name", { required: true })}
                         />
                         {errors.name && <p className="error">Name is required</p>}
@@ -126,7 +126,7 @@ const Contact = () => {
                             id="email"
                             required
                             placeholder="Email"
-                            className="inputField"
+                            className="inputFeild"
                             {...register("email", { required: true })}
                         />
                         {errors.email && <p className="error">Email is required</p>}
@@ -138,14 +138,14 @@ const Contact = () => {
                             id="message"
                             required
                             placeholder="Enter Your Message"
-                            className="inputField"
+                            className="inputFeild"
                             rows={5}
                             {...register("message", { required: true })}
                         />
                         {errors.message && <p className="error">Message is required</p>}
                     </div>
 
-                    <button type="submit">
+                    <button type="submit" className='Btn'>
                         Submit
                     </button>
                 </form>

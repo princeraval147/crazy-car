@@ -48,7 +48,7 @@ const Login = () => {
                             name="email"
                             type="email"
                             placeholder="Enter Email"
-                            className="inputField"
+                            className="inputFeild"
                             {...register('email', { required: true })}
                         />
                         {errors.email && <span>Email is required</span>}
@@ -59,7 +59,7 @@ const Login = () => {
                             name="password"
                             type="password"
                             placeholder="••••••••"
-                            className="inputField"
+                            className="inputFeild"
                             {...register('password', { required: true })}
                         />
                         {errors.password && <span>Password is required</span>}
@@ -75,7 +75,7 @@ const Login = () => {
                             </div>
                             <a href="#">Forgot password?</a>
                         </div>
-                        <button type="submit">Sign in</button>
+                        <button type="submit" className='Btn'>Sign in</button>
                         <p>
                             Don't have an account yet?
                             <NavLink to='/signUp'> Sign Up</NavLink>
