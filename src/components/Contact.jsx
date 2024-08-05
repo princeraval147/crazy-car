@@ -1,12 +1,18 @@
-import React from 'react'
-import { useForm, ValidationError } from '@formspree/react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const Contact = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [state, handleSubmit] = useForm("xeojebgz");
-    if (state.succeeded) {
-        return <p style={{ height: "100vh" }}>Thanks for joining!</p>;
-    }
+    const onSubmit = async data => {
+        try {
+            const response = await axios.post('http://localhost:5000/contact', data);
+            console.log('Data sent successfully:', response.data);
+        } catch (error) {
+            console.log('Error during login:', error);
+        }
+    };
 
     return (
         <>
@@ -98,23 +104,19 @@ const Contact = () => {
 
                 <form
                     className="contactForm"
-                    onSubmit={handleSubmit}
-                    method='POST'
+                    onSubmit={handleSubmit(onSubmit)}
                 >
                     <div>
                         <input
-                            type="name"
+                            type="text"
                             name="name"
                             id="name"
                             required
                             placeholder="Full Name"
-                            className="inputFeild"
+                            className="inputField"
+                            {...register("name", { required: true })}
                         />
-                        <ValidationError
-                            prefix="name"
-                            field="name"
-                            errors={state.errors}
-                        />
+                        {errors.name && <p className="error">Name is required</p>}
                     </div>
 
                     <div>
@@ -124,42 +126,32 @@ const Contact = () => {
                             id="email"
                             required
                             placeholder="Email"
-                            className="inputFeild"
+                            className="inputField"
+                            {...register("email", { required: true })}
                         />
-                        <ValidationError
-                            prefix="email"
-                            field="email"
-                            errors={state.errors}
-                        />
+                        {errors.email && <p className="error">Email is required</p>}
                     </div>
 
                     <div>
                         <textarea
-                            name="Message"
-                            id="Message"
+                            name="message"
+                            id="message"
                             required
                             placeholder="Enter Your Message"
-                            className="inputFeild"
+                            className="inputField"
                             rows={5}
+                            {...register("message", { required: true })}
                         />
-                        <ValidationError
-                            prefix="Message"
-                            field="message"
-                            errors={state.errors}
-                        />
+                        {errors.message && <p className="error">Message is required</p>}
                     </div>
 
-                    <button
-                        className='Btn'
-                        type="submit"
-                        disabled={state.submitting}
-                    >
+                    <button type="submit">
                         Submit
                     </button>
-                </form >
-            </div >
+                </form>
+            </div>
         </>
-    )
+    );
 }
 
-export default Contact
+export default Contact;

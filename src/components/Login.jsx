@@ -1,17 +1,35 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import '../index.css';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [input, setInput] = useState({
-        Email: "",
-        Pass: ""
-    });
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
 
-    const handlerSubmit = (e) => {
-        e.preventDefault();
-        console.log(input);
-    }
+            const result = await response.json();
+
+            if (result.success) {
+                navigate('/dashboard');
+            } else {
+                alert(result.message);
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            alert('An error occurred during login.');
+        }
+    };
 
     return (
         <>
@@ -22,62 +40,51 @@ const Login = () => {
                     </h1>
                     <form
                         className="loginForm"
-                        action="#"
-                        onSubmit={handlerSubmit}
+                        onSubmit={handleSubmit(onSubmit)}
                     >
-                        <label htmlFor="Email">Your email</label>
+                        <label htmlFor="email">Your email</label>
                         <input
-                            id='Email'
-                            name="Email"
-                            onChange={e => setInput({
-                                ...input,
-                                [e.target.name]: e.target.value
-                            })}
+                            id="email"
+                            name="email"
                             type="email"
-                            value={input.Email}
-                            className="inputFeild"
                             placeholder="Enter Email"
-                            required
+                            className="inputField"
+                            {...register('email', { required: true })}
                         />
-                        <label htmlFor="Pass">Password</label>
+                        {errors.email && <span>Email is required</span>}
+
+                        <label htmlFor="password">Password</label>
                         <input
-                            onChange={e => setInput({
-                                ...input,
-                                [e.target.name]: e.target.value,
-                            })}
-                            value={input.Pass}
+                            id="password"
+                            name="password"
                             type="password"
-                            name="Pass"
-                            id="Pass"
                             placeholder="••••••••"
-                            className="inputFeild"
-                            required
+                            className="inputField"
+                            {...register('password', { required: true })}
                         />
+                        {errors.password && <span>Password is required</span>}
+
                         <div className="rf">
                             <div className="remember">
-                                <div>
-                                    <input
-                                        id="remember"
-                                        aria-describedby="remember"
-                                        type="checkbox"
-                                        required="" />
-                                </div>
-                                <div>
-                                    <label htmlFor="remember" className="">Remember me</label>
-                                </div>
+                                <input
+                                    id="remember"
+                                    type="checkbox"
+                                    {...register('remember')}
+                                />
+                                <label htmlFor="remember">Remember me</label>
                             </div>
                             <a href="#">Forgot password?</a>
                         </div>
-                        <button type="submit" className='Btn'>Sign in</button>
+                        <button type="submit">Sign in</button>
                         <p>
                             Don't have an account yet?
-                            <NavLink to='/signUp' className='link'> Sign Up</NavLink>
+                            <NavLink to='/signUp'> Sign Up</NavLink>
                         </p>
                     </form>
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

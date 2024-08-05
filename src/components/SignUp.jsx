@@ -1,105 +1,97 @@
-import React, { useState } from 'react'
-import { useNavigate, NavLink } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
+    const navigate = useNavigate();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const Navigate = useNavigate();
+    const onSubmitFun = async (data) => {
+        console.log(data);
+        if (data.password === data.conformPassword) {
+            try {
+                const response = await fetch('http://localhost:5000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        userName: data.userName,
+                        email: data.email,
+                        password: data.password
+                    })
+                });
 
-    const [input, setInput] = useState({
-        userName: "",
-        email: "",
-        password: "",
-        conformPassword: ""
-    });
-
-    const handlerSubmit = (e) => {
-        e.preventDefault();
-        console.table(input)
-        if (input.password === input.conformPassword) {
-            Navigate('/login');
+                const result = await response.json();
+                if (result.success) {
+                    navigate('/login');
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.log('Error during signup:', error);
+                alert('An error occurred during signup.');
+            }
+        } else {
+            alert("Confirm Password doesn't match");
         }
-        else {
-            alert("Conform Password Can't Match");
-        }
-    }
-
+    };
 
     return (
         <>
             <div className="sign">
-                <form className="form" action="" onSubmit={handlerSubmit}>
+                <form className="form" onSubmit={handleSubmit(onSubmitFun)} method='POST'>
                     <h1>Create Your Account</h1>
-                    <label htmlFor="userName">Username : </label>
+
+                    <label htmlFor="userName">Username:</label>
                     <input
-                        className='inputFeild'
+                        className="inputField"
                         type="text"
-                        name="userName"
                         id="userName"
                         placeholder="Enter Your Name"
-                        required
-                        value={input.userName}
-                        onChange={e => setInput({
-                            ...input,
-                            [e.target.name]: e.target.value
-                        })}
+                        {...register('userName', { required: true })}
                     />
+                    {errors.userName && <span className='error'>Username is required</span>}
 
-                    <label htmlFor="email">Email :</label>
+                    <label htmlFor="email">Email:</label>
                     <input
-                        className='inputFeild'
+                        className="inputField"
                         type="email"
-                        name="email"
                         id="email"
                         placeholder="Enter Email Address"
-                        required
-                        value={input.email}
-                        onChange={e => setInput({
-                            ...input,
-                            [e.target.name]: e.target.value
-                        })}
+                        {...register('email', { required: true })}
                     />
+                    {errors.email && <span className='error'>Email is required</span>}
 
-                    <label htmlFor="password">Password :</label>
+                    <label htmlFor="password">Password:</label>
                     <input
-                        className='inputFeild'
+                        className="inputField"
                         type="password"
-                        name="password"
                         id="password"
                         placeholder="••••••••••••••••"
-                        // required
-                        value={input.password}
-                        onChange={e => setInput({
-                            ...input,
-                            [e.target.name]: e.target.value
-                        })}
+                        {...register('password', { required: true })}
                     />
+                    {errors.password && <span className='error'>Password is required</span>}
 
-                    <label htmlFor="conformPassword">Confirm Password :</label>
+                    <label htmlFor="conformPassword">Confirm Password:</label>
                     <input
-                        className='inputFeild'
+                        className="inputField"
                         type="password"
-                        name="conformPassword"
                         id="conformPassword"
                         placeholder="Re-Enter Password"
-                        // required
-                        value={input.conformPassword}
-                        onChange={e => setInput({
-                            ...input,
-                            [e.target.name]: e.target.value
-                        })}
+                        {...register('conformPassword', { required: true })}
                     />
-                    <button type="submit" className='Btn'>Sign Up</button>
-                    <div className='signupTxt'>
-                        <p>
-                            Already have an account?
-                            <NavLink to='/login' className='link'> Login</NavLink>
-                        </p>
+                    {errors.conformPassword && <span className='error'>Confirm Password is required</span>}
+
+                    <div>
+                        <button type="submit">Sign Up</button>
                         <a href="#">Forgot password?</a>
                     </div>
                 </form>
             </div>
         </>
-    )
-}
+    );
+};
 
-export default SignUp
+export default SignUp;
