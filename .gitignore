@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 .env
+.env.example
+.env.local
+.env.staging
 *.local
 
 # Editor directories and files
