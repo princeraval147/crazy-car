@@ -35,7 +35,7 @@ connectDB();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors({
-    origin: "http://localhost:5173", // Adjust this to match the origin of your frontend application
+    origin: "https://crazycar-project.netlify.app/", // Adjust this to match the origin of your frontend application
     credentials: true // Allow cookies and authorization headers
 }));
 app.use(express.json());
