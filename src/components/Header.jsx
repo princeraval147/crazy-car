@@ -4,8 +4,8 @@ import Logo from '/Img/Logo.png';
 
 const Header = () => {
 
-    const [search, setSearch] = useState(null);
-    console.log(search);
+    // const [search, setSearch] = useState(null);
+    // console.log(search);
 
     return (
         <>
@@ -17,23 +17,17 @@ const Header = () => {
                         </NavLink>
                     </h1>
                 </div>
-                <div className="search">
-                    <div class="wrap-input-18">
-                        <div class="search">
-                            <div>
-                                <input
+                {/* <div className="search"> */}
+                {/* <div class="wrap-input-18"> */}
+                {/* <div class="search"> */}
+                <div>
+                    {/* <input
                                     type="text"
                                     value={search}
                                     placeholder="Search . . ."
                                     onChange={e => setSearch(e.target.value)}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="section2">
-
-                    <ul className='links'>
+                                /> */}
+                    <div className="links">
                         <li>
                             <NavLink to='/' className='link'>Home</NavLink>
                         </li>
@@ -43,11 +37,28 @@ const Header = () => {
                         <li>
                             <NavLink to='/contact' className='link'>Contact Us</NavLink>
                         </li>
-                        <li>
-                            <NavLink to='/login' className='link'>Login</NavLink>
+                    </div>
+                    {/* </div> */}
+                    {/* </div> */}
+                    {/* </div> */}
+                </div>
+                <div className="section2">
+
+                    <ul className='links'>
+                        {/* <li>
+                            <NavLink to='/' className='link'>Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to='/signUp' className='link'>Sign Up</NavLink>
+                            <NavLink to='/about' className='link'>About</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/contact' className='link'>Contact Us</NavLink>
+                        </li> */}
+                        <li>
+                            <NavLink to='/login' className='headerLogin'>Login</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/signUp' className='Btn'>Sign Up</NavLink>
                         </li>
                     </ul>
                 </div>
