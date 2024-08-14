@@ -22,6 +22,7 @@ const Home = () => {
         backgroundSize: 'cover',
         height: '80vh'
     }
+
     const slideImages = [
         {
             url: img1,
