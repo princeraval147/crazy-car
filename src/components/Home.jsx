@@ -2,11 +2,10 @@ import React from 'react'
 import Design from './Design'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import 'react-slideshow-image/dist/styles.css'
 // import img1 from '../../public/Img/Car2'
-import img2 from '../../public/Img/Car3.png'
-import img3 from '../../public/Img/Car4.jpg'
-import img4 from '../../public/Img/bgCar.jpg'
+import img1 from '../../public/Img/bgCar.jpg'
+import img2 from '../../public/Img/KIA.png'
+import img3 from '../../public/Img/MB.jpg'
 
 const Home = () => {
 
@@ -25,15 +24,15 @@ const Home = () => {
     }
     const slideImages = [
         {
-            url: img2,
+            url: img1,
             // caption: 'Slide 1'
         },
         {
-            url: img3,
+            url: img2,
             // caption: 'Slide 2'
         },
         {
-            url: img4,
+            url: img3,
             // caption: 'Slide 3'
         },
     ];
