@@ -10,7 +10,7 @@ const SignUp = () => {
         console.log(data);
         if (data.password === data.conformPassword) {
             try {
-                const response = await fetch('hhttps://crazycar-backend.onrender.com/signUp', {
+                const response = await fetch('https://crazycar-backend.onrender.com/signUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
