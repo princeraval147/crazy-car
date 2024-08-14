@@ -48,8 +48,6 @@ const Home = () => {
 
     return (
         <>
-
-
             {/* SlideShow */}
 
             <div className="slide-container">
