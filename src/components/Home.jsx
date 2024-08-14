@@ -9,11 +9,11 @@ import img3 from '../../public/Img/MB.jpg'
 
 const Home = () => {
 
-    const spanStyle = {
-        padding: '20px',
-        background: '#efefef',
-        color: '#000000'
-    }
+    // const spanStyle = {
+    //     padding: '20px',
+    //     background: '#efefef',
+    //     color: '#000000'
+    // }
 
     const divStyle = {
         display: 'flex',
