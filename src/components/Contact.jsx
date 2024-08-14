@@ -7,7 +7,7 @@ const Contact = () => {
 
     const onSubmit = async data => {
         try {
-            const response = await axios.post('http://localhost:5000/contact', data);
+            const response = await axios.post('https://crazycar-backend.onrender.com/contact', data);
             console.log('Data sent successfully:', response.data);
         } catch (error) {
             console.log('Error during login:', error);
