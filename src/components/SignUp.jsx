@@ -10,7 +10,7 @@ const SignUp = () => {
         console.log(data);
         if (data.password === data.conformPassword) {
             try {
-                const response = await fetch('http://localhost:5000/contact', {
+                const response = await fetch('http://localhost:5000/signUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
