@@ -300,3 +300,24 @@ a {
     /* justify-content: center; */
     /* align-items: center; */
 }
+
+/*  --------------------------------     CAR   -------------------------------- */
+
+.carFirst {
+    background: url(../public/Img/FamilyCar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+
+.searchCar {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.searchDetail {
+    display: flex;
+}

@@ -9,6 +9,8 @@ import Contact from './components/Contact.jsx'
 import Error from './components/Error.jsx'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import Car from './components/Car.jsx'
+import Cars from './components/Cars.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +20,7 @@ const router = createBrowserRouter(
       <Route path='contact' element={<Contact />} />
       <Route path='login' element={<Login />} />
       <Route path='signUp' element={<SignUp />} />
+      <Route path='car' element={<Cars />} />
       <Route path='*' element={<Error />} />
     </Route>
   )

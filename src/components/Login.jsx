@@ -21,7 +21,7 @@ const Login = () => {
             const result = await response.json();
 
             if (result.success) {
-                navigate('/dashboard');
+                navigate('/car');
             } else {
                 alert(result.message);
             }

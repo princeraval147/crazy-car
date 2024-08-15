@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 // Import models
 const User = require('./models/User');
 const Contact = require('./models/contact');
-// const CarData = require('./models/cardata');
+const CarData = require('./models/cardata');
 
 // Load environment variables
 dotenv.config();
