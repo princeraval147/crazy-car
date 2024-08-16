@@ -304,7 +304,7 @@ a {
 /*  --------------------------------     CAR   -------------------------------- */
 
 .carFirst {
-    background: url(../public/Img/FamilyCar.jpg);
+    background: url(/Img/FamilyCar.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

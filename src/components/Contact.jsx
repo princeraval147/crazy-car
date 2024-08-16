@@ -9,6 +9,7 @@ const Contact = () => {
         try {
             const response = await axios.post('https://crazycar-backend.onrender.com/contact', data);
             console.log('Data sent successfully:', response.data);
+            alert("Thanks For contact Us");
         } catch (error) {
             console.log('Error during login:', error);
         }

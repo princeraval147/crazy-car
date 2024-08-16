@@ -81,11 +81,6 @@ const Home = () => {
                     {slideImages.map((slideImage, index) => (
                         <div key={index}>
                             <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
-                                <span>
-                                    <h1 style={spanStyle}>
-                                        Welcome to <Typewriter text="CrazyCar Official Website" delay={200} />
-                                    </h1>
-                                </span>
                                 {/* <span style={spanStyle}>{slideImage.caption}</span> */}
                             </div>
                         </div>
