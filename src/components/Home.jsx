@@ -3,8 +3,8 @@ import styles from "./Design.module.css";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import 'react-slideshow-image/dist/styles.css'
-import img4 from '/Img/bgCar.jpg'
-import img2 from '/Img/KIA.png'
+import img4 from '/Img/4K.jpg'
+import img2 from '/Img/4k2.jpg'
 import img3 from '/Img/CarPic.avif'
 
 const Home = () => {
@@ -20,6 +20,7 @@ const Home = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundSize: 'cover',
+        backgroundPosition: "center",
         height: '80vh'
     }
 
@@ -188,7 +189,6 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            {/* <Design /> */}
         </>
     )
 }
