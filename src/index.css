@@ -145,6 +145,16 @@ a {
     text-decoration: underline;
 }
 
+/*  --------------------------------     ERROR   -------------------------------- */
+
+.error {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 31vw;
+}
 
 /*  --------------------------------     LOGIN   -------------------------------- */
 
