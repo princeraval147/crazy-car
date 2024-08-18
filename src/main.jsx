@@ -11,6 +11,7 @@ import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import Car from './components/Car.jsx'
 import Cars from './components/Cars.jsx'
+import Dashboard from './components/Dashboard.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path='login' element={<Login />} />
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
+      <Route path='dashboard' element={<Dashboard />} />
       <Route path='*' element={<Error />} />
     </Route>
   )
