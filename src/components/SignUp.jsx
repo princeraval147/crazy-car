@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 const SignUp = () => {
@@ -85,11 +85,15 @@ const SignUp = () => {
                     {errors.conformPassword && <span className='error'>Confirm Password is required</span>}
 
                     <div>
-                        <button type="submit" className='Btn'>Sign Up</button>
                         <a href="#">Forgot password?</a>
+                        <button type="submit" className='Btn'>Sign Up</button>
+                        <p>
+                            Already have an account ?
+                            <NavLink to='/login' className='signUpBtn'> Log In</NavLink>
+                        </p>
                     </div>
-                </form>
-            </div>
+                </form >
+            </div >
         </>
     );
 };

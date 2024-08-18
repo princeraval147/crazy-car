@@ -78,7 +78,7 @@ const Login = () => {
                         <button type="submit" className='Btn'>Sign in</button>
                         <p>
                             Don't have an account yet?
-                            <NavLink to='/signUp'> Sign Up</NavLink>
+                            <NavLink to='/signUp' className='signUpBtn'> Sign Up</NavLink>
                         </p>
                     </form>
                 </div>

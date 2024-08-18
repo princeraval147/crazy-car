@@ -184,12 +184,6 @@ a {
     margin-top: 40px;
 }
 
-/* .loginInput {
-    padding: 15px;
-    border: 1px solid gray;
-    margin-left: 10px;
-    width: 100%;
-} */
 
 .remember {
     display: flex;
@@ -203,6 +197,21 @@ a {
     gap: 60px;
     margin-bottom: 10px;
 }
+
+.signUpBtn {
+    padding: 10px;
+    color: #2E3944;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.5s
+}
+
+.signUpBtn:hover {
+    background: rgba(128, 128, 128, 0.288);
+    color: black;
+    border-radius: 10px;
+}
+
 
 /*  --------------------------------     SIGNUP   -------------------------------- */
 
