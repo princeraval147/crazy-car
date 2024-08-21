@@ -8,8 +8,8 @@ function Cars() {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/cardata');
-                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
+                // const response = await fetch('http://localhost:5000/cardata');
+                const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 console.log('Fetched car data:', data);
                 setCarsData(data);
@@ -20,36 +20,33 @@ function Cars() {
         fetchCarData();
     }, []);
 
-    const Cars = [
-        "Audi",
-        "BMW",
-        "Suzuki"
+    const CarBrand = [
+        carsData.map((car) => (
+            car.brand
+        ))
     ];
 
-    const Models = {
-        // "Models": {
-        "Maruti": [
-            "Baleno",
-            "Alto 800",
-            "Brezza"
-        ],
-        "Audi": [
-            "R8",
-            "A5",
-            "Q4"
-        ]
-        // }
-    }
+    const UniqueCarBrand = carsData.filter(
+        (car, index, self) =>
+            index === self.findIndex(
+                (t) => t.brand === car.brand
+            )
+    );
+    console.log("Removed Duplicate : ", UniqueCarBrand);
+
+    const carBrandString = JSON.stringify(CarBrand);
+    // console.log(CarBrand, " ", typeof (carBrandString));
+
 
     const CarsModel = [
-        "Alto 800",
-        "Brezza",
-        "Audi A5"
+        carsData.map((car) => (
+            car.model
+        ))
     ];
 
     const [selectedCar, setSelectedCar] = useState(String);
     const [selectedCarModel, setSelectedCarModel] = useState(String);
-    // console.log()
+
     const handlerSubmit = () => {
         console.table([selectedCar, selectedCarModel])
     }
@@ -67,7 +64,7 @@ function Cars() {
                             disableClearable
                             className='searchTxt'
                             disablePortal
-                            options={Cars}
+                            options={CarBrand}
                             sx={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Select Brand" />}
                             // freeSolo
@@ -108,8 +105,9 @@ function Cars() {
                     <Car
                         key={car._id}
                         image={car.image}
-                        title={car.title}
+                        title={`${car.brand} ${car.model}`}
                         description={car.description}
+                        price={car.price}
                     />
                 ))}
             </div>
