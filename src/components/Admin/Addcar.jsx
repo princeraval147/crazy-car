@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import './addcar.css'
 
 const Addcar = () => {
   const { register, handleSubmit } = useForm();
-
+  const Navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
       const response = await fetch('http://localhost:5000/cardata', {
@@ -16,6 +17,8 @@ const Addcar = () => {
       });
       const result = await response.json();
       console.log(result);
+      alert("Car Added Successfully");
+      Navigate('/car');
     } catch (error) {
       console.error(error);
     }

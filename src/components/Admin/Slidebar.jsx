@@ -40,14 +40,14 @@ const styles = {
     backgroundColor: '#dadada',
     color: 'black',
     padding: '20px',
-    minHeight: '100vh', 
+    minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
   },
   navList: {
     listStyleType: 'none',
     padding: 0,
-    overflowY: 'auto',  
+    overflowY: 'auto',
   },
   navItem: {
     margin: '20px 0',

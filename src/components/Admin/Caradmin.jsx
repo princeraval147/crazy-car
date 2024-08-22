@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Car from '../Car'; 
+import Car from '../Car';
 
 const Caradmin = () => {
     const [cars, setCars] = useState([]);
@@ -11,10 +11,9 @@ const Caradmin = () => {
             const response = await fetch(`http://localhost:5000/cardata/${id}`, {
                 method: 'DELETE'
             });
-
             if (response.ok) {
                 console.log('Car data deleted successfully');
-                setCars(cars.filter(car => car._id !== id)); 
+                setCars(cars.filter(car => car._id !== id));
             } else {
                 console.error('Error deleting car data');
             }
@@ -36,7 +35,7 @@ const Caradmin = () => {
         };
 
         fetchCarData();
-    }, []); 
+    }, []);
 
     return (
         <div
@@ -51,8 +50,8 @@ const Caradmin = () => {
             }}
         >
             {cars.map((car) => (
-                <div 
-                    key={car._id} 
+                <div
+                    key={car._id}
                     style={{
                         maxWidth: '300px',
                         textAlign: 'center',
@@ -68,7 +67,7 @@ const Caradmin = () => {
                         description={car.description}
                         price={car.price}
                     />
-                    <div 
+                    <div
                         style={{
                             display: 'flex',
                             justifyContent: 'space-around',

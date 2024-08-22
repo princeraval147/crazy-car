@@ -12,6 +12,12 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Car from './components/Car.jsx'
 import Cars from './components/Cars.jsx'
 import Dashboard from './components/Dashboard.jsx'
+import Admin from '../../crazy-car-main/src/components/admin/Admin.jsx'
+import UpdateCar from '../../crazy-car-main/src/components/admin/UpdateCar.jsx'
+import Logout from '../../crazy-car-main/src/components/Logout.jsx'
+import User from '../../crazy-car-main/src/components/admin/User.jsx'
+import Caradmin from '../../crazy-car-main/src/components/admin/Caradmin.jsx'
+import Addcar from '../../crazy-car-main/src/components/admin/Addcar.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +28,14 @@ const router = createBrowserRouter(
       <Route path='login' element={<Login />} />
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
-      <Route path='dashboard' element={<Dashboard />} />
+      <Route path='logout' element={<Logout />} />
+      <Route path='update-car/:id' element={<UpdateCar />} />
+      <Route path='admin' element={<Admin />} >
+        <Route path='user' element={<User />} />
+        <Route path='caradmin' element={<Caradmin />} />
+        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='addcar' element={<Addcar />} />
+      </Route>
       <Route path='*' element={<Error />} />
     </Route>
   )

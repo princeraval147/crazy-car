@@ -36,33 +36,67 @@ connectDB();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors({
-    origin: "https://crazycar-project.netlify.app",
-    // origin: "http://localhost:5173",
+    origin: "http://localhost:5173",
+    // origin: "https://crazycar-project.netlify.app",
     credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
 
-// Verify token route
-app.post('/verify-token', async (req, res) => {
-    const { token } = req.body;
 
+// verify admin
+
+// const isAdmin = async (req, res, next) => {
+//     try {
+//         const token = req.cookies.token;
+//         if (!token) {
+//             return res.status(401).json({ message: 'Access denied. No token provided.' });
+//         }
+
+//         const decoded = jwt.verify(token, JWT_SECRET);
+//         const user = await User.findOne({ email: decoded.email });
+
+//         if (!user) {
+//             return res.status(401).json({ message: 'Invalid token' });
+//         }
+
+//         if (!user.isadmin) {
+//             return res.status(403).json({ message: 'Access denied. Admins only.' });
+//         }
+
+//         req.user = user;
+//         next();
+//     } catch (error) {
+//         console.error('Error checking admin status:', error);
+//         res.status(500).json({ message: 'An error occurred while checking admin status' });
+//     }
+// };
+
+const isAdmin = async (req, res, next) => {
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
+        const token = req.headers['x-access-token'] || req.headers['authorization'];
+        if (!token) {
+            return res.status(401).json({ message: 'No token provided' });
+        }
+
+        const decoded = await jwt.verify(token, process.env.SECRET_KEY);
         const user = await User.findOne({ email: decoded.email });
 
         if (!user) {
-            return res.status(401).json({ valid: false, message: 'Invalid token' });
+            return res.status(401).json({ message: 'Invalid token' });
         }
 
-        res.status(200).json({ valid: true });
+        if (user.isAdmin) {
+            next(); // allow access
+        } else {
+            return res.status(403).json({ message: 'Access denied' });
+        }
     } catch (error) {
-        console.error('Error verifying token:', error);
-        res.status(401).json({ valid: false, message: 'Invalid token' });
+        return res.status(500).json({ message: 'Internal Server Error' });
     }
-});
+};
 
-// Authentication middleware
+
 const authenticateToken = (req, res, next) => {
     const token = req.cookies.token;
 
@@ -78,6 +112,18 @@ const authenticateToken = (req, res, next) => {
         next();
     });
 };
+
+//check isloggedin
+app.get('/auth/check', authenticateToken, (req, res) => {
+    res.status(200).json({ isLoggedIn: true });
+});
+
+//admin check
+app.get('/admin/check', isAdmin, (req, res) => {
+    res.status(200).json({ message: 'You are an admin' });
+});
+
+
 
 // Signup route
 app.post('/signup', async (req, res) => {
@@ -100,17 +146,120 @@ app.post('/signup', async (req, res) => {
         res.status(500).json({ success: false, message: 'An error occurred during signup' });
     }
 });
+//logout route
+app.post('/logout', (req, res) => {
+    res.clearCookie('token');
+    res.status(200).json({ success: true, message: 'Logged out successfully' });
+});
 
 // Insert car data route
 app.post('/cardata', async (req, res) => {
-    const { title, description, image } = req.body;
+    const { model, brand, price, description, image } = req.body;
     try {
-        const newCarData = new CarData({ title, description, image });
+        const newCarData = new CarData({ model, brand, price, description, image });
         await newCarData.save();
         res.status(201).json(newCarData);
     } catch (error) {
         console.error('Error saving car data:', error);
         res.status(400).json({ error: 'Error saving car data' });
+    }
+});
+
+// Route to get car data by ID
+app.get('/cardata/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const car = await CarData.findById(id);
+        if (!car) {
+            res.status(404).json({ message: 'Car not found' });
+        } else {
+            res.json(car);
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error fetching car data' });
+    }
+});
+
+// Update car data
+app.put('/cardata/:id', async (req, res) => {
+    const { id } = req.params;
+    const { model, brand, price, description, image } = req.body;
+
+    try {
+        const updatedCarData = await CarData.findByIdAndUpdate(
+            id,
+            { model, brand, price, description, image },
+            { new: true }
+        );
+
+        if (!updatedCarData) {
+            return res.status(404).json({ message: 'Car data not found' });
+        }
+
+        res.status(200).json(updatedCarData);
+    } catch (error) {
+        console.error('Error updating car data:', error);
+        res.status(500).json({ message: 'An error occurred while updating car data' });
+    }
+});
+
+// Delete car data
+app.delete('/cardata/:id', async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const deletedCarData = await CarData.findByIdAndDelete(id);
+
+        if (!deletedCarData) {
+            return res.status(404).json({ message: 'Car data not found' });
+        }
+
+        res.status(200).json({ message: 'Car data deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting car data:', error);
+        res.status(500).json({ message: 'An error occurred while deleting car data' });
+    }
+});
+
+// route to get user count
+app.get('/api/users/count', async (req, res) => {
+    try {
+        const totalUsers = await User.countDocuments({});
+        res.json({ totalUsers });
+    } catch (error) {
+        res.status(500).json({ error: 'Unable to fetch user count' });
+    }
+});
+
+// route to get car data count
+app.get('/api/cars/count', async (req, res) => {
+    try {
+        const totalCars = await CarData.countDocuments({});
+        res.json({ totalCars });
+    } catch (error) {
+        res.status(500).json({ error: 'Unable to fetch car count' });
+    }
+});
+
+// get all user route
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({ error: 'Error fetching users' });
+    }
+});
+// Get all car data for admin route
+app.get('/cardataadmin', async (req, res) => {
+    try {
+        const carData = await CarData.find();
+        res.status(200).json(carData);
+    } catch (error) {
+        console.error('Error fetching car data:', error);
+        res.status(500).json({ error: 'Error fetching car data' });
     }
 });
 
@@ -152,10 +301,12 @@ app.post('/login', async (req, res) => {
 });
 
 // Logout route
-app.post('/logout', (req, res) => {
-    res.clearCookie('token'); // Remove the JWT cookie
+app.get('/logout', (req, res) => {
+    // res.cookie('token','');
+    res.clearCookie('token');
     res.status(200).json({ success: true, message: 'Logged out successfully' });
 });
+
 
 // Contact route
 app.post('/contact', async (req, res) => {
@@ -170,6 +321,6 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(port, () => {
-    // console.log(`Server running on http://localhost:${port}`);
-    console.log(`Server running on https://crazycar-backend.onrender.com/signUp:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
+    // console.log(`Server running on https://crazycar-backend.onrender.com/signUp:${port}`);
 });
