@@ -17,16 +17,7 @@ const Header = () => {
                         </NavLink>
                     </h1>
                 </div>
-                {/* <div className="search"> */}
-                {/* <div class="wrap-input-18"> */}
-                {/* <div class="search"> */}
                 <div>
-                    {/* <input
-                                    type="text"
-                                    value={search}
-                                    placeholder="Search . . ."
-                                    onChange={e => setSearch(e.target.value)}
-                                /> */}
                     <div className="links">
                         <li>
                             <NavLink to='/' className='link'>Home</NavLink>
@@ -37,23 +28,13 @@ const Header = () => {
                         <li>
                             <NavLink to='/contact' className='link'>Contact Us</NavLink>
                         </li>
+                        <li>
+                            <NavLink to='/car' className='link'>Car</NavLink>
+                        </li>
                     </div>
-                    {/* </div> */}
-                    {/* </div> */}
-                    {/* </div> */}
                 </div>
                 <div className="section2">
-
                     <ul className='links'>
-                        {/* <li>
-                            <NavLink to='/' className='link'>Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/about' className='link'>About</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/contact' className='link'>Contact Us</NavLink>
-                        </li> */}
                         <li>
                             <NavLink to='/login' className='headerLogin'>Login</NavLink>
                         </li>

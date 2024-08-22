@@ -4,15 +4,24 @@ import Car from './Car';
 
 function Cars() {
     const [carsData, setCarsData] = useState([]);
+    const [brands, setBrands] = useState([]);
+    const [models, setModels] = useState([]);
+    const [selectedBrand, setSelectedBrand] = useState('');
+    const [selectedModel, setSelectedModel] = useState('');
 
     useEffect(() => {
         const fetchCarData = async () => {
             try {
                 const response = await fetch('http://localhost:5000/cardata');
-                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 console.log('Fetched car data:', data);
                 setCarsData(data);
+
+                const uniqueBrands = Array.from(new Set(data.map(car => car.brand)));
+                setBrands(uniqueBrands);
+
+                const uniqueModels = Array.from(new Set(data.map(car => car.model)));
+                setModels(uniqueModels);
             } catch (error) {
                 console.error('Error fetching car data:', error);
             }
@@ -20,36 +29,13 @@ function Cars() {
         fetchCarData();
     }, []);
 
-    const CarBrand = [
-        carsData.map((car) => (
-            car.brand
-        ))
-    ];
-
-    const UniqueCarBrand = carsData.filter(
-        (car, index, self) =>
-            index === self.findIndex(
-                (t) => t.brand === car.brand
-            )
-    );
-    console.log("Removed Duplicate : ", UniqueCarBrand);
-
-    const carBrandString = JSON.stringify(CarBrand);
-    // console.log(CarBrand, " ", typeof (carBrandString));
-
-
-    const CarsModel = [
-        carsData.map((car) => (
-            car.model
-        ))
-    ];
-
-    const [selectedCar, setSelectedCar] = useState(String);
-    const [selectedCarModel, setSelectedCarModel] = useState(String);
-
-    const handlerSubmit = () => {
-        console.table([selectedCar, selectedCarModel])
-    }
+    const handleSearch = () => {
+        const filteredCars = carsData.filter(car =>
+            (selectedBrand ? car.brand === selectedBrand : true) &&
+            (selectedModel ? car.model === selectedModel : true)
+        );
+        setCarsData(filteredCars);
+    };
 
     return (
         <>
@@ -60,30 +46,34 @@ function Cars() {
                     </div>
                     <div className="searchDetail">
                         <Autocomplete
-                            isOptionEqualToValue={(option, value) => option.value === value.value}
                             disableClearable
                             className='searchTxt'
                             disablePortal
-                            options={CarBrand}
+                            options={brands}
                             sx={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Select Brand" />}
-                            // freeSolo
-                            value={selectedCar}
-                            onChange={(e, newVal) => setSelectedCar(newVal)}
+                            value={selectedBrand}
+                            onChange={(e, newVal) => {
+                                setSelectedBrand(newVal);
+                                setSelectedModel('');
+                                // Filter models based on selected brand
+                                const filteredModels = carsData
+                                    .filter(car => car.brand === newVal)
+                                    .map(car => car.model);
+                                setModels(Array.from(new Set(filteredModels)));
+                            }}
                         />
                         <Autocomplete
-                            isOptionEqualToValue={(option, value) => option.value === value.value}
                             disableClearable
                             className='searchTxt'
                             disablePortal
-                            options={CarsModel}
+                            options={models}
                             sx={{ width: 300 }}
                             renderInput={(params) => <TextField {...params} label="Select Model" />}
-                            // freeSolo
-                            value={selectedCarModel}
-                            onChange={(e, newVal) => setSelectedCarModel(newVal)}
+                            value={selectedModel}
+                            onChange={(e, newVal) => setSelectedModel(newVal)}
                         />
-                        <button className='Btn' onClick={handlerSubmit}>
+                        <button className='Btn' onClick={handleSearch}>
                             Search
                         </button>
                     </div>
