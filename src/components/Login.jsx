@@ -24,7 +24,7 @@ const Login = () => {
             if (result.success) {
                 navigate('/car');
             } else {
-                alert(result.message);
+                alert("Invalid Email or Password", result.message);
             }
         } catch (error) {
             console.error('Error during login:', error);

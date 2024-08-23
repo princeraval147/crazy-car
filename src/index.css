@@ -662,11 +662,11 @@ a {
 /*  --------------------------------     CAR   -------------------------------- */
 
 .carFirst {
-    background: url(/Img/FamilyCar2.jpg);
+    background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: 65vh;
 }
 
 .searchCar {
@@ -674,6 +674,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    /* border: 2px solid red; */
 }
 
 .searchDetail {

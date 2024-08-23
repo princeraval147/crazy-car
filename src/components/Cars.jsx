@@ -13,6 +13,7 @@ function Cars() {
         const fetchCarData = async () => {
             try {
                 const response = await fetch('http://localhost:5000/cardata');
+                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 console.log('Fetched car data:', data);
                 setCarsData(data);
@@ -47,6 +48,7 @@ function Cars() {
                     <div className="searchDetail">
                         <Autocomplete
                             disableClearable
+                            isOptionEqualToValue={(option, value) => option.value === value.value}  // For ignore warning of console
                             className='searchTxt'
                             disablePortal
                             options={brands}
@@ -65,6 +67,7 @@ function Cars() {
                         />
                         <Autocomplete
                             disableClearable
+                            isOptionEqualToValue={(option, value) => option.value === value.value}
                             className='searchTxt'
                             disablePortal
                             options={models}
