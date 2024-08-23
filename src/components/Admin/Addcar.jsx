@@ -9,6 +9,7 @@ const Addcar = () => {
   const onSubmit = async (data) => {
     try {
       const response = await fetch('http://localhost:5000/cardata', {
+        // const response = await fetch('https://crazycar-backend.onrender.com/cardata', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
