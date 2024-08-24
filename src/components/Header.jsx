@@ -81,7 +81,7 @@ const Header = () => {
                         ) : (
                             <>
                                 <li>
-                                    <NavLink to='/login' className='Btn'>Login</NavLink>
+                                    <NavLink to='/login' className='hoverEffct'>Login</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to='/signUp' className='Btn'>Sign Up</NavLink>
