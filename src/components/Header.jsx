@@ -1,35 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Logo from '/Img/Logo.png';
 
 const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const click_ref = React.useRef(null);
-
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const checkLoginStatus = async () => {
-            try {
-                const response = await fetch('http://localhost:5000/auth/check', {
-                    // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
-                    method: 'GET',
-                    credentials: 'include',
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setIsLoggedIn(data.isLoggedIn);
-                } else {
-                    setIsLoggedIn(false);
-                }
-            } catch (error) {
-                console.error('Error checking login status:', error);
+    const checkLoginStatus = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/auth/check', {
+                // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
+                method: 'GET',
+                credentials: 'include',
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setIsLoggedIn(data.isLoggedIn);
+            } else {
                 setIsLoggedIn(false);
             }
-        };
-        checkLoginStatus();
-    }, []);
+        } catch (error) {
+            console.error('Error checking login status:', error);
+            setIsLoggedIn(false);
+        }
+    };
+    checkLoginStatus();
 
     const handlerLogout = async () => {
         try {
