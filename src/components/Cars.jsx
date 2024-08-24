@@ -12,8 +12,8 @@ function Cars() {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                // const response = await fetch('http://localhost:5000/cardata');
-                const response = await fetch('https://crazycar-backend.onrender.com/cardata');
+                const response = await fetch('http://localhost:5000/cardata');
+                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 console.log('Fetched car data:', data);
                 setCarsData(data);

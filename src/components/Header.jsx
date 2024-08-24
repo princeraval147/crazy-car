@@ -1,11 +1,54 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
 import Logo from '/Img/Logo.png';
 
 const Header = () => {
 
-    // const [search, setSearch] = useState(null);
-    // console.log(search);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const click_ref = React.useRef(null);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const checkLoginStatus = async () => {
+            try {
+                const response = await fetch('http://localhost:5000/auth/check', {
+                    // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
+                    method: 'GET',
+                    credentials: 'include',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setIsLoggedIn(data.isLoggedIn);
+                } else {
+                    setIsLoggedIn(false);
+                }
+            } catch (error) {
+                console.error('Error checking login status:', error);
+                setIsLoggedIn(false);
+            }
+        };
+        checkLoginStatus();
+    }, []);
+
+    const handlerLogout = async () => {
+        try {
+            await fetch('http://localhost:5000/logout', {
+                // await fetch('https://crazycar-backend.onrender.com/logout', {
+                method: 'GET',
+                credentials: 'include',
+            });
+            navigate('/login', { replace: true });
+        } catch (error) {
+            console.error(error);
+            navigate('/login', { replace: true });
+        }
+        finally {
+            console.log("Click Logout");
+            setIsLoggedIn(false);
+            navigate('/login');
+        }
+    }
 
     return (
         <>
@@ -35,12 +78,20 @@ const Header = () => {
                 </div>
                 <div className="section2">
                     <ul className='links'>
-                        <li>
-                            <NavLink to='/login' className='headerLogin'>Login</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/signUp' className='Btn'>Sign Up</NavLink>
-                        </li>
+                        {isLoggedIn === true ? (
+                            <li>
+                                <button onClick={handlerLogout} className='Btn'>Logout</button>
+                            </li>
+                        ) : (
+                            <>
+                                <li>
+                                    <NavLink to='/login' className='Btn'>Login</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/signUp' className='Btn'>Sign Up</NavLink>
+                                </li>
+                            </>
+                        )}
                     </ul>
                 </div>
             </div >
