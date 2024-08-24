@@ -62,6 +62,10 @@ a {
     border-radius: 10px;
 }
 
+a.active {
+    color: black;
+}
+
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -138,11 +142,12 @@ a {
 }
 
 .Circles {
-    display: none;
+    display: none
 }
 
 .mobile {
     display: flex;
+
 }
 
 .titles {
@@ -160,12 +165,10 @@ a {
     color: #6E7E83;
 }
 
-
 .both {
     display: flex;
     flex-direction: column;
 }
-
 
 .centerTitle {
     font-style: normal;
@@ -286,7 +289,7 @@ a {
     background: #F3379C;
     position: relative;
     top: 90px;
-    left: 307px;
+    left: 302px;
     margin: 0;
 }
 
@@ -309,7 +312,7 @@ a {
     background: #02BCD2;
     position: relative;
     top: 48px;
-    left: 232px;
+    left: 226px;
 }
 
 @keyframes animationName {

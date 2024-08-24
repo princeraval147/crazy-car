@@ -15,14 +15,14 @@ function Cars() {
                 const response = await fetch('http://localhost:5000/cardata');
                 // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
-                console.log('Fetched car data:', data);
+                // console.log('Fetched car data:', data);
                 setCarsData(data);
 
                 const uniqueBrands = Array.from(new Set(data.map(car => car.brand)));
                 setBrands(uniqueBrands);
-
                 const uniqueModels = Array.from(new Set(data.map(car => car.model)));
                 setModels(uniqueModels);
+
             } catch (error) {
                 console.error('Error fetching car data:', error);
             }
@@ -36,6 +36,8 @@ function Cars() {
             (selectedModel ? car.model === selectedModel : true)
         );
         setCarsData(filteredCars);
+        console.log(filteredCars);
+        // console.log(error);
     };
 
     return (
@@ -97,10 +99,11 @@ function Cars() {
                 {carsData.map((car) => (
                     <Car
                         key={car._id}
+                        car={car}
                         image={car.image}
                         title={`${car.brand} ${car.model}`}
-                        description={car.description}
                         price={car.price}
+                        description={car.description}
                     />
                 ))}
             </div>
