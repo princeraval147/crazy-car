@@ -1,15 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import './addcar.css'
+import '../../index.css'
 
 const Addcar = () => {
   const { register, handleSubmit } = useForm();
   const Navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
-      // const response = await fetch('http://localhost:5000/cardata', {
-      const response = await fetch('https://crazycar-backend.onrender.com/cardata', {
+      const response = await fetch('http://localhost:5000/cardata', {
+        // const response = await fetch('https://crazycar-backend.onrender.com/cardata', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
