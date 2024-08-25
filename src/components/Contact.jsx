@@ -7,8 +7,8 @@ const Contact = () => {
 
     const onSubmit = async data => {
         try {
-            // const response = await axios.post('http://localhost:500/contact', data);
-            const response = await axios.post('https://crazycar-backend.onrender.com/contact', data);
+            const response = await axios.post('http://localhost:500/contact', data);
+            // const response = await axios.post('https://crazycar-backend.onrender.com/contact', data);
             console.log('Data sent successfully:', response.data);
             alert("Thanks For contact Us");
         } catch (error) {
