@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Car from '../Car';
 
-const Caradmin = () => {
+const CarManage = () => {
     const [cars, setCars] = useState([]);
     const navigate = useNavigate();
 
@@ -14,6 +14,7 @@ const Caradmin = () => {
             });
             if (response.ok) {
                 console.log('Car data deleted successfully');
+                alert("Car Deleted Successfully");
                 setCars(cars.filter(car => car._id !== id));
             } else {
                 console.error('Error deleting car data');
@@ -111,4 +112,4 @@ const Caradmin = () => {
     );
 };
 
-export default Caradmin;
+export default CarManage;

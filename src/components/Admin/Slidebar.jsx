@@ -4,27 +4,28 @@ import { FaUsers, FaCar, FaTachometerAlt, FaPlus } from 'react-icons/fa';
 
 const Slidebar = () => {
   return (
-    <div style={styles.sidebar}>
-      <h3>Admin Panel</h3>
+    <div className="sidebar">
+      <h3 align='center'>Admin Panel</h3>
+      <hr />
       <nav>
-        <ul style={styles.navList}>
-          <li style={styles.navItem}>
-            <NavLink to="dashboard" style={styles.navLink}>
+        <ul className="navList">
+          <li className="navItem">
+            <NavLink to="dashboard" className="hoverEffct">
               <FaTachometerAlt /> Dashboard
             </NavLink>
           </li>
-          <li style={styles.navItem}>
-            <NavLink to="user" style={styles.navLink}>
+          <li className="navItem">
+            <NavLink to="user" className="hoverEffct">
               <FaUsers /> Users
             </NavLink>
           </li>
-          <li style={styles.navItem}>
-            <NavLink to="caradmin" style={styles.navLink}>
+          <li className="navItem">
+            <NavLink to="carmanage" className="hoverEffct">
               <FaCar /> Car Management
             </NavLink>
           </li>
-          <li style={styles.navItem}>
-            <NavLink to="addcar" style={styles.navLink}>
+          <li className="navItem">
+            <NavLink to="addcar" className="hoverEffct">
               <FaPlus /> Add Car
             </NavLink>
           </li>
@@ -32,30 +33,6 @@ const Slidebar = () => {
       </nav>
     </div>
   );
-};
-
-const styles = {
-  sidebar: {
-    width: '200px',
-    backgroundColor: '#dadada',
-    color: 'black',
-    padding: '20px',
-    minHeight: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  navList: {
-    listStyleType: 'none',
-    padding: 0,
-    overflowY: 'auto',
-  },
-  navItem: {
-    margin: '20px 0',
-  },
-  navLink: {
-    color: 'black',
-    textDecoration: 'none',
-  },
 };
 
 export default Slidebar;

@@ -755,10 +755,10 @@ a.active {
     font-size: 1.1em;
 }
 
-/*  --------------------------------     DASHBOARD   -------------------------------- */
+/*  --------------------------------     SLIDEBAR   -------------------------------- */
 
 .sidebar {
-    width: 200px;
+    width: 250px;
     background-color: #dadada;
     color: black;
     padding: 20px;
@@ -780,4 +780,16 @@ a.active {
 .sidebarName {
     color: black;
     text-decoration: none;
+}
+
+
+.adminPanel {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
 }

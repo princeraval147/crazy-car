@@ -9,15 +9,14 @@ import Contact from './components/Contact.jsx'
 import Error from './components/Error.jsx'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import Car from './components/Car.jsx'
+// import Car from './components/Car.jsx'
 import Cars from './components/Cars.jsx'
 import Dashboard from './components/Admin/Dashboard.jsx'
-import Admin from '../../crazy-car-main/src/components/admin/Admin.jsx'
-import UpdateCar from '../../crazy-car-main/src/components/admin/UpdateCar.jsx'
-import Logout from '../../crazy-car-main/src/components/Logout.jsx'
-import User from '../../crazy-car-main/src/components/admin/User.jsx'
-import Caradmin from '../../crazy-car-main/src/components/admin/Caradmin.jsx'
-import Addcar from '../../crazy-car-main/src/components/admin/Addcar.jsx'
+import CarManage from './components/Admin/CarManage.jsx'
+import AdminPanel from './components/Admin/AdminPanel.jsx'
+import UpdateCar from './components/Admin/UpdateCar.jsx'
+import User from './components/Admin/User.jsx'
+import Addcar from './components/Admin/Addcar.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,12 +27,11 @@ const router = createBrowserRouter(
       <Route path='login' element={<Login />} />
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
-      <Route path='logout' element={<Logout />} />
       <Route path='update-car/:id' element={<UpdateCar />} />
-      <Route path='admin' element={<Admin />} >
-        <Route path='user' element={<User />} />
-        <Route path='caradmin' element={<Caradmin />} />
+      <Route path='admin' element={<AdminPanel />} >
         <Route path='dashboard' element={<Dashboard />} />
+        <Route path='user' element={<User />} />
+        <Route path='carmanage' element={<CarManage />} />
         <Route path='addcar' element={<Addcar />} />
       </Route>
       <Route path='*' element={<Error />} />
