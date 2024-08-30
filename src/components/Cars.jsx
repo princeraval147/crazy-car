@@ -3,6 +3,7 @@ import { Autocomplete, TextField } from "@mui/material";
 import Car from './Car';
 
 function Cars() {
+    const [originalCarsData, setOriginalCarsData] = useState([]);
     const [carsData, setCarsData] = useState([]);
     const [brands, setBrands] = useState([]);
     const [models, setModels] = useState([]);
@@ -12,17 +13,19 @@ function Cars() {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/cardata');
-                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
+                // const response = await fetch('http://localhost:5000/cardata');
+                const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 // console.log('Fetched car data:', data);
+                console.log('Fetched car data:', data);
+                setOriginalCarsData(data);
                 setCarsData(data);
 
                 const uniqueBrands = Array.from(new Set(data.map(car => car.brand)));
                 setBrands(uniqueBrands);
+
                 const uniqueModels = Array.from(new Set(data.map(car => car.model)));
                 setModels(uniqueModels);
-
             } catch (error) {
                 console.error('Error fetching car data:', error);
             }
@@ -30,14 +33,26 @@ function Cars() {
         fetchCarData();
     }, []);
 
+    useEffect(() => {
+        if (selectedBrand) {
+            const filteredModels = originalCarsData
+                .filter(car => car.brand === selectedBrand)
+                .map(car => car.model);
+            setModels(Array.from(new Set(filteredModels)));
+        } else {
+            const uniqueModels = Array.from(new Set(originalCarsData.map(car => car.model)));
+            setModels(uniqueModels);
+        }
+    }, [selectedBrand, originalCarsData]);
+
     const handleSearch = () => {
-        const filteredCars = carsData.filter(car =>
+        const filteredCars = originalCarsData.filter(car =>
             (selectedBrand ? car.brand === selectedBrand : true) &&
             (selectedModel ? car.model === selectedModel : true)
         );
         setCarsData(filteredCars);
-        console.log(filteredCars);
-        // console.log(error);
+        setSelectedBrand('');
+        setSelectedModel('');
     };
 
     return (
@@ -50,7 +65,6 @@ function Cars() {
                     <div className="searchDetail">
                         <Autocomplete
                             disableClearable
-                            isOptionEqualToValue={(option, value) => option.value === value.value}  // For ignore warning of console
                             className='searchTxt'
                             disablePortal
                             options={brands}
@@ -60,16 +74,10 @@ function Cars() {
                             onChange={(e, newVal) => {
                                 setSelectedBrand(newVal);
                                 setSelectedModel('');
-                                // Filter models based on selected brand
-                                const filteredModels = carsData
-                                    .filter(car => car.brand === newVal)
-                                    .map(car => car.model);
-                                setModels(Array.from(new Set(filteredModels)));
                             }}
                         />
                         <Autocomplete
                             disableClearable
-                            isOptionEqualToValue={(option, value) => option.value === value.value}
                             className='searchTxt'
                             disablePortal
                             options={models}
@@ -99,11 +107,10 @@ function Cars() {
                 {carsData.map((car) => (
                     <Car
                         key={car._id}
-                        car={car}
                         image={car.image}
                         title={`${car.brand} ${car.model}`}
-                        price={car.price}
                         description={car.description}
+                        price={car.price}
                     />
                 ))}
             </div>
