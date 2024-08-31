@@ -39,11 +39,11 @@ const Header = () => {
             console.error(error);
             navigate('/login', { replace: true });
         }
-        finally {
-            console.log("Click Logout");
-            setIsLoggedIn(false);
-            navigate('/login');
-        }
+        // finally {
+        //     console.log("Click Logout");
+        //     setIsLoggedIn(false);
+        //     navigate('/login');
+        // }
     }
 
     return (

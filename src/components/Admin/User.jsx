@@ -28,7 +28,9 @@ const User = () => {
             <h3>User Data</h3>
             <p><strong>Name : </strong> {user.userName}</p>
             <p><strong>Email : </strong> {user.email}</p>
-            <p><strong>Admin : </strong> {user.isadmin.toString()}</p>        </div>
+            <p><strong>Admin : </strong>
+              {user.isadmin === true ? "True" : "False"}
+            </p></div>
         ))}
       </div>
     </>
