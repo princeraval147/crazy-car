@@ -1,18 +1,32 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const Navigate = useNavigate();
 
     const onSubmit = async data => {
         try {
-            // const response = await axios.post('http://localhost:500/contact', data);
-            const response = await axios.post('https://crazycar-backend.onrender.com/contact', data);
-            console.log('Data sent successfully:', response.data);
-            alert("Thanks For contact Us");
+            const response = await fetch('http://localhost:5000/contact', {
+                // const response = await fetch('https://crazycar-backend.onrender.com/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Data sent successfully:', result);
+                alert("Thanks for contacting us");
+                Navigate('/car');
+            } else {
+                console.error('Error during submission:', response.statusText);
+            }
         } catch (error) {
-            console.log('Error during login:', error);
+            console.log('Error during submission:', error);
         }
     };
 

@@ -4,15 +4,9 @@ import 'react-slideshow-image/dist/styles.css'
 import 'react-slideshow-image/dist/styles.css'
 import img4 from '/Img/4K.jpg'
 import img2 from '/Img/4k2.jpg'
-import img3 from '/Img/CarPic.avif'
+import img3 from '/Img/MB.jpg'
 
 const Home = () => {
-
-    const spanStyle = {
-        padding: '20px',
-        // background: '#fff',
-        color: '#fff'
-    }
 
     const divStyle = {
         display: 'flex',
@@ -38,40 +32,6 @@ const Home = () => {
         },
     ];
 
-    // const images = [
-    //     img1,
-    //     img2,
-    //     img3,
-    //     img4
-    // ];
-
-
-    const Typewriter = ({ text, delay, infinite }) => {
-        const [currentText, setCurrentText] = useState('');
-        const [currentIndex, setCurrentIndex] = useState(0);
-
-        useEffect(() => {
-            let timeout;
-
-            if (currentIndex <= text.length) {
-                timeout = setTimeout(() => {
-                    setCurrentText(prevText => prevText + text[currentIndex]);
-                    setCurrentIndex(prevIndex => prevIndex + 1);
-                }, delay);
-
-            } else if (infinite) { // ADD THIS CHECK
-                setCurrentIndex(0);
-                setCurrentText('');
-            }
-
-            return () => clearTimeout(timeout);
-        }, [currentIndex, delay, infinite, text]);
-
-        return <span>{currentText}</span>;
-    };
-
-
-
     return (
         <>
             {/* SlideShow */}
@@ -88,7 +48,7 @@ const Home = () => {
                 </Slide>
             </div>
 
-            {/* <-------------------------------  Animation Content ------------------------------> */}
+            {/* <---------------------------  Animation Content ------------------------------> */}
 
             <div className="container">
                 <div className="circles">
