@@ -86,7 +86,7 @@ const SignUp = () => {
                     {errors.conformPassword && <span className='error'>Confirm Password is required</span>}
 
                     <div>
-                        <a href="#">Forgot password?</a>
+                        <NavLink>Forgot password?</NavLink>
                         <button type="submit" className='Btn'>Sign Up</button>
                         <p>
                             Already have an account ?

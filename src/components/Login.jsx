@@ -74,7 +74,7 @@ const Login = () => {
                                 />
                                 <label htmlFor="remember">Remember me</label>
                             </div>
-                            <a href="#">Forgot password?</a>
+                            <NavLink>Forgot password?</NavLink>
                         </div>
                         <button type="submit" className='Btn'>Sign in</button>
                         <p>
