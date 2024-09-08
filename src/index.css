@@ -726,33 +726,52 @@ a.active {
 }
 
 /*  --------------------------------     USER   -------------------------------- */
-
-.user-container {
+.userContainer {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
 }
 
-.user-card {
-    background-color: white;
+.userContainer table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.userContainer table th,
+table td {
+    padding: 12px 15px;
     text-align: left;
-    margin-top: 50px;
+    border-bottom: 1px solid #ddd;
 }
 
-.user-card h3 {
+.userContainer table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.userContainer table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.userContainer table td {
+    color: #333;
+}
+
+.userContainer table th,
+table td {
+    font-size: 16px;
+}
+
+.userContainer h3 {
     text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.user-card p {
-    margin: 10px 0;
-    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 /*  --------------------------------     SLIDEBAR   -------------------------------- */

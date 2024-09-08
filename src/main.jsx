@@ -9,7 +9,6 @@ import Contact from './components/Contact.jsx'
 import Error from './components/Error.jsx'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-// import Car from './components/Car.jsx'
 import Cars from './components/Cars.jsx'
 import Dashboard from './components/Admin/Dashboard.jsx'
 import CarManage from './components/Admin/CarManage.jsx'
@@ -18,6 +17,7 @@ import UpdateCar from './components/Admin/UpdateCar.jsx'
 import User from './components/Admin/User.jsx'
 import Addcar from './components/Admin/Addcar.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,12 +29,12 @@ const router = createBrowserRouter(
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
       <Route path='update-car/:id' element={<UpdateCar />} />
-      <Route path='/' element={<ProtectedRoute />} >
-        <Route path='admin' element={<AdminPanel />} >
-          <Route path='dashboard' element={<Dashboard />} />
-          <Route path='user' element={<User />} />
-          <Route path='carmanage' element={<CarManage />} />
-          <Route path='addcar' element={<Addcar />} />
+      <Route element={<ProtectedRoute />}>
+        <Route path="admin" element={<AdminPanel />} >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="user" element={<User />} />
+          <Route path="carmanage" element={<CarManage />} />
+          <Route path="addcar" element={<Addcar />} />
         </Route>
       </Route>
       <Route path='*' element={<Error />} />

@@ -5,12 +5,12 @@ import Logo from '/Img/Logo.png';
 const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
 
     const checkLoginStatus = async () => {
         try {
             const response = await fetch('http://localhost:5000/auth/check', {
-                // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -21,16 +21,33 @@ const Header = () => {
                 setIsLoggedIn(false);
             }
         } catch (error) {
-            console.error('Error checking login status:', error);
+            // console.error('Error checking login status:', error);
             setIsLoggedIn(false);
         }
     };
     checkLoginStatus();
 
+    const checkAdminStatus = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/admin/check', {
+                method: 'GET',
+                credentials: 'include',
+            });
+            if (response.ok) {
+                const data = await response.json();
+                setIsAdmin(data.isadmin);
+            } else {
+                setIsAdmin(false);
+            }
+        } catch (error) {
+            setIsAdmin(false);
+        }
+    };
+    checkAdminStatus();
+
     const handlerLogout = async () => {
         try {
             await fetch('http://localhost:5000/logout', {
-                // await fetch('https://crazycar-backend.onrender.com/logout', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -38,6 +55,10 @@ const Header = () => {
         } catch (error) {
             console.error(error);
             navigate('/login', { replace: true });
+        } finally {
+            console.log("Click Logout");
+            setIsLoggedIn(false);
+            navigate('/login');
         }
     }
 
@@ -65,6 +86,19 @@ const Header = () => {
                         <li>
                             <NavLink to='/car' className='link'>Car</NavLink>
                         </li>
+                        {
+                            isAdmin ? (
+                                <>
+                                    <li>
+                                        <NavLink to='/admin/dashboard' className='link'>Dashboard</NavLink>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+
+                                </>
+                            )
+                        }
                     </div>
                 </div>
                 <div className="section2">

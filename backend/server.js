@@ -44,57 +44,28 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-// verify admin
-
-// const isAdmin = async (req, res, next) => {
-//     try {
-//         const token = req.cookies.token;
-//         if (!token) {
-//             return res.status(401).json({ message: 'Access denied. No token provided.' });
-//         }
-
-//         const decoded = jwt.verify(token, JWT_SECRET);
-//         const user = await User.findOne({ email: decoded.email });
-
-//         if (!user) {
-//             return res.status(401).json({ message: 'Invalid token' });
-//         }
-
-//         if (!user.isadmin) {
-//             return res.status(403).json({ message: 'Access denied. Admins only.' });
-//         }
-
-//         req.user = user;
-//         next();
-//     } catch (error) {
-//         console.error('Error checking admin status:', error);
-//         res.status(500).json({ message: 'An error occurred while checking admin status' });
-//     }
-// };
-
 const isAdmin = async (req, res, next) => {
     try {
-        const token = req.headers['x-access-token'] || req.headers['authorization'];
+        const token = req.cookies.token;
         if (!token) {
-            return res.status(401).json({ message: 'No token provided' });
+            return res.status(401).json({ message: 'Please Login' });
         }
-
-        const decoded = await jwt.verify(token, process.env.SECRET_KEY);
+        const decoded = jwt.verify(token, JWT_SECRET);
         const user = await User.findOne({ email: decoded.email });
-
         if (!user) {
             return res.status(401).json({ message: 'Invalid token' });
         }
-
-        if (user.isAdmin) {
-            next(); // allow access
+        if (user.isadmin) {
+            next();
         } else {
             return res.status(403).json({ message: 'Access denied' });
         }
     } catch (error) {
+        console.error('Error in isAdmin middleware:', error);
         return res.status(500).json({ message: 'Internal Server Error' });
     }
 };
+
 
 
 const authenticateToken = (req, res, next) => {
@@ -120,7 +91,7 @@ app.get('/auth/check', authenticateToken, (req, res) => {
 
 //admin check
 app.get('/admin/check', isAdmin, (req, res) => {
-    res.status(200).json({ message: 'You are an admin' });
+    res.status(200).json({ isadmin: 'true' });
 });
 
 

@@ -1,49 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
 
 const ProtectedRoute = () => {
-
-    const Navigate = useNavigate();
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [users, setUsers] = useState([]);
+    const [isAdmin, setIsAdmin] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const checkAdminStatus = async () => {
             try {
-                const response = await fetch('http://localhost:5000/users');
-                // const response = await fetch('https://crazycar-backend.onrender.com/users');
-                const data = await response.json();
-                setUsers(data);
+                const response = await fetch('http://localhost:5000/admin/check', {
+                    method: 'GET',
+                    credentials: 'include',
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    setIsAdmin(data.isadmin);
+                    console.log("Admin status:", data.isadmin);
+                } else {
+                    setIsAdmin(false);
+                }
             } catch (error) {
-                console.error('Error fetching user data:', error);
+                console.error('Error checking admin status:', error);
+                setIsAdmin(false);
             }
         };
-        fetchData();
+
+        checkAdminStatus();
     }, []);
 
-    const checkLoginStatus = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/auth/check', {
-                // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
-                method: 'GET',
-                credentials: 'include',
-            });
-            if (response.ok) {
-                const data = await response.json();
-                setIsLoggedIn(data.isLoggedIn);
-            } else {
-                setIsLoggedIn(false);
-            }
-        } catch (error) {
-            console.error('Error checking login status:', error);
-            setIsLoggedIn(false);
-        }
-    };
-    checkLoginStatus();
-    // console.log("User Login = ", isLoggedIn);
 
+    if (isAdmin === null) {
+        return <div>Loading...</div>;
+    }
 
-    return isLoggedIn === true ? <Outlet /> : Navigate('/login')
-}
+    return isAdmin ? <Outlet /> : <Navigate to="/error" replace />;
+};
 
-export default ProtectedRoute
+export default ProtectedRoute;
