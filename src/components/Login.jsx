@@ -20,8 +20,8 @@ const Login = () => {
             });
 
             const result = await response.json();
-
             if (result.success) {
+                localStorage.setItem('userData', JSON.stringify(result.data));
                 navigate('/car');
             } else {
                 alert("Invalid Email or Password", result.message);
