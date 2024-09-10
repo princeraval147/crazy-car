@@ -21,8 +21,9 @@ const Login = () => {
 
             const result = await response.json();
             if (result.success) {
-                localStorage.setItem('userData', JSON.stringify(result.data));
-                navigate('/car');
+                console.log(result);
+                localStorage.setItem('userLogin', JSON.stringify(result.success));
+                navigate('/');
             } else {
                 alert("Invalid Email or Password", result.message);
             }

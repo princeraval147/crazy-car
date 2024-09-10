@@ -28,6 +28,8 @@ const Header = () => {
     };
     checkLoginStatus();
 
+    const localstorageData = localStorage.getItem('userLogin');
+    console.log("User Login = ", localstorageData)
     const checkAdminStatus = async () => {
         try {
             // const response = await fetch('http://localhost:5000/admin/check', {
@@ -54,6 +56,7 @@ const Header = () => {
                 method: 'GET',
                 credentials: 'include',
             });
+            localStorage.setItem('userLogin', 'false');
             navigate('/login', { replace: true });
         } catch (error) {
             console.error(error);
@@ -106,7 +109,7 @@ const Header = () => {
                 </div>
                 <div className="section2">
                     <ul className='links'>
-                        {isLoggedIn === true ? (
+                        {isLoggedIn === true || localstorageData === 'true' ? (
                             <li>
                                 <button onClick={handlerLogout} className='Btn'>Logout</button>
                             </li>
