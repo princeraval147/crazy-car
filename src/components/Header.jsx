@@ -32,6 +32,7 @@ const Header = () => {
     console.log("User Login = ", localstorageData)
 
     const localstorageAdmin = localStorage.getItem('isAdmin');
+    console.log(localstorageAdmin)
     const checkAdminStatus = async () => {
         try {
             // const response = await fetch('http://localhost:5000/admin/check', {
@@ -60,6 +61,7 @@ const Header = () => {
                 credentials: 'include',
             });
             localStorage.setItem('userLogin', 'false');
+            localStorage.setItem('isAdmin', 'false');
             navigate('/login', { replace: true });
         } catch (error) {
             console.error(error);

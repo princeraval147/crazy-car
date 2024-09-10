@@ -9,8 +9,8 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         try {
-            // const response = await fetch('http://localhost:5000/login', {
-            const response = await fetch('https://crazycar-backend.onrender.com/login', {
+            const response = await fetch('http://localhost:5000/login', {
+                // const response = await fetch('https://crazycar-backend.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const Login = () => {
             if (result.success) {
                 console.log(result);
                 localStorage.setItem('userLogin', JSON.stringify(result.success));
-                navigate('/');
+                navigate('/car');
             } else {
                 alert("Invalid Email or Password", result.message);
             }
