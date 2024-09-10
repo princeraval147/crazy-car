@@ -30,6 +30,8 @@ const Header = () => {
 
     const localstorageData = localStorage.getItem('userLogin');
     console.log("User Login = ", localstorageData)
+
+    const localstorageAdmin = localStorage.getItem('isAdmin');
     const checkAdminStatus = async () => {
         try {
             // const response = await fetch('http://localhost:5000/admin/check', {
@@ -40,6 +42,7 @@ const Header = () => {
             if (response.ok) {
                 const data = await response.json();
                 setIsAdmin(data.isadmin);
+                localStorage.setItem("isAdmin", JSON.stringify(data.isadmin));
             } else {
                 setIsAdmin(false);
             }
@@ -93,7 +96,7 @@ const Header = () => {
                             <NavLink to='/car' className='link'>Car</NavLink>
                         </li>
                         {
-                            isAdmin ? (
+                            isAdmin || localstorageAdmin === 'true' ? (
                                 <>
                                     <li>
                                         <NavLink to='/admin/dashboard' className='link'>Dashboard</NavLink>
