@@ -43,6 +43,7 @@ const Header = () => {
             if (response.ok) {
                 const data = await response.json();
                 setIsAdmin(data.isadmin);
+                console.log(data)
                 localStorage.setItem("isAdmin", JSON.stringify(data.isadmin));
             } else {
                 setIsAdmin(false);
