@@ -28,11 +28,6 @@ const Header = () => {
     };
     checkLoginStatus();
 
-    const localstorageData = localStorage.getItem('userLogin');
-    console.log("User Login = ", localstorageData)
-
-    const localstorageAdmin = localStorage.getItem('isAdmin');
-    console.log(localstorageAdmin)
     const checkAdminStatus = async () => {
         try {
             // const response = await fetch('http://localhost:5000/admin/check', {
@@ -44,7 +39,6 @@ const Header = () => {
                 const data = await response.json();
                 setIsAdmin(data.isadmin);
                 console.log(data)
-                localStorage.setItem("isAdmin", JSON.stringify(data.isadmin));
             } else {
                 setIsAdmin(false);
             }
@@ -61,8 +55,6 @@ const Header = () => {
                 method: 'GET',
                 credentials: 'include',
             });
-            localStorage.setItem('userLogin', 'false');
-            localStorage.setItem('isAdmin', 'false');
             navigate('/login', { replace: true });
         } catch (error) {
             console.error(error);
@@ -99,7 +91,7 @@ const Header = () => {
                             <NavLink to='/car' className='link'>Car</NavLink>
                         </li>
                         {
-                            isAdmin || localstorageAdmin === 'true' ? (
+                            isAdmin ? (
                                 <>
                                     <li>
                                         <NavLink to='/admin/dashboard' className='link'>Dashboard</NavLink>
@@ -115,7 +107,7 @@ const Header = () => {
                 </div>
                 <div className="section2">
                     <ul className='links'>
-                        {isLoggedIn === true || localstorageData === 'true' ? (
+                        {isLoggedIn === true ? (
                             <li>
                                 <button onClick={handlerLogout} className='Btn'>Logout</button>
                             </li>
