@@ -8,13 +8,35 @@ const Header = () => {
     const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
 
+    // const checkLoginStatus = async () => {
+    //     try {
+    //         // const response = await fetch('http://localhost:5000/auth/check', {
+    //         const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
+    //             method: 'GET',
+    //             credentials: 'include',
+    //         });
+    //         if (response.ok) {
+    //             const data = await response.json();
+    //             setIsLoggedIn(data.isLoggedIn);
+    //         } else {
+    //             setIsLoggedIn(false);
+    //         }
+    //     } catch (error) {
+    //         // console.error('Error checking login status:', error);
+    //         setIsLoggedIn(false);
+    //     }
+    // };
+    // checkLoginStatus();
+
     const checkLoginStatus = async () => {
         try {
             // const response = await fetch('http://localhost:5000/auth/check', {
             const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
                 method: 'GET',
                 credentials: 'include',
+                mode: 'cors', // Explicitly set CORS mode
             });
+
             if (response.ok) {
                 const data = await response.json();
                 setIsLoggedIn(data.isLoggedIn);
@@ -22,11 +44,13 @@ const Header = () => {
                 setIsLoggedIn(false);
             }
         } catch (error) {
-            // console.error('Error checking login status:', error);
+            console.error('Error checking login status:', error);
             setIsLoggedIn(false);
         }
     };
+
     checkLoginStatus();
+
 
     const checkAdminStatus = async () => {
         try {
