@@ -90,15 +90,6 @@ app.get('/auth/check', authenticateToken, (req, res) => {
     res.status(200).json({ isLoggedIn: true });
 });
 
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
-
-
 //admin check
 app.get('/admin/check', isAdmin, (req, res) => {
     res.status(200).json({ isadmin: 'true' });
