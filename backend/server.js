@@ -16,7 +16,7 @@ dotenv.config();
 
 const app = express();
 // const port = 5000;
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5000;
 
 // Connect to MongoDB
 const connectDB = async () => {
@@ -37,8 +37,8 @@ connectDB();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors({
-    // origin: "http://localhost:5173",
-    origin: "https://crazycar-project.netlify.app",
+    origin: "http://localhost:5173",
+    // origin: "https://crazycar-project.netlify.app",
     credentials: true
 }));
 app.use(express.json());
