@@ -48,7 +48,6 @@ const Header = () => {
             setIsLoggedIn(false);
         }
     };
-
     checkLoginStatus();
 
 
