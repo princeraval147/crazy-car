@@ -306,6 +306,6 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-    // console.log(`Server running on https://crazycar-backend.onrender.com/signUp:${port}`);
+    // console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on https://crazycar-backend.onrender.com/signUp:${port}`);
 });
