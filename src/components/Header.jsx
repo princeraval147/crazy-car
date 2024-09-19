@@ -3,40 +3,16 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Logo from '/Img/Logo.png';
 
 const Header = () => {
-
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
 
-    // const checkLoginStatus = async () => {
-    //     try {
-    //         // const response = await fetch('http://localhost:5000/auth/check', {
-    //         const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
-    //             method: 'GET',
-    //             credentials: 'include',
-    //         });
-    //         if (response.ok) {
-    //             const data = await response.json();
-    //             setIsLoggedIn(data.isLoggedIn);
-    //         } else {
-    //             setIsLoggedIn(false);
-    //         }
-    //     } catch (error) {
-    //         // console.error('Error checking login status:', error);
-    //         setIsLoggedIn(false);
-    //     }
-    // };
-    // checkLoginStatus();
-
     const checkLoginStatus = async () => {
         try {
             const response = await fetch('http://localhost:5000/auth/check', {
-                // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
                 method: 'GET',
                 credentials: 'include',
-                mode: 'cors', // Explicitly set CORS mode
             });
-
             if (response.ok) {
                 const data = await response.json();
                 setIsLoggedIn(data.isLoggedIn);
@@ -44,24 +20,22 @@ const Header = () => {
                 setIsLoggedIn(false);
             }
         } catch (error) {
-            console.error('Error checking login status:', error);
+            // console.error('Error checking login status:', error);
             setIsLoggedIn(false);
         }
     };
-    checkLoginStatus();
 
+    checkLoginStatus();
 
     const checkAdminStatus = async () => {
         try {
             const response = await fetch('http://localhost:5000/admin/check', {
-                // const response = await fetch('https://crazycar-backend.onrender.com/admin/check', {
                 method: 'GET',
                 credentials: 'include',
             });
             if (response.ok) {
                 const data = await response.json();
                 setIsAdmin(data.isadmin);
-                console.log(data)
             } else {
                 setIsAdmin(false);
             }
@@ -74,7 +48,6 @@ const Header = () => {
     const handlerLogout = async () => {
         try {
             await fetch('http://localhost:5000/logout', {
-                // await fetch('https://crazycar-backend.onrender.com/logout', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -88,6 +61,8 @@ const Header = () => {
             navigate('/login');
         }
     }
+
+
 
     return (
         <>
@@ -113,27 +88,27 @@ const Header = () => {
                         <li>
                             <NavLink to='/car' className='link'>Car</NavLink>
                         </li>
-                        {
-                            isAdmin ? (
-                                <>
-                                    <li>
-                                        <NavLink to='/admin/dashboard' className='link'>Dashboard</NavLink>
-                                    </li>
-                                </>
-                            ) : (
-                                <>
+                        {isAdmin ? (
+                            <>
+                                <li>
+                                    <NavLink to='/admin/dashboard' className='link'>Dashboard</NavLink> {/* New Dashboard button */}
+                                </li>
+                            </>
+                        ) : (
+                            <>
 
-                                </>
-                            )
-                        }
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="section2">
                     <ul className='links'>
-                        {isLoggedIn === true ? (
-                            <li>
-                                <button onClick={handlerLogout} className='Btn'>Logout</button>
-                            </li>
+                        {isLoggedIn ? (
+                            <>
+                                <li>
+                                    <button onClick={handlerLogout} className='Btn'>Logout</button>
+                                </li>
+                            </>
                         ) : (
                             <>
                                 <li>
@@ -146,9 +121,9 @@ const Header = () => {
                         )}
                     </ul>
                 </div>
-            </div >
+            </div>
         </>
     )
 }
 
-export default Header
+export default Header;

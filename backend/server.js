@@ -15,8 +15,7 @@ const CarData = require('./models/cardata');
 dotenv.config();
 
 const app = express();
-// const port = 5000;
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 // Connect to MongoDB
 const connectDB = async () => {
@@ -37,25 +36,11 @@ connectDB();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(cors({
-    // origin: "http://localhost:5173",
-    origin: "https://crazycar-project.netlify.app",
+    origin: "http://localhost:5173",    //  Frontend
     credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Methods",
-        "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-    );
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-with, Content-Type, Accept, Authorization"
-    );
-    next();
-});
 
 
 const isAdmin = async (req, res, next) => {
@@ -306,6 +291,5 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(port, () => {
-    // console.log(`Server running on http://localhost:${port}`);
-    console.log(`Server running on https://crazycar-backend.onrender.com/signUp:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
