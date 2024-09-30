@@ -1,0 +1,5 @@
+For Frontend :-
+npm run dev
+
+For Backend :-
+npx nodemon server.js
