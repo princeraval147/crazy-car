@@ -15,8 +15,6 @@ function Cars() {
             try {
                 const response = await fetch('http://localhost:5000/cardata');
                 const data = await response.json();
-                // console.log('Fetched car data:', data);
-                console.log('Fetched car data:', data);
                 setOriginalCarsData(data);
                 setCarsData(data);
 
@@ -106,10 +104,14 @@ function Cars() {
                 {carsData.map((car) => (
                     <Car
                         key={car._id}
+                        id={car._id}
                         image={car.image}
                         title={`${car.brand} ${car.model}`}
+                        price={`${"₹"} ${car.price}`}
+                        year={car.year}
+                        fuelType={car.fuelType}
+                        mileage={car.mileage}
                         description={car.description}
-                        price={car.price}
                     />
                 ))}
             </div>

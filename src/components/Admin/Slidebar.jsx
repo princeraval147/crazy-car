@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaUsers, FaCar, FaTachometerAlt, FaPlus } from 'react-icons/fa';
+import { FaUsers, FaCar, FaTachometerAlt, FaPlus, FaChartBar } from 'react-icons/fa';
 
 const Slidebar = () => {
   return (
@@ -27,6 +27,11 @@ const Slidebar = () => {
           <li className="navItem">
             <NavLink to="addcar" className="hoverEffct">
               <FaPlus /> Add Car
+            </NavLink>
+          </li>
+          <li className="navItem">
+            <NavLink to="ratingAnalysis" className="hoverEffct">
+              <FaChartBar />  Rating Analysis
             </NavLink>
           </li>
         </ul>

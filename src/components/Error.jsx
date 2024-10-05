@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Error = () => {
     return (
         <>
-            <div className="error">
+            <div className="errorPage">
                 <h1>404 Page Not Found...!!</h1>
                 <p>Go to <NavLink className='link' to='/' >Home Page</NavLink></p>
             </div>

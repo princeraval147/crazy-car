@@ -18,6 +18,26 @@ const User = () => {
     fetchData();
   }, []);
 
+  const handleDelete = async (userId) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this user?");
+    if (confirmDelete) {
+      try {
+        const response = await fetch(`http://localhost:5000/users/${userId}`, {
+          method: 'DELETE',
+        });
+
+        if (response.ok) {
+          setUsers(users.filter(user => user._id !== userId));
+          alert('User deleted successfully.');
+        } else {
+          alert('Error deleting user.');
+        }
+      } catch (error) {
+        console.error('Error deleting user:', error);
+      }
+    }
+  };
+
   return (
     <>
       <div className="userContainer">
@@ -28,6 +48,7 @@ const User = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Admin</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -37,12 +58,20 @@ const User = () => {
                 <td>{user.userName}</td>
                 <td>{user.email}</td>
                 <td>{user.isadmin.toString()}</td>
+                <td>
+                  <button
+                    className="delete-button"
+                    style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }}
+                    onClick={() => handleDelete(user._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
     </>
   );
 };

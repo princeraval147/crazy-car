@@ -63,10 +63,14 @@ const CarManage = () => {
                     }}
                 >
                     <Car
+                        id={car._id}
                         image={car.image}
                         title={`${car.brand} ${car.model}`}
                         description={car.description}
                         price={car.price}
+                        year={car.year}
+                        fuelType={car.fuelType}
+                        mileage={car.mileage}
                     />
                     <div
                         style={{

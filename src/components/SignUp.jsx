@@ -52,7 +52,7 @@ const SignUp = () => {
                         placeholder="Enter Your Name"
                         {...register('userName', { required: true })}
                     />
-                    {errors.userName && <span className='error'>Username is required</span>}
+                    {errors.userName && <span className='errorMsg'>Username is required</span>}
 
                     <label htmlFor="email">Email:</label>
                     <input
@@ -62,7 +62,7 @@ const SignUp = () => {
                         placeholder="Enter Email Address"
                         {...register('email', { required: true })}
                     />
-                    {errors.email && <span className='error'>Email is required</span>}
+                    {errors.email && <span className='errorMsg'>Email is required</span>}
 
                     <label htmlFor="password">Password:</label>
                     <input
@@ -72,7 +72,7 @@ const SignUp = () => {
                         placeholder="••••••••••••••••"
                         {...register('password', { required: true })}
                     />
-                    {errors.password && <span className='error'>Password is required</span>}
+                    {errors.password && <span className='errorMsg'>Password is required</span>}
 
                     <label htmlFor="conformPassword">Confirm Password:</label>
                     <input
@@ -82,7 +82,7 @@ const SignUp = () => {
                         placeholder="Re-Enter Password"
                         {...register('conformPassword', { required: true })}
                     />
-                    {errors.conformPassword && <span className='error'>Confirm Password is required</span>}
+                    {errors.conformPassword && <span className='errorMsg'>Confirm Password is required</span>}
 
                     <div>
                         <NavLink>Forgot password?</NavLink>

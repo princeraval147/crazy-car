@@ -17,7 +17,8 @@ import UpdateCar from './components/Admin/UpdateCar.jsx'
 import User from './components/Admin/User.jsx'
 import Addcar from './components/Admin/Addcar.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
-
+import CarInfo from './components/CarInfo.jsx'
+import CarRatingAnalysis from './components/Admin/CarRatingAnalysis.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path='login' element={<Login />} />
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
+      <Route path='carinfo/:id' element={<CarInfo />} />
       <Route path='update-car/:id' element={<UpdateCar />} />
       <Route element={<ProtectedRoute />}>
         <Route path="admin" element={<AdminPanel />} >
@@ -35,6 +37,7 @@ const router = createBrowserRouter(
           <Route path="user" element={<User />} />
           <Route path="carmanage" element={<CarManage />} />
           <Route path="addcar" element={<Addcar />} />
+          <Route path="ratingAnalysis" element={<CarRatingAnalysis />} />
         </Route>
       </Route>
       <Route path='*' element={<Error />} />

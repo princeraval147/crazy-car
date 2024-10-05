@@ -50,7 +50,7 @@ const Login = () => {
                             className="inputFeild"
                             {...register('email', { required: true })}
                         />
-                        {errors.email && <span>Email is required</span>}
+                        {errors.email && <span className='errorMsg'>Email is required</span>}
 
                         <label htmlFor="password">Password</label>
                         <input
@@ -61,7 +61,7 @@ const Login = () => {
                             className="inputFeild"
                             {...register('password', { required: true })}
                         />
-                        {errors.password && <span>Password is required</span>}
+                        {errors.password && <span className='errorMsg'>Password is required</span>}
 
                         <div className="rf">
                             <div className="remember">
