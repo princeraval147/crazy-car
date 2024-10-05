@@ -20,7 +20,7 @@ function CarRatingAnalysis() {
 
     return (
         <div style={styles.container}>
-            <h1>Car Rating Analysis</h1>
+            <h1 align="center" style={styles.cra}>Car Rating Analysis</h1>
 
             <section style={styles.topCarsSection}>
                 <h2>Top 3 Cars</h2>
@@ -39,8 +39,8 @@ function CarRatingAnalysis() {
                 <h2>All Cars Rating in Percentage</h2>
                 <table style={styles.table} border={2}>
                     <thead>
-                        <tr>
-                            <th>Car</th>
+                        <tr >
+                            <th style={styles.tableHeading}>Car</th>
                             <th>Total Ratings</th>
                             <th>Rating Percentage</th>
                         </tr>
@@ -65,6 +65,10 @@ const styles = {
         padding: '40px',
         maxWidth: '1200px',
         margin: '0 auto',
+    },
+    cra: {
+        borderBottom: "2px solid gray",
+        marginBottom: "30px"
     },
     topCarsSection: {
         marginBottom: '50px',
@@ -93,6 +97,9 @@ const styles = {
     },
     tableRow: {
         borderBottom: '1px solid #ddd',
+    },
+    tableHeading: {
+        padding: "15px",
     },
     tableCell: {
         padding: '10px',

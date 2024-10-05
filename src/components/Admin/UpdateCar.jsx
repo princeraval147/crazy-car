@@ -156,11 +156,13 @@ const UpdateCar = () => {
                         <input
                             type="radio"
                             value="Electric"
+
                             {...register('fuelType', { required: 'Fuel type is required' })}
                         /> Electric
                         <input
                             type="radio"
                             value="Petrol"
+                            style={{ marginBottom: "20px" }}
                             {...register('fuelType', { required: 'Fuel type is required' })}
                         /> Petrol
                         <input
@@ -170,9 +172,6 @@ const UpdateCar = () => {
                         /> Diesel
                         {errors.fuelType && <span style={styles.error}>{errors.fuelType.message}</span>}
                     </label>
-                </div>
-
-                <div style={styles.formRight}>
                     <label style={styles.label}>Mileage:
                         <input
                             type="text"
@@ -181,11 +180,11 @@ const UpdateCar = () => {
                         />
                         {errors.mileage && <span style={styles.error}>{errors.mileage.message}</span>}
                     </label>
-
                     <label style={styles.label}>Transmission:
                         <input
                             type="radio"
                             value="Automatic"
+                            style={{ marginBottom: "20px" }}
                             {...register('transmission', { required: 'Transmission is required' })}
                         /> Automatic
                         <input
@@ -195,7 +194,6 @@ const UpdateCar = () => {
                         /> Manual
                         {errors.transmission && <span style={styles.error}>{errors.transmission.message}</span>}
                     </label>
-
                     <label style={styles.label}>Engine Capacity (cc):
                         <input
                             type="text"
@@ -206,7 +204,9 @@ const UpdateCar = () => {
                         />
                         {errors.engineCapacity && <span style={styles.error}>{errors.engineCapacity.message}</span>}
                     </label>
+                </div>
 
+                <div style={styles.formRight}>
                     <label style={styles.label}>Seating Capacity:
                         <input
                             type="number"

@@ -110,6 +110,7 @@ const Addcar = () => {
                 max: { value: new Date().getFullYear(), message: `Year cannot be beyond ${new Date().getFullYear()}` }
               })}
               className="inputFeild"
+              min={1900}
             />
             {errors.year && <span style={{ color: 'red' }}>{errors.year.message}</span>}
           </label>
