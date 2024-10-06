@@ -654,9 +654,9 @@ a.active {
 /*  --------------------------------     CAR   -------------------------------- */
 
 .carFirst {
-    /* background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996); */
+    background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996);
     /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg); */
-    background: url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg);
+    /* background: url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
