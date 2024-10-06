@@ -20,15 +20,16 @@ const Slidebar = () => {
             </NavLink>
           </li>
           <li className="navItem">
-            <NavLink to="carmanage" className="hoverEffct">
-              <FaCar /> Car Management
-            </NavLink>
-          </li>
-          <li className="navItem">
             <NavLink to="addcar" className="hoverEffct">
               <FaPlus /> Add Car
             </NavLink>
           </li>
+          <li className="navItem">
+            <NavLink to="carmanage" className="hoverEffct">
+              <FaCar /> Car Management
+            </NavLink>
+          </li>
+
           <li className="navItem">
             <NavLink to="ratingAnalysis" className="hoverEffct">
               <FaChartBar />  Rating Analysis

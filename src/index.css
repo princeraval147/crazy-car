@@ -23,15 +23,14 @@ a {
 
 .inputFeild:focus {
     outline: none;
-    border: 2px solid #45A29E;
+    border: 2px solid #f75d34;
 }
 
 .Btn {
-    background: #42d9ff;
-    border: 1px solid #42d9ff;
-    border-radius: 6px;
+    background: #f75d34;
+    border: 1px solid orangered;
+    border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 4px;
-    /* box-sizing: border-box; */
     color: #FFFFFF;
     cursor: pointer;
     font-size: 16px;
@@ -42,10 +41,10 @@ a {
 }
 
 .Btn:hover {
-    background-color: rgb(182, 226, 192);
-    color: #141414;
+    background-color: orangered;
+    color: #000;
     transition: 0.5s;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .hoverEffct {
@@ -655,7 +654,9 @@ a.active {
 /*  --------------------------------     CAR   -------------------------------- */
 
 .carFirst {
-    background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996);
+    /* background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996); */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg); */
+    background: url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -100,10 +100,11 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('model', { required: 'Model is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                             onBlur={(e) => checkModelAvailability(e.target.value)}
                         />
-                        {modelExists && <span style={styles.error}>Model already exists</span>}
+                        {/* {modelExists && <span style={styles.error}>Model already exists</span>} */}
                         {errors.model && <span style={styles.error}>{errors.model.message}</span>}
                     </label>
 
@@ -111,7 +112,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('brand', { required: 'Brand is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.brand && <span style={styles.error}>{errors.brand.message}</span>}
                     </label>
@@ -124,13 +126,15 @@ const UpdateCar = () => {
                                 valueAsNumber: true,
                                 min: { value: 1, message: 'Price must be a positive number' }
                             })}
-                            style={styles.input}
+                            className='inputFeild'
+                            // style={styles.input}
                             min={0}
                         />
                         <select
                             value={priceUnit}
                             onChange={(e) => setPriceUnit(e.target.value)}
-                            style={styles.select}
+                            // style={styles.select}
+                            className='inputFeild'
                         >
                             <option value="Lakhs">Lakhs</option>
                             <option value="Crores">Crores</option>
@@ -141,13 +145,15 @@ const UpdateCar = () => {
                     <label style={styles.label}>Year:
                         <input
                             type="number"
+                            className='inputFeild'
                             {...register('year', {
                                 required: 'Year is required',
                                 valueAsNumber: true,
                                 min: { value: 1900, message: 'Year must be greater than 1900' },
                                 max: { value: new Date().getFullYear(), message: `Year cannot be beyond ${new Date().getFullYear()}` }
                             })}
-                            style={styles.input}
+                            // style={styles.input}
+                            min={1900}
                         />
                         {errors.year && <span style={styles.error}>{errors.year.message}</span>}
                     </label>
@@ -156,7 +162,6 @@ const UpdateCar = () => {
                         <input
                             type="radio"
                             value="Electric"
-
                             {...register('fuelType', { required: 'Fuel type is required' })}
                         /> Electric
                         <input
@@ -176,7 +181,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('mileage', { required: 'Mileage is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.mileage && <span style={styles.error}>{errors.mileage.message}</span>}
                     </label>
@@ -200,7 +206,8 @@ const UpdateCar = () => {
                             {...register('engineCapacity', {
                                 required: 'Engine capacity is required',
                             })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.engineCapacity && <span style={styles.error}>{errors.engineCapacity.message}</span>}
                     </label>
@@ -215,7 +222,8 @@ const UpdateCar = () => {
                                 valueAsNumber: true,
                                 min: { value: 1, message: 'Seating capacity must be at least 1' }
                             })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.seatingCapacity && <span style={styles.error}>{errors.seatingCapacity.message}</span>}
                     </label>
@@ -224,7 +232,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('bodyType', { required: 'Body type is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.bodyType && <span style={styles.error}>{errors.bodyType.message}</span>}
                     </label>
@@ -237,7 +246,8 @@ const UpdateCar = () => {
                                 valueAsNumber: true,
                                 min: { value: 1, message: 'Boot space must be a positive number' }
                             })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.bootSpace && <span style={styles.error}>{errors.bootSpace.message}</span>}
                     </label>
@@ -246,7 +256,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('safetyFeatures', { required: 'Safety features are required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.safetyFeatures && <span style={styles.error}>{errors.safetyFeatures.message}</span>}
                     </label>
@@ -255,7 +266,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('features', { required: 'Features are required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.features && <span style={styles.error}>{errors.features.message}</span>}
                     </label>
@@ -264,7 +276,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('warranty', { required: 'Warranty is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.warranty && <span style={styles.error}>{errors.warranty.message}</span>}
                     </label>
@@ -272,7 +285,8 @@ const UpdateCar = () => {
                     <label style={styles.label}>Description:
                         <textarea
                             {...register('description', { required: 'Description is required' })}
-                            style={styles.textarea}
+                            // style={styles.textarea}
+                            className='inputFeild'
                         />
                         {errors.description && <span style={styles.error}>{errors.description.message}</span>}
                     </label>
@@ -281,13 +295,15 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('image', { required: 'Image URL is required' })}
-                            style={styles.input}
+                            // style={styles.input}
+                            className='inputFeild'
                         />
                         {errors.image && <span style={styles.error}>{errors.image.message}</span>}
                     </label>
                 </div>
-
-                <button type="submit" style={styles.submitButton}>Update Car</button>
+                <span style={styles.btnSpan}>
+                    <button type="submit" style={styles.submitButton}>Update Car</button>
+                </span>
             </form>
         </div>
     );
@@ -348,7 +364,7 @@ const styles = {
     },
     submitButton: {
         display: 'block',
-        width: '100%',
+        width: '150px',
         padding: '10px',
         border: 'none',
         backgroundColor: '#007BFF',
