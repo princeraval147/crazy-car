@@ -82,13 +82,14 @@ const Addcar = () => {
           <label>Price:
             <input
               type="number"
+              step={0.01}
               {...register('price', {
                 required: 'Price is required',
-                min: { value: 0, message: 'Price cannot be negative' }
+                min: { value: 3, message: 'Price cannot be negative' }
               })}
               className="inputFeild"
               onKeyDown={preventMinus}
-              min={0}
+              min={3}
             />
             <select
               value={priceUnit}

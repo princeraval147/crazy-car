@@ -100,8 +100,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('model', { required: 'Model is required' })}
-                            // style={styles.input}
                             className='inputFeild'
+                            disabled
                             onBlur={(e) => checkModelAvailability(e.target.value)}
                         />
                         {/* {modelExists && <span style={styles.error}>Model already exists</span>} */}
@@ -112,8 +112,8 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('brand', { required: 'Brand is required' })}
-                            // style={styles.input}
                             className='inputFeild'
+                            disabled
                         />
                         {errors.brand && <span style={styles.error}>{errors.brand.message}</span>}
                     </label>
@@ -121,14 +121,14 @@ const UpdateCar = () => {
                     <label style={styles.label}>Price:
                         <input
                             type="number"
+                            step="0.01"
                             {...register('price', {
                                 required: 'Price is required',
                                 valueAsNumber: true,
-                                min: { value: 1, message: 'Price must be a positive number' }
+                                min: { value: 3.00, message: 'Price must be a positive number' }
                             })}
                             className='inputFeild'
-                            // style={styles.input}
-                            min={0}
+                            min={3}
                         />
                         <select
                             value={priceUnit}
@@ -152,7 +152,6 @@ const UpdateCar = () => {
                                 min: { value: 1900, message: 'Year must be greater than 1900' },
                                 max: { value: new Date().getFullYear(), message: `Year cannot be beyond ${new Date().getFullYear()}` }
                             })}
-                            // style={styles.input}
                             min={1900}
                         />
                         {errors.year && <span style={styles.error}>{errors.year.message}</span>}
@@ -181,7 +180,6 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('mileage', { required: 'Mileage is required' })}
-                            // style={styles.input}
                             className='inputFeild'
                         />
                         {errors.mileage && <span style={styles.error}>{errors.mileage.message}</span>}
@@ -206,7 +204,6 @@ const UpdateCar = () => {
                             {...register('engineCapacity', {
                                 required: 'Engine capacity is required',
                             })}
-                            // style={styles.input}
                             className='inputFeild'
                         />
                         {errors.engineCapacity && <span style={styles.error}>{errors.engineCapacity.message}</span>}
@@ -222,7 +219,6 @@ const UpdateCar = () => {
                                 valueAsNumber: true,
                                 min: { value: 1, message: 'Seating capacity must be at least 1' }
                             })}
-                            // style={styles.input}
                             className='inputFeild'
                         />
                         {errors.seatingCapacity && <span style={styles.error}>{errors.seatingCapacity.message}</span>}
@@ -232,7 +228,6 @@ const UpdateCar = () => {
                         <input
                             type="text"
                             {...register('bodyType', { required: 'Body type is required' })}
-                            // style={styles.input}
                             className='inputFeild'
                         />
                         {errors.bodyType && <span style={styles.error}>{errors.bodyType.message}</span>}

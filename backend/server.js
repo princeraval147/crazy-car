@@ -68,7 +68,7 @@ const isAdmin = async (req, res, next) => {
 };
 
 
-//3-10
+
 const authenticateToken = (req, res, next) => {
     const token = req.cookies.token;
 
@@ -84,17 +84,18 @@ const authenticateToken = (req, res, next) => {
         next();
     });
 };
-//3-10
+
+
 //check isloggedin
 app.get('/auth/check', authenticateToken, (req, res) => {
     res.status(200).json({ isLoggedIn: true, userId: req.user.email });
 });
 
+
 //admin check
 app.get('/admin/check', isAdmin, (req, res) => {
     res.status(200).json({ isadmin: 'true' });
 });
-
 
 
 // Signup route
@@ -118,11 +119,14 @@ app.post('/signup', async (req, res) => {
         res.status(500).json({ success: false, message: 'An error occurred during signup' });
     }
 });
+
+
 //logout route
 app.post('/logout', (req, res) => {
     res.clearCookie('token');
     res.status(200).json({ success: true, message: 'Logged out successfully' });
 });
+
 
 // POST route to add a new car
 app.post('/cardata', async (req, res) => {
@@ -166,6 +170,8 @@ app.post('/cardata', async (req, res) => {
     }
 });
 
+
+// Check model already exists for Addcar
 app.get('/checkmodel/:model', async (req, res) => {
     const model = req.params.model;
     try {
@@ -179,7 +185,8 @@ app.get('/checkmodel/:model', async (req, res) => {
         return res.status(500).json({ message: 'Server error' });
     }
 });
-//3-10
+
+
 // Route to get car data by ID
 app.get('/cardata/:id', authenticateToken, async (req, res) => {
     try {
@@ -200,57 +207,8 @@ app.get('/cardata/:id', authenticateToken, async (req, res) => {
     }
 });
 
-// Update car route
-// app.put('/cardata/:id', async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         const { model, brand, price, description, image, year, fuelType, mileage, transmission, engineCapacity, seatingCapacity, bodyType, safetyFeatures, bootSpace, features, warranty } = req.body;
 
-//         // Find the car by ID
-//         const car = await Car.findById(id);
-
-//         if (!car) {
-//             return res.status(404).json({ message: 'Car not found' });
-//         }
-
-//         // Check if the model already exists in another car (exclude the current car)
-//         const existingCar = await Car.findOne({ model: model, _id: { $ne: id } });
-
-//         if (existingCar) {
-//             return res.status(400).json({ message: 'Model already exists, cannot update' });
-//         }
-
-//         // If model is unique, update the car data
-//         car.model = model;
-//         car.brand = brand;
-//         car.price = price;
-//         car.description = description;
-//         car.image = image;
-//         car.year = year;
-//         car.fuelType = fuelType;
-//         car.mileage = mileage;
-//         car.transmission = transmission;
-//         car.engineCapacity = engineCapacity;
-//         car.seatingCapacity = seatingCapacity;
-//         car.bodyType = bodyType;
-//         car.safetyFeatures = safetyFeatures;
-//         car.bootSpace = bootSpace;
-//         car.features = features;
-//         car.warranty = warranty;
-
-//         // Save updated car
-//         await car.save();
-
-//         res.status(200).json({ message: 'Car updated successfully', car });
-
-//     } catch (error) {
-//         console.error('Error updating car data:', error);
-//         res.status(500).json({ message: 'Internal server error' });
-//     }
-// });
-
-//5-10 update car
-
+//  For update fetch car data
 app.get('/getcardata/:id', async (req, res) => {
     try {
         const car = await Car.findById(req.params.id);
@@ -263,6 +221,7 @@ app.get('/getcardata/:id', async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 });
+
 
 app.put('/updatecar/:id', async (req, res) => {
     const { model, brand, price, year, fuelType, mileage, transmission, engineCapacity, seatingCapacity, bodyType, safetyFeatures, bootSpace, features, warranty, description, image } = req.body;
@@ -299,8 +258,7 @@ app.put('/updatecar/:id', async (req, res) => {
 });
 
 
-
-
+//  Get data for delete
 app.delete('/cardata/:id', async (req, res) => {
     const { id } = req.params;  // Extract the car ID from the request parameters
 
@@ -315,7 +273,9 @@ app.delete('/cardata/:id', async (req, res) => {
         res.status(500).json({ message: 'An error occurred while deleting car data' });
     }
 });
-// route to get user count
+
+
+// get user count
 app.get('/api/users/count', async (req, res) => {
     try {
         const totalUsers = await User.countDocuments({});
@@ -325,7 +285,8 @@ app.get('/api/users/count', async (req, res) => {
     }
 });
 
-// route to get car data count
+
+// car data count
 app.get('/api/cars/count', async (req, res) => {
     try {
         const totalCars = await Car.countDocuments({});
@@ -335,7 +296,7 @@ app.get('/api/cars/count', async (req, res) => {
     }
 });
 
-// get all user route
+// get all user
 app.get('/users', async (req, res) => {
     try {
         const users = await User.find();
@@ -345,6 +306,8 @@ app.get('/users', async (req, res) => {
         res.status(500).json({ error: 'Error fetching users' });
     }
 });
+
+
 // Delete a user
 app.delete('/users/:id', async (req, res) => {
     try {
@@ -356,6 +319,8 @@ app.delete('/users/:id', async (req, res) => {
         res.status(500).json({ message: 'Error deleting user' });
     }
 });
+
+
 // Get all car data for admin route
 app.get('/cardataadmin', async (req, res) => {
     try {
@@ -367,7 +332,7 @@ app.get('/cardataadmin', async (req, res) => {
 });
 
 
-// Get all car data route
+// Get all car data
 app.get('/cardata', async (req, res) => {
     try {
         const cars = await Car.find();
@@ -404,6 +369,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
+
 // Logout route
 app.get('/logout', (req, res) => {
     // res.cookie('token','');
@@ -411,7 +377,8 @@ app.get('/logout', (req, res) => {
     res.status(200).json({ success: true, message: 'Logged out successfully' });
 });
 
-//rating system 3-10
+
+//rating system
 app.post('/rate', authenticateToken, async (req, res) => {
     const { carId, rating } = req.body;
     const userId = req.user.email; // Extract user ID from token
@@ -434,8 +401,9 @@ app.post('/rate', authenticateToken, async (req, res) => {
         res.status(500).json({ message: 'Error submitting rating' });
     }
 });
-//3-10 carratinganalysis
 
+
+//  car Rating Analysis
 app.get('/car-rating-analysis', async (req, res) => {
     try {
         const cars = await Car.find(); // Fetch all cars
@@ -475,7 +443,6 @@ app.get('/car-rating-analysis', async (req, res) => {
 });
 
 
-
 // Contact route
 app.post('/contact', async (req, res) => {
     const { name, email, message } = req.body;
@@ -487,6 +454,7 @@ app.post('/contact', async (req, res) => {
         res.status(400).json({ error: 'Error saving contact' });
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);

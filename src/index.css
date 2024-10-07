@@ -348,7 +348,6 @@ a.active {
     flex-shrink: 0;
     background: #FFF;
     border-radius: 180px;
-    /* border: 1px solid black; */
     box-shadow: 0px 3.706301689147949px 34.46355056762695px 0px rgba(204, 204, 204, 0.16);
 
 }
@@ -472,7 +471,7 @@ a.active {
     text-decoration: underline;
 }
 
-/*  --------------------------------     ERROR   -------------------------------- */
+/*  --------------------------------     ERRORPAGE   -------------------------------- */
 
 .errorPage {
     display: flex;
@@ -559,7 +558,6 @@ a.active {
 .section {
     height: 100vh;
     width: 70vw;
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -603,7 +601,6 @@ a.active {
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    /* border: 2px solid yellow; */
 }
 
 .image img {
@@ -644,19 +641,12 @@ a.active {
 
 .contactForm {
     width: 400px;
-    /* padding: 2rem; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 /*  --------------------------------     CAR   -------------------------------- */
 
 .carFirst {
     background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996);
-    /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg); */
-    /* background: url(https://c4.wallpaperflare.com/wallpaper/483/78/479/tesla-model-s-model-x-model-3-electric-car-hd-wallpaper-preview.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -668,14 +658,17 @@ a.active {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    /* border: 2px solid red; */
 }
 
 .searchDetail {
     display: flex;
+    width: 70%;
+    padding: 30px;
+    background: rgba(245, 222, 179, 0.733);
+    border-radius: 20px 10px;
 }
 
-/* ------------------------------------ */
+/*  --------------------------------     CAR CARD   -------------------------------- */
 
 .aboutCar {
     margin: 8px 0px;
@@ -684,7 +677,6 @@ a.active {
 }
 
 .carDescription {
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -731,20 +723,6 @@ a.active {
     color: #333;
 }
 
-/* .form-input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.small-input {
-    max-width: 100%;
-    padding: 8px;
-} */
-
 .textarea-input {
     height: 80px;
     resize: none;
@@ -773,6 +751,7 @@ a.active {
 }
 
 /*  --------------------------------     USER   -------------------------------- */
+
 .userContainer {
     display: flex;
     justify-content: center;
@@ -848,7 +827,6 @@ table td {
     text-decoration: none;
 }
 
-
 .adminPanel {
     display: flex;
     min-height: 100vh;
@@ -860,7 +838,7 @@ table td {
     overflow-y: auto;
 }
 
-/*  --------------------------------     HOME   -------------------------------- */
+/*  --------------------------------     RATING   -------------------------------- */
 
 .rating {
     display: flex;
