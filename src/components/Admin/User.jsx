@@ -9,12 +9,12 @@ const User = () => {
       try {
         const response = await fetch('http://localhost:5000/users');
         const data = await response.json();
+        console.log("Data = ", data)
         setUsers(data);
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
     };
-
     fetchData();
   }, []);
 
@@ -25,7 +25,7 @@ const User = () => {
         const response = await fetch(`http://localhost:5000/users/${userId}`, {
           method: 'DELETE',
         });
-
+        console.log("Response", response)
         if (response.ok) {
           setUsers(users.filter(user => user._id !== userId));
           alert('User deleted successfully.');
@@ -61,7 +61,7 @@ const User = () => {
                 <td>
                   <button
                     className="delete-button"
-                    style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }}
+                    style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px', cursor: "pointer" }}
                     onClick={() => handleDelete(user._id)}
                   >
                     Delete

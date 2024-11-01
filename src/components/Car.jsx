@@ -8,6 +8,13 @@ function Car({ id, image, title, description, price, year, fuelType, mileage }) 
         navigate(`/carinfo/${id}`); // Proper dynamic URL
     };
 
+    function truncate(description, length) {
+        if (description.length > length)
+            return description.substring(0, length) + "...";
+        else
+            return description;
+    };
+
     return (
         <div style={{
             width: "250px",
@@ -30,7 +37,10 @@ function Car({ id, image, title, description, price, year, fuelType, mileage }) 
             <p className='aboutCar'>Year: {year}</p>
             <p className='aboutCar'>Fuel Type: {fuelType}</p>
             <p className='aboutCar'>Mileage: {mileage}</p>
-            <p className='carDescription'>{description}</p>
+            <p className='carDescription'>
+                {/* {description} */}
+                {truncate(description, 50)}
+            </p>
             <button
                 onClick={handleViewMore}
                 style={{

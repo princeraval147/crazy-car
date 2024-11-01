@@ -1,0 +1,41 @@
+/* .text {
+  border-bottom: 1px solid #4f46ba;
+  width: 125px;
+} */
+
+.box {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+  font-size: 14px;
+  color: #666;
+}
+
+.button {
+  background-color: #4F46BA;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #4343ba;
+}
+
+.forgot-password {
+  font-size: 14px;
+  color: #666;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.sign-up {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}

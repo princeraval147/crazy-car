@@ -75,7 +75,10 @@ a.active {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #D3D9D4;
+    /* background: #D3D9D4; */
+    /* background: #ffb805; */
+    background: #0000004b;
+    /* background: #eaeff1; */
     color: black;
     text-align: center;
 }
@@ -104,10 +107,32 @@ a.active {
     transition: 0.5s;
 }
 
+.profileSide {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.profileIcon {
+    font-size: 24px;
+}
+
+.me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileMenu {
+    border: 2px solid red;
+}
+
+
 /*  --------------------------------     FOOTER   -------------------------------- */
 
 .footer {
-    background: #D3D9D4;
+    /* background: #D3D9D4; */
+    background: #0000004b;
     color: black;
     padding: 24px;
     text-align: center;
@@ -120,8 +145,62 @@ a.active {
     align-items: center;
 }
 
-.footer .text {
-    margin-top: 1.5rem;
+.footer .FooterLastText {
+    padding-top: 1.5rem;
+    border-top: 2px solid gray;
+}
+
+.footerAbout {
+    margin: 24px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    /* border: 2px solid red; */
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid green; */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footerLinks a {
+    color: #000000b4;
+    font-weight: 600;
+}
+
+.footerLinks a:hover {
+    color: #000;
+}
+
+a svg {
+    transition: all 0.3s linear;
+}
+
+a:hover svg {
+    transform: scale(1.5);
+}
+
+.facebook:hover {
+    color: blue;
+}
+
+.instagram:hover {
+    color: #e11d74;
+}
+
+.twitter:hover {
+    color: #00adb5;
+}
+
+.github:hover {
+    color: black;
+}
+
+.linkedin:hover {
+    color: #04009a;
 }
 
 /*  --------------------------------     HOME   -------------------------------- */

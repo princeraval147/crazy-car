@@ -19,6 +19,8 @@ import Addcar from './components/Admin/Addcar.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
 import CarInfo from './components/CarInfo.jsx'
 import CarRatingAnalysis from './components/Admin/CarRatingAnalysis.jsx'
+// import LoginPopUp from './components/LoginPopUp.jsx'
+import LoginModal from './components/LoginModal.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,7 +28,9 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
-      <Route path='login' element={<Login />} />
+      {/* <Route path='login' element={<Login />} /> */}
+      <Route path='login' element={<LoginModal />} />
+      {/* <Route path='login' element={<LoginPopUp />} /> */}
       <Route path='signUp' element={<SignUp />} />
       <Route path='car' element={<Cars />} />
       <Route path='carinfo/:id' element={<CarInfo />} />
