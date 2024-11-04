@@ -63,7 +63,7 @@ const Login = () => {
                         />
                         {errors.password && <span className='errorMsg'>Password is required</span>}
 
-                        <div className="rf">
+                        {/* <div className="rf">
                             <div className="remember">
                                 <input
                                     id="remember"
@@ -73,7 +73,7 @@ const Login = () => {
                                 <label htmlFor="remember">Remember me</label>
                             </div>
                             <NavLink>Forgot password?</NavLink>
-                        </div>
+                        </div> */}
                         <button type="submit" className='Btn'>Sign in</button>
                         <p>
                             Don't have an account yet?

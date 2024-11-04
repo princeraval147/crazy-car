@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 // import MenuItem from '@mui/material/MenuItem';
 import { CgProfile } from "react-icons/cg";
 import { FaAngleDown } from "react-icons/fa";
-import MuiProfile from './MuiProfile'
 
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -57,7 +56,7 @@ const Header = () => {
                 setIsLoggedIn(false);
             }
         } catch (error) {
-            // console.error('Error checking login status:', error);
+            console.error('Error checking login status:', error);
             setIsLoggedIn(false);
         }
     };
@@ -142,56 +141,14 @@ const Header = () => {
                     <ul className='links'>
                         {isLoggedIn ? (
                             <>
+
                                 {/* <li>
                                     <button onClick={handlerLogout} className='Btn'>Logout</button>
                                 </li> */}
+
                                 <div>
-                                    {/* <Button
-                                        id="basic-button"
-                                        aria-controls={open ? 'basic-menu' : undefined}
-                                        aria-haspopup="true"
-                                        aria-expanded={open ? 'true' : undefined}
-                                        onClick={handleClick}
-                                    >
-                                        Dashboard
-                                    </Button> */}
-
-                                    {/* <div className="profileSide">
-                                        <CgProfile
-                                            id="basic-button"
-                                            aria-controls={open ? 'basic-menu' : undefined}
-                                            aria-haspopup="true"
-                                            aria-expanded={open ? 'true' : undefined}
-                                            onClick={handleClick}
-                                            className='profileIcon'
-                                        />
-                                        <span className='me'>
-                                            Me<FaAngleDown />
-                                        </span>
-                                    </div>
-                                    <Menu
-                                        id="basic-menu"
-                                        anchorEl={anchorEl}
-                                        open={open}
-                                        onClose={handleClose}
-                                        MenuListProps={{
-                                            'aria-labelledby': 'basic-button',
-                                        }}
-                                    >
-                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        <MenuItem onClick={handlerLogout}>Logout</MenuItem>
-                                    </Menu> */}
-
-
-                                    {/* <MuiProfile /> */}
-
-
                                     <div className="profile">
-
                                         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                                            {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
-                <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
                                             <Tooltip title="Account settings">
                                                 <IconButton
                                                     onClick={handleClick}
@@ -201,8 +158,10 @@ const Header = () => {
                                                     aria-haspopup="true"
                                                     aria-expanded={open ? 'true' : undefined}
                                                 >
-                                                    <Avatar sx={{ width: 32, height: 32 }}>
-                                                        P
+                                                    <Avatar sx={{ width: 40, height: 40 }}>
+                                                        {
+                                                            isAdmin ? "A" : "U"
+                                                        }
                                                     </Avatar>
                                                 </IconButton>
                                             </Tooltip>
@@ -288,7 +247,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
