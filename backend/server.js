@@ -39,55 +39,88 @@ const connectDB = async () => {
 connectDB();
 
 const JWT_SECRET = process.env.JWT_SECRET;
-
+// For Live
 app.use(cors({
-    // origin: "http://localhost:5173",    //  Frontend
-    origin: "https://crazycar-project.netlify.app",    //  Frontend
-    credentials: true
+    origin: ['https://crazycar-project.netlify.app'], // allow specific domains
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    headers: ['Content-Type', 'Authorization'],
+    credentials: true, // allow cookies
 }));
+
+
+// app.use(cors({
+//     // origin: "http://localhost:5173",    //  Frontend
+//     origin: "https://crazycar-project.netlify.app",    //  Frontend
+//     credentials: true
+// }));
 app.use(express.json());
 app.use(cookieParser());
 
 
-const isAdmin = async (req, res, next) => {
-    try {
-        const token = req.cookies.token;
-        if (!token) {
-            return res.status(401).json({ message: 'Please Login' });
-        }
-        const decoded = jwt.verify(token, JWT_SECRET);
-        const user = await User.findOne({ email: decoded.email });
-        if (!user) {
-            return res.status(401).json({ message: 'Invalid token' });
-        }
-        if (user.isadmin) {
-            next();
-        } else {
-            return res.status(403).json({ message: 'Access denied' });
-        }
-    } catch (error) {
-        console.error('Error in isAdmin middleware:', error);
-        return res.status(500).json({ message: 'Internal Server Error' });
-    }
-};
 
 
 
+// const isAdmin = async (req, res, next) => {
+//     try {
+//         const token = req.cookies.token;
+//         if (!token) {
+//             return res.status(401).json({ message: 'Please Login' });
+//         }
+//         const decoded = jwt.verify(token, JWT_SECRET);
+//         const user = await User.findOne({ email: decoded.email });
+//         if (!user) {
+//             return res.status(401).json({ message: 'Invalid token' });
+//         }
+//         if (user.isadmin) {
+//             next();
+//         } else {
+//             return res.status(403).json({ message: 'Access denied' });
+//         }
+//     } catch (error) {
+//         console.error('Error in isAdmin middleware:', error);
+//         return res.status(500).json({ message: 'Internal Server Error' });
+//     }
+// };
+
+
+
+// const authenticateToken = (req, res, next) => {
+//     const token = req.cookies.token;
+
+//     if (!token) {
+//         return res.status(401).json({ message: 'Access denied. No token provided.' });
+//     }
+
+//     jwt.verify(token, JWT_SECRET, (err, user) => {
+//         if (err) {
+//             return res.status(403).json({ message: 'Invalid token.' });
+//         }
+//         req.user = user; // Attach user info to request
+//         next();
+//     });
+// };
+
+// For live
 const authenticateToken = (req, res, next) => {
-    const token = req.cookies.token;
+    const token = req.header('Authorization');
+    if (!token) return res.status(401).json({ message: 'Access denied' });
 
-    if (!token) {
-        return res.status(401).json({ message: 'Access denied. No token provided.' });
-    }
-
-    jwt.verify(token, JWT_SECRET, (err, user) => {
-        if (err) {
-            return res.status(403).json({ message: 'Invalid token.' });
-        }
-        req.user = user; // Attach user info to request
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ message: 'Token expired' });
+        req.user = user;
         next();
     });
 };
+
+// Example isAdmin middleware for Live
+const isAdmin = (req, res, next) => {
+    if (!req.user || req.user.role !== 'admin') {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+    next();
+};
+
+
 
 
 //check isloggedin
