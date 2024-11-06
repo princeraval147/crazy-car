@@ -17,7 +17,10 @@ const Rating = require('./models/Rating');
 dotenv.config();
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 4000;
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 // Connect to MongoDB
 const connectDB = async () => {
