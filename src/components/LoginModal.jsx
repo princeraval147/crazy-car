@@ -29,7 +29,6 @@ const LoginModal = (props) => {
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
-    const [rememberMe, setRememberMe] = useState(false);
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -107,13 +106,6 @@ const LoginModal = (props) => {
                     <FormHelperText error>{passwordError}</FormHelperText>
                 )}
             </FormControl>
-            <div className="flex items-center mt-2">
-                <Checkbox
-                    checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
-                />
-                <Typography variant="body2">Remember me</Typography>
-            </div>
             <Button
                 variant="contained"
                 color="primary"
@@ -129,7 +121,7 @@ const LoginModal = (props) => {
                 </Link>
             </Typography>
             <Typography variant="body2" sx={{ mt: 2 }}>
-                Don’t have an account?{" "}
+                Don't have an account?{" "}
                 <Link href="#" underline="hover">
                     Sign up
                 </Link>

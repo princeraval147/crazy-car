@@ -7,7 +7,8 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/users');
+        // const response = await fetch('http://localhost:5000/users');
+        const response = await fetch('https://crazycar-backend.onrender.com/users');
         const data = await response.json();
         console.log("Data = ", data)
         setUsers(data);
@@ -22,7 +23,8 @@ const User = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this user?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost:5000/users/${userId}`, {
+        // const response = await fetch(`http://localhost:5000/users/${userId}`, {
+        const response = await fetch(`https://crazycar-backend.onrender.com/users/${userId}`, {
           method: 'DELETE',
         });
         console.log("Response", response)

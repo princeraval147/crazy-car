@@ -48,11 +48,12 @@ a {
 }
 
 .hoverEffct {
-    padding: 15px;
+    padding: 10px;
     color: #2E3944;
     font-weight: 600;
     font-size: 18px;
-    transition: 0.5s
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 .hoverEffct:hover {
@@ -612,6 +613,10 @@ a:hover svg {
     background: rgba(128, 128, 128, 0.288);
     color: black;
     border-radius: 10px;
+}
+
+.alreadyLine {
+    margin-top: 25px;
 }
 
 

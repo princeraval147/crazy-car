@@ -10,7 +10,8 @@ const SignUp = () => {
         console.log(data);
         if (data.password === data.conformPassword) {
             try {
-                const response = await fetch('http://localhost:5000/signUp', {
+                // const response = await fetch('http://localhost:5000/signUp', {
+                const response = await fetch('https://crazycar-backend.onrender.com/signUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -85,9 +86,9 @@ const SignUp = () => {
                     {errors.conformPassword && <span className='errorMsg'>Confirm Password is required</span>}
 
                     <div>
-                        <NavLink>Forgot password?</NavLink>
+                        {/* <NavLink>Forgot password?</NavLink> */}
                         <button type="submit" className='Btn'>Sign Up</button>
-                        <p>
+                        <p className='alreadyLine'>
                             Already have an account ?
                             <NavLink to='/login' className='signUpBtn'> Log In</NavLink>
                         </p>

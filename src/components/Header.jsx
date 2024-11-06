@@ -45,7 +45,8 @@ const Header = () => {
 
     const checkLoginStatus = async () => {
         try {
-            const response = await fetch('http://localhost:5000/auth/check', {
+            // const response = await fetch('http://localhost:5000/auth/check', {
+            const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -65,7 +66,8 @@ const Header = () => {
 
     const checkAdminStatus = async () => {
         try {
-            const response = await fetch('http://localhost:5000/admin/check', {
+            // const response = await fetch('http://localhost:5000/admin/check', {
+            const response = await fetch('https://crazycar-backend.onrender.com/admin/check', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -83,7 +85,8 @@ const Header = () => {
 
     const handlerLogout = async () => {
         try {
-            await fetch('http://localhost:5000/logout', {
+            // await fetch('http://localhost:5000/logout', {
+            await fetch('https://crazycar-backend.onrender.com/logout', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -204,23 +207,33 @@ const Header = () => {
                                             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                         >
                                             <MenuItem onClick={handleClose}>
-                                                <Avatar /> Profile
+                                                <Avatar />
+                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                    Profile
+                                                </NavLink>
                                             </MenuItem>
                                             <MenuItem onClick={handleClose}>
-                                                <Avatar /> My account
+                                                <Avatar />
+                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                    My account
+                                                </NavLink>
                                             </MenuItem>
                                             <Divider />
                                             <MenuItem onClick={handleClose}>
                                                 <ListItemIcon>
                                                     <IoPersonAdd />
                                                 </ListItemIcon>
-                                                Add another account
+                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                    Add another account
+                                                </NavLink>
                                             </MenuItem>
                                             <MenuItem onClick={handleClose}>
                                                 <ListItemIcon>
                                                     <IoMdSettings size={24} />
                                                 </ListItemIcon>
-                                                Settings
+                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                    Settings
+                                                </NavLink>
                                             </MenuItem>
                                             <MenuItem onClick={handlerLogout}>
                                                 <ListItemIcon>
