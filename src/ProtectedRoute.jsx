@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ProtectedRoute = () => {
     const [isAdmin, setIsAdmin] = useState(null);
@@ -24,13 +25,14 @@ const ProtectedRoute = () => {
                 setIsAdmin(false);
             }
         };
-
         checkAdminStatus();
     }, []);
 
 
     if (isAdmin === null) {
-        return <div>Loading...</div>;
+        return <div className='Loading' >
+            <CircularProgress />
+        </div>
     }
 
     return isAdmin ? <Outlet /> : <Navigate to="/error" replace />;
