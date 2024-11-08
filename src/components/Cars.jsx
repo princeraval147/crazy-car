@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Autocomplete, TextField } from "@mui/material";
 import Car from './Car';
+import Pagination from '@mui/material/Pagination';
 
 function Cars() {
     const [originalCarsData, setOriginalCarsData] = useState([]);
@@ -13,8 +14,8 @@ function Cars() {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                // const response = await fetch('http://localhost:5000/cardata');
-                const response = await fetch('https://crazycar-backend.onrender.com/cardata');
+                const response = await fetch('http://localhost:5000/cardata');
+                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 setOriginalCarsData(data);
                 setCarsData(data);
@@ -115,6 +116,9 @@ function Cars() {
                         description={car.description}
                     />
                 ))}
+            </div>
+            <div className="pagination">
+                <Pagination count={10} />
             </div>
         </>
     );
