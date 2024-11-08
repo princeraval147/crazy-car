@@ -569,7 +569,7 @@ a:hover svg {
 }
 
 /*  --------------------------------     LOGIN   -------------------------------- */
-
+/* // Removeable */
 .login {
     display: flex;
     justify-content: center;
@@ -756,6 +756,14 @@ a:hover svg {
     padding: 30px;
     background: rgba(245, 222, 179, 0.733);
     border-radius: 20px 10px;
+}
+
+/*  --------------------------------     CARS   -------------------------------- */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 /*  --------------------------------     CAR CARD   -------------------------------- */

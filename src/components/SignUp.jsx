@@ -10,8 +10,8 @@ const SignUp = () => {
         console.log(data);
         if (data.password === data.conformPassword) {
             try {
-                // const response = await fetch('http://localhost:5000/signUp', {
-                const response = await fetch('https://crazycar-backend.onrender.com/signUp', {
+                const response = await fetch('http://localhost:5000/signUp', {
+                    // const response = await fetch('https://crazycar-backend.onrender.com/signUp', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -26,7 +26,8 @@ const SignUp = () => {
 
                 const result = await response.json();
                 if (result.success) {
-                    navigate('/login');
+                    // navigate('/login');
+                    navigate('/'); // For Login Modal
                 } else {
                     alert(result.message);
                 }
@@ -90,7 +91,7 @@ const SignUp = () => {
                         <button type="submit" className='Btn'>Sign Up</button>
                         <p className='alreadyLine'>
                             Already have an account ?
-                            <NavLink to='/login' className='signUpBtn'> Log In</NavLink>
+                            <NavLink to='/' className='signUpBtn'> Log In</NavLink>
                         </p>
                     </div>
                 </form >

@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Logo from '/Img/Logo.png';
-import Button from '@mui/material/Button';
-// import Menu from '@mui/material/Menu';
-// import MenuItem from '@mui/material/MenuItem';
 import { CgProfile } from "react-icons/cg";
 import { FaAngleDown } from "react-icons/fa";
-
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -14,16 +10,21 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { IoMdSettings } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
+import LoginModal from './LoginModal';
+import Modal from "@mui/material/Modal";
 
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
+    // For Login Modal
+    const [loginOpen, loginSetOpen] = React.useState(false);
+    const handleOpen = () => loginSetOpen(true);
+    const loginClose = () => loginSetOpen(false);
 
     // const [anchorEl, setAnchorEl] = React.useState(null);
     // const open = Boolean(anchorEl);
@@ -34,6 +35,7 @@ const Header = () => {
     //     setAnchorEl(null);
     // };
 
+    // For Profile Drop Down
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -45,8 +47,8 @@ const Header = () => {
 
     const checkLoginStatus = async () => {
         try {
-            // const response = await fetch('http://localhost:5000/auth/check', {
-            const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
+            const response = await fetch('http://localhost:5000/auth/check', {
+                // const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -66,8 +68,8 @@ const Header = () => {
 
     const checkAdminStatus = async () => {
         try {
-            // const response = await fetch('http://localhost:5000/admin/check', {
-            const response = await fetch('https://crazycar-backend.onrender.com/admin/check', {
+            const response = await fetch('http://localhost:5000/admin/check', {
+                // const response = await fetch('https://crazycar-backend.onrender.com/admin/check', {
                 method: 'GET',
                 credentials: 'include',
             });
@@ -85,23 +87,24 @@ const Header = () => {
 
     const handlerLogout = async () => {
         try {
-            // await fetch('http://localhost:5000/logout', {
-            await fetch('https://crazycar-backend.onrender.com/logout', {
+            await fetch('http://localhost:5000/logout', {
+                // await fetch('https://crazycar-backend.onrender.com/logout', {
                 method: 'GET',
                 credentials: 'include',
             });
-            navigate('/login', { replace: true });
+            // navigate('/login', { replace: true });
+            navigate('/', { replace: true }); // For Login Modal
         } catch (error) {
             console.error(error);
-            navigate('/login', { replace: true });
+            // navigate('/login', { replace: true });
+            navigate('/', { replace: true }); // For Login Modal
         } finally {
             console.log("Click Logout");
             setIsLoggedIn(false);
-            navigate('/login');
+            // navigate('/login');
+            navigate('/'); // For Login Modal
         }
     }
-
-
 
     return (
         <>
@@ -249,7 +252,18 @@ const Header = () => {
                         ) : (
                             <>
                                 <li>
-                                    <NavLink to='/login' className='hoverEffct'>Login</NavLink>
+                                    {/* <NavLink to='/login' className='hoverEffct'>Login</NavLink> */}
+                                    <span onClick={handleOpen} className='hoverEffct'>
+                                        Login
+                                    </span>
+                                    <Modal
+                                        open={loginOpen}
+                                        onClose={loginClose}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                    >
+                                        <LoginModal loginClose={loginClose} />
+                                    </Modal>
                                 </li>
                                 <li>
                                     <NavLink to='/signUp' className='Btn'>Sign Up</NavLink>
