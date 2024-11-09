@@ -14,8 +14,8 @@ const UpdateCar = () => {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                // const response = await fetch(`http://localhost:5000/getcardata/${id}`);
-                const response = await fetch(`https://crazycar-backend.onrender.com/getcardata/${id}`);
+                const response = await fetch(`http://localhost:5000/getcardata/${id}`);
+                // const response = await fetch(`https://crazycar-backend.onrender.com/getcardata/${id}`);
                 const data = await response.json();
 
                 // Log the response to check if 'engineCapacity' exists
@@ -64,8 +64,8 @@ const UpdateCar = () => {
         };
 
         try {
-            // const response = await fetch(`http://localhost:5000/updatecar/${id}`, {
-            const response = await fetch(`https://crazycar-backend.onrender.com/updatecar/${id}`, {
+            const response = await fetch(`http://localhost:5000/updatecar/${id}`, {
+                // const response = await fetch(`https://crazycar-backend.onrender.com/updatecar/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -85,8 +85,8 @@ const UpdateCar = () => {
 
     const checkModelAvailability = async (model) => {
         try {
-            // const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
-            const response = await fetch(`https://crazycar-backend.onrender.com/checkmodel/${model}`);
+            const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
+            // const response = await fetch(`https://crazycar-backend.onrender.com/checkmodel/${model}`);
             const result = await response.json();
             setModelExists(result.exists);
         } catch (error) {
