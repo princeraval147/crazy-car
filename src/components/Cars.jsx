@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Autocomplete, TextField } from "@mui/material";
 import Car from './Car';
+// import PaginationComponent from './PaginationComponent';
 import Pagination from '@mui/material/Pagination';
 
 function Cars() {
@@ -54,6 +55,61 @@ function Cars() {
         setSelectedModel('');
     };
 
+
+    //  Pagination
+    // const [page, setPage] = useState(1);
+    // const handlePage = (e, p) => {
+    //     console.log(e, p)
+    //     setPage(p)
+    // }
+
+    // const [carCount, setCarCount] = useState(0);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             // Fetch total car data
+    //             const carResponse = await fetch('http://localhost:5000/api/cars/count');
+    //             const carData = await carResponse.json();
+    //             console.log('Fetched car data:', carData);
+    //             setCarCount(carData.totalCars);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     };
+    //     fetchData();
+    // }, []);
+    // console.log("Total Car = ", carCount);
+
+    // AI
+    const [page, setPage] = useState(1);
+    const [cars, setCars] = useState([]);
+    const [carCount, setCarCount] = useState(0);
+    const [perPage] = useState(8); // 8 cars per page
+    const handlePage = (e, value) => {
+        setPage(value);
+        console.log("Current Page = ", value);
+    };
+    useEffect(() => {
+        const fetchCars = async () => {
+            try {
+                const start = (page - 1) * perPage;
+                const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
+                const data = await response.json();
+                setCars(data);
+                const carCountResponse = await fetch('http://localhost:5000/api/cars/count');
+                const carData = await carCountResponse.json();
+                setCarCount(carData.totalCars);
+                console.log('My data = ', carData);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+        fetchCars();
+    }, [page, perPage]);
+    const pageConsole = Math.ceil(carCount / perPage)
+    // console.log("New = ", pageConsole);
+
+
     return (
         <>
             <div className="carFirst">
@@ -63,6 +119,7 @@ function Cars() {
                     </div>
                     <div className="searchDetail">
                         <Autocomplete
+                            isOptionEqualToValue={(option, value) => option.value === value.value} // To avoid Warnig in Console
                             disableClearable
                             className='searchTxt'
                             disablePortal
@@ -76,6 +133,7 @@ function Cars() {
                             }}
                         />
                         <Autocomplete
+                            isOptionEqualToValue={(option, value) => option.value === value.value} // To avoid Warnig in Console
                             disableClearable
                             className='searchTxt'
                             disablePortal
@@ -118,8 +176,16 @@ function Cars() {
                 ))}
             </div>
             <div className="pagination">
-                <Pagination count={10} />
+                {/* <Pagination count={10} onChange={handlePage} size='large' /> */}
+                <Pagination
+                    count={Math.ceil(carCount / perPage)}
+                    // count={10}
+                    page={page}
+                    onChange={(e, value) => handlePage(e, value)}
+                    size='large'
+                />
             </div>
+            {/* <PaginationComponent /> */}
         </>
     );
 }
