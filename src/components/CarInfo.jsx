@@ -73,7 +73,7 @@ const CarInfo = () => {
     // If the car data is not yet loaded, show a loading message
     if (!car) {
         return <div className='Loading' >
-            <CircularProgress />
+            <p>Please Login to View More Details</p>
         </div>
     }
 

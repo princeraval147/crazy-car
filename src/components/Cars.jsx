@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Autocomplete, TextField } from "@mui/material";
 import Car from './Car';
-// import PaginationComponent from './PaginationComponent';
+import PaginationComponent from './PaginationComponent';
 import Pagination from '@mui/material/Pagination';
 
 function Cars() {
@@ -93,7 +93,8 @@ function Cars() {
         const fetchCars = async () => {
             try {
                 const start = (page - 1) * perPage;
-                const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
+                // const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
+                // const response = await fetch(`http://localhost:5000/cardata?limit=8&skip=0`);
                 const data = await response.json();
                 setCars(data);
                 const carCountResponse = await fetch('http://localhost:5000/api/cars/count');
@@ -106,8 +107,6 @@ function Cars() {
         };
         fetchCars();
     }, [page, perPage]);
-    const pageConsole = Math.ceil(carCount / perPage)
-    // console.log("New = ", pageConsole);
 
 
     return (
@@ -177,15 +176,15 @@ function Cars() {
             </div>
             <div className="pagination">
                 {/* <Pagination count={10} onChange={handlePage} size='large' /> */}
-                <Pagination
+                {/* <Pagination
                     count={Math.ceil(carCount / perPage)}
                     // count={10}
                     page={page}
                     onChange={(e, value) => handlePage(e, value)}
                     size='large'
-                />
+                /> */}
+                <PaginationComponent />
             </div>
-            {/* <PaginationComponent /> */}
         </>
     );
 }
