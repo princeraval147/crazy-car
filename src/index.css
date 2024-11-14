@@ -1081,13 +1081,32 @@ table td {
     margin-bottom: 30px;
 }
 
+.topCars {
+    display: flex;
+    justify-content: space-between;
+}
+
+.PieChart {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .topCarsSection {
-    margin-bottom: 50px;
+    /* border: 2px solid green; */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 50px; */
 }
 
 .topCarsContainer {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    gap: 25px;
 }
 
 .topCarItem {
