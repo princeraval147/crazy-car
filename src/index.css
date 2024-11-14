@@ -1052,10 +1052,58 @@ table td {
     overflow-y: auto;
 }
 
+
+
 /*  --------------------------------     RATING   -------------------------------- */
+
+
 
 .rating {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+/*  --------------------------------     RATING ANALYSIS   -------------------------------- */
+
+
+
+.RatingContainer {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cra {
+    border-bottom: 2px solid gray;
+    margin-bottom: 30px;
+}
+
+.topCarsSection {
+    margin-bottom: 50px;
+}
+
+.topCarsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.topCarItem {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.allCarsSection {
+    margin-top: 40px;
+}
+
+.RatingTable {
+    width: 100%;
+    border-collapse: collapse;
 }

@@ -74,6 +74,7 @@ const CarInfo = () => {
     if (!car) {
         return <div className='Loading' >
             <p>Please Login to View More Details</p>
+            {/* <CircularProgress /> */}
         </div>
     }
 

@@ -62,7 +62,6 @@ function Cars() {
     //     console.log(e, p)
     //     setPage(p)
     // }
-
     // const [carCount, setCarCount] = useState(0);
     // useEffect(() => {
     //     const fetchData = async () => {
@@ -80,7 +79,8 @@ function Cars() {
     // }, []);
     // console.log("Total Car = ", carCount);
 
-    // AI
+
+    // AI Pagination
     const [page, setPage] = useState(1);
     const [cars, setCars] = useState([]);
     const [carCount, setCarCount] = useState(0);
@@ -93,7 +93,7 @@ function Cars() {
         const fetchCars = async () => {
             try {
                 const start = (page - 1) * perPage;
-                // const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
+                const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
                 // const response = await fetch(`http://localhost:5000/cardata?limit=8&skip=0`);
                 const data = await response.json();
                 setCars(data);
@@ -176,14 +176,14 @@ function Cars() {
             </div>
             <div className="pagination">
                 {/* <Pagination count={10} onChange={handlePage} size='large' /> */}
-                {/* <Pagination
+                <Pagination
                     count={Math.ceil(carCount / perPage)}
                     // count={10}
                     page={page}
                     onChange={(e, value) => handlePage(e, value)}
                     size='large'
-                /> */}
-                <PaginationComponent />
+                />
+                {/* <PaginationComponent /> */}
             </div>
         </>
     );

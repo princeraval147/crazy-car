@@ -377,6 +377,30 @@ app.get('/cardata', async (req, res) => {
     }
 });
 
+//  AI PAGINATION
+// app.get('/cardata', async (req, res) => {
+//     const page = parseInt(req.query.page) || 1;
+//     const limit = parseInt(req.query.limit) || 8;
+//     try {
+//         const skip = (page - 1) * limit;
+//         const cars = await Car.find().skip(skip).limit(limit);
+//         const totalCount = await Car.countDocuments();
+//         res.json(
+//             cars,
+//             // "pagination": {
+//             // "currentPage": page,
+//             // "perPage": limit,
+//             // "totalPages": Math.ceil(totalCount / limit),
+//             // "totalRecords": totalCount
+//             // }
+//         );
+//         // res.json(cars);
+//     } catch (err) {
+//         res.status(500).json({ message: 'Error fetching cars data' });
+//     }
+// });
+
+
 
 // Login route
 app.post('/login', async (req, res) => {
