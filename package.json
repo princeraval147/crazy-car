@@ -24,6 +24,7 @@
     "react-router-dom": "^6.24.1",
     "react-simple-image-slider": "^2.4.1",
     "react-slideshow-image": "^4.3.1",
+    "recharts": "^2.13.3",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
