@@ -211,13 +211,13 @@ const Header = () => {
                                         >
                                             <MenuItem onClick={handleClose}>
                                                 <Avatar />
-                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                <NavLink to='#' style={{ color: "#212121" }}>
                                                     Profile
                                                 </NavLink>
                                             </MenuItem>
                                             <MenuItem onClick={handleClose}>
                                                 <Avatar />
-                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                <NavLink to='#' style={{ color: "#212121" }}>
                                                     My account
                                                 </NavLink>
                                             </MenuItem>
@@ -226,7 +226,7 @@ const Header = () => {
                                                 <ListItemIcon>
                                                     <IoPersonAdd />
                                                 </ListItemIcon>
-                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                <NavLink to='/signUp' style={{ color: "#212121" }}>
                                                     Add another account
                                                 </NavLink>
                                             </MenuItem>
@@ -234,7 +234,7 @@ const Header = () => {
                                                 <ListItemIcon>
                                                     <IoMdSettings size={24} />
                                                 </ListItemIcon>
-                                                <NavLink to='signUp' style={{ color: "#212121" }}>
+                                                <NavLink to='#' style={{ color: "#212121" }}>
                                                     Settings
                                                 </NavLink>
                                             </MenuItem>
