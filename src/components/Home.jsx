@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import 'react-slideshow-image/dist/styles.css'
-import img4 from '/Img/4K.jpg'
+import img1 from '/Img/4K.jpg'
 import img2 from '/Img/4k2.jpg'
 import img3 from '/Img/MB.jpg'
 
@@ -19,15 +19,15 @@ const Home = () => {
 
     const slideImages = [
         {
-            url: img4,
+            url: img1,
             caption: 'Slide 1'
         },
         {
-            url: img3,
+            url: img2,
             caption: 'Slide 2'
         },
         {
-            url: img2,
+            url: img3,
             caption: 'Slide 3'
         },
     ];
@@ -50,7 +50,7 @@ const Home = () => {
 
             {/* <---------------------------  Animation Content ------------------------------> */}
 
-            <div className="container">
+            <div className="animationContainer">
                 <div className="circles">
                     <div className="mainCircle">
                         <div className="innerCircleWrapper">

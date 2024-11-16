@@ -78,7 +78,11 @@ a.active {
     background: rgba(211, 209, 209, 0.76);
 }
 
+
+
 /*  --------------------------------     HEADER   -------------------------------- */
+
+
 
 .header {
     display: flex;
@@ -135,10 +139,12 @@ a.active {
 }
 
 
+
 /*  --------------------------------     FOOTER   -------------------------------- */
 
+
+
 .footer {
-    /* background: #D3D9D4; */
     background: #0000004b;
     color: black;
     padding: 24px;
@@ -162,13 +168,11 @@ a.active {
     padding: 20px;
     display: flex;
     justify-content: space-around;
-    /* border: 2px solid red; */
 }
 
 .footerLinks {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid green; */
     align-items: flex-start;
     gap: 10px;
 }
@@ -190,10 +194,6 @@ a:hover svg {
     transform: scale(1.5);
 }
 
-.facebook:hover {
-    color: blue;
-}
-
 .instagram:hover {
     color: #e11d74;
 }
@@ -202,27 +202,25 @@ a:hover svg {
     color: #00adb5;
 }
 
-.github:hover {
-    color: black;
+.facebook:hover {
+    color: blue;
 }
 
 .linkedin:hover {
     color: #04009a;
 }
 
-/*  --------------------------------     HOME   -------------------------------- */
-
-.homeContainer {
-    height: 100vh;
-    width: 100%;
-    background-image: url(/Img/bgCar.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: white;
+.github:hover {
+    color: black;
 }
 
-.container {
+
+
+/*  --------------------------------     HOME   -------------------------------- */
+
+
+
+.animationContainer {
     display: flex;
     justify-content: space-around;
     width: 90%;
@@ -541,7 +539,11 @@ a:hover svg {
     animation-delay: 12s
 }
 
+
+
 /*  --------------------------------     ABOUT   -------------------------------- */
+
+
 
 .about {
     width: 75%;
@@ -557,7 +559,11 @@ a:hover svg {
     text-decoration: underline;
 }
 
+
+
 /*  --------------------------------     ERRORPAGE   -------------------------------- */
+
+
 
 .errorPage {
     display: flex;
@@ -567,6 +573,8 @@ a:hover svg {
     gap: 30px;
     height: 31vw;
 }
+
+
 
 /*  --------------------------------     LOGIN   -------------------------------- */
 /* // Removeable */
@@ -628,7 +636,10 @@ a:hover svg {
 }
 
 
+
 /*  --------------------------------     SIGNUP   -------------------------------- */
+
+
 
 .sign {
     display: flex;
@@ -698,7 +709,11 @@ a:hover svg {
     width: 100%;
 }
 
+
+
 /*  --------------------------------     CONTACT   -------------------------------- */
+
+
 
 .contactAll {
     display: flex;
@@ -733,7 +748,11 @@ a:hover svg {
     width: 400px;
 }
 
+
+
 /*  --------------------------------     CAR   -------------------------------- */
+
+
 
 .carFirst {
     background: url(https://img.freepik.com/premium-photo/happy-family-with-car-travel-summer-vacation-car-sunset_76964-24706.jpg?w=996);
@@ -758,7 +777,11 @@ a:hover svg {
     border-radius: 20px 10px;
 }
 
+
+
 /*  --------------------------------     CARS   -------------------------------- */
+
+
 
 .pagination {
     display: flex;
@@ -766,7 +789,11 @@ a:hover svg {
     padding: 20px;
 }
 
+
+
 /*  --------------------------------     CAR CARD   -------------------------------- */
+
+
 
 .aboutCar {
     margin: 8px 0px;
@@ -790,7 +817,11 @@ a:hover svg {
     border: 2px solid red;
 }
 
+
+
 /*  --------------------------------     CAR INFO (VIEW MORE)   -------------------------------- */
+
+
 
 .carinfoIinks {
     margin: 25px
@@ -903,6 +934,8 @@ a:hover svg {
 
 /*  --------------------------------     ADDCAR   -------------------------------- */
 
+
+
 .add-car-form {
     max-width: 900px;
     margin: 0 auto;
@@ -964,7 +997,11 @@ a:hover svg {
     background-color: #45a049;
 }
 
+
+
 /*  --------------------------------     USER   -------------------------------- */
+
+
 
 .userContainer {
     display: flex;
@@ -1014,7 +1051,11 @@ table td {
     margin-bottom: 20px;
 }
 
+
+
 /*  --------------------------------     SLIDEBAR   -------------------------------- */
+
+
 
 .sidebar {
     width: 250px;
@@ -1087,18 +1128,15 @@ table td {
 }
 
 .PieChart {
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .topCarsSection {
-    /* border: 2px solid green; */
     width: 500px;
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 50px; */
 }
 
 .topCarsContainer {
