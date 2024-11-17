@@ -3,7 +3,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
-import ImageSlider from './ImageSlider';
+import SimpleImageSlider from "react-simple-image-slider";
 import CircularProgress from '@mui/material/CircularProgress';
 
 const CarInfo = () => {
@@ -27,16 +27,13 @@ const CarInfo = () => {
                 const data = await carResponse.json();
                 setCar(data.car); // Set car details
                 setRating(data.rating); // Set user's existing rating
-
                 // Fetch logged-in user's info (assuming you have an endpoint that returns user details from token)
                 const userResponse = await fetch('http://localhost:5000/auth/check', { credentials: 'include' });
                 // const userResponse = await fetch('https://crazycar-backend.onrender.com/auth/check', { credentials: 'include' });
                 const userData = await userResponse.json();
-
                 if (userData && userData.isLoggedIn) {
                     setUserId(userData.userId); // Set user ID from the response
                 }
-
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -80,6 +77,13 @@ const CarInfo = () => {
 
     const carName = car.brand + " " + car.model;
 
+    //  Image Slider
+    const images = [
+        { url: "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?cs=srgb&dl=pexels-mikebirdy-3729464.jpg&fm=jpg" },
+        { url: "https://imgd.aeplcdn.com/642x336/n/cw/ec/139651/curvv-exterior-right-front-three-quarter.jpeg?isig=0&q=80" },
+        { url: "https://static.toiimg.com/photo/80387978.cms" },
+    ];
+
     return (
         <>
             <div onClick={handleClick} className="carinfoIinks">
@@ -99,7 +103,13 @@ const CarInfo = () => {
                 <div className="mainContentContainer">
                     <div className="imageContainer">
                         {/* <img src={car.image} alt={car.model} className="carinfoImage" /> */}
-                        <ImageSlider />
+                        <SimpleImageSlider
+                            width={500}
+                            height={400}
+                            images={images}
+                            showBullets={true}
+                            showNavs={true}
+                        />
                     </div>
                     <div className="carDetailsContainer">
                         <h2 className="carinfoTitle">
