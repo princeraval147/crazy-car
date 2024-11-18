@@ -911,12 +911,10 @@ a:hover svg {
     width: 80%;
 }
 
-.ratingContainer {
+.ratingStars {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-
 }
 
 .carInfoLink {
@@ -1082,6 +1080,10 @@ table td {
     text-decoration: none;
 }
 
+.slidebarItemName {
+    margin-left: 3px;
+}
+
 .adminPanel {
     display: flex;
     min-height: 100vh;
@@ -1112,19 +1114,20 @@ table td {
 
 
 .RatingContainer {
-    padding: 40px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .cra {
     border-bottom: 2px solid gray;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .topCars {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .PieChart {

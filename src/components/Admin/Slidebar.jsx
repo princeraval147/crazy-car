@@ -11,28 +11,27 @@ const Slidebar = () => {
         <ul className="navList">
           <li className="navItem">
             <NavLink to="dashboard" className="hoverEffct">
-              <FaTachometerAlt /> Dashboard
+              <FaTachometerAlt /> <span className='slidebarItemName'> Dashboard </span>
             </NavLink>
           </li>
           <li className="navItem">
             <NavLink to="user" className="hoverEffct">
-              <FaUsers /> Users
+              <FaUsers /> <span className='slidebarItemName'> Users </span>
             </NavLink>
           </li>
           <li className="navItem">
             <NavLink to="addcar" className="hoverEffct">
-              <FaPlus /> Add Car
+              <FaPlus /> <span className='slidebarItemName'> Add Car </span>
             </NavLink>
           </li>
           <li className="navItem">
             <NavLink to="carmanage" className="hoverEffct">
-              <FaCar /> Car Management
+              <FaCar /> <span className='slidebarItemName'> Car Management </span>
             </NavLink>
           </li>
-
           <li className="navItem">
             <NavLink to="ratingAnalysis" className="hoverEffct">
-              <FaChartBar />  Rating Analysis
+              <FaChartBar />  <span className='slidebarItemName'> Rating Analysis </span>
             </NavLink>
           </li>
         </ul>

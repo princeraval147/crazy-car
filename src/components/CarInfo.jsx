@@ -120,7 +120,7 @@ const CarInfo = () => {
 
                         {/* Rating system */}
                         {userId && (
-                            <div className="ratingContainer">
+                            <div className="ratingStars">
                                 <h3>Rate this Car:</h3>
                                 <ReactStars
                                     count={5}
