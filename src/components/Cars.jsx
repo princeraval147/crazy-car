@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, CircularProgress, TextField } from "@mui/material";
 import Car from './Car';
 import PaginationComponent from './PaginationComponent';
 import Pagination from '@mui/material/Pagination';
@@ -100,7 +100,7 @@ function Cars() {
                 const carCountResponse = await fetch('http://localhost:5000/api/cars/count');
                 const carData = await carCountResponse.json();
                 setCarCount(carData.totalCars);
-                console.log('My data = ', carData);
+                // console.log('My data = ', carData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -108,6 +108,8 @@ function Cars() {
         fetchCars();
     }, [page, perPage]);
 
+    console.log("Data = ", carsData)
+    console.log("Data 2 = ", originalCarsData)
 
     return (
         <>
@@ -160,20 +162,28 @@ function Cars() {
                     boxSizing: 'border-box',
                 }}
             >
-                {carsData.map((car) => (
-                    <Car
-                        key={car._id}
-                        id={car._id}
-                        image={car.image}
-                        title={`${car.brand} ${car.model}`}
-                        price={`${"₹"} ${car.price}`}
-                        year={car.year}
-                        fuelType={car.fuelType}
-                        mileage={car.mileage}
-                        description={car.description}
-                    />
-                ))}
+                {
+                    !originalCarsData || originalCarsData.length === 0 ?
+                        <div className='Loading'>
+                            <CircularProgress />
+                        </div>
+                        :
+                        carsData.map((car) => (
+                            <Car
+                                key={car._id}
+                                id={car._id}
+                                image={car.image}
+                                title={`${car.brand} ${car.model}`}
+                                price={`${"₹"} ${car.price}`}
+                                year={car.year}
+                                fuelType={car.fuelType}
+                                mileage={car.mileage}
+                                description={car.description}
+                            />
+                        ))
+                }
             </div>
+
             <div className="pagination">
                 {/* <Pagination count={10} onChange={handlePage} size='large' /> */}
                 <Pagination
