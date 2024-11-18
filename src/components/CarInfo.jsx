@@ -102,14 +102,14 @@ const CarInfo = () => {
             <div className="carinfoContainer">
                 <div className="mainContentContainer">
                     <div className="imageContainer">
-                        {/* <img src={car.image} alt={car.model} className="carinfoImage" /> */}
-                        <SimpleImageSlider
+                        <img src={car.image} alt={car.model} className="carinfoImage" />
+                        {/* <SimpleImageSlider
                             width={500}
                             height={400}
                             images={images}
                             showBullets={true}
                             showNavs={true}
-                        />
+                        /> */}
                     </div>
                     <div className="carDetailsContainer">
                         <h2 className="carinfoTitle">
