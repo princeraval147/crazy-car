@@ -92,9 +92,9 @@ const LoginModal = (props) => {
                 </button>
             </form>
             <Typography variant="body2" sx={{ mt: 2 }}>
-                {/* <p style={{ color: "#333" }}>
-                    By Continuing I accept the Privacy Policy, Terms & Conditions and Consent Declaration & authorise GirnarSoft Pvt. Ltd.
-                </p> */}
+                <p style={{ color: "#333" }}>
+                    By Continuing I accept the Privacy Policy, Terms & Conditions.
+                </p>
             </Typography>
             <Typography variant="body2" sx={{ mt: 2 }}>
                 Don't have an account?{" "}
