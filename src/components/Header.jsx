@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Logo from '/Img/Logo.png';
-import { CgProfile } from "react-icons/cg";
-import { FaAngleDown } from "react-icons/fa";
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
@@ -246,7 +244,6 @@ const Header = () => {
                                             </MenuItem>
                                         </Menu>
                                     </div>
-
                                 </div>
                             </>
                         ) : (
@@ -270,8 +267,6 @@ const Header = () => {
                                 </li>
                             </>
                         )}
-
-
                     </ul>
                 </div>
             </div >
