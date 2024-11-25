@@ -47,7 +47,8 @@ const Header = () => {
         try {
             // const response = await fetch('http://localhost:5000/auth/check', {
             const response = await fetch('https://crazycar-backend.onrender.com/auth/check', {
-                method: 'GET',
+                // method: 'GET',
+                method: 'POST',
                 credentials: 'include',
             });
             if (response.ok) {
