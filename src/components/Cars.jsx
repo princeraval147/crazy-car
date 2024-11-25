@@ -15,8 +15,8 @@ function Cars() {
     useEffect(() => {
         const fetchCarData = async () => {
             try {
-                // const response = await fetch('http://localhost:5000/cardata');
-                const response = await fetch('https://crazycar-backend.onrender.com/cardata');
+                const response = await fetch('http://localhost:5000/cardata');
+                // const response = await fetch('https://crazycar-backend.onrender.com/cardata');
                 const data = await response.json();
                 setOriginalCarsData(data);
                 setCarsData(data);
@@ -93,8 +93,8 @@ function Cars() {
         const fetchCars = async () => {
             try {
                 const start = (page - 1) * perPage;
-                const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
-                // const response = await fetch(`http://localhost:5000/cardata?limit=8&skip=0`);
+                const response = await fetch(`http://localhost:5000/cardata?limit=8&skip=0`);
+                // const response = await fetch(`http://localhost:5000/cardata?limit=${perPage}&skip=${start}`);
                 const data = await response.json();
                 setCars(data);
                 const carCountResponse = await fetch('http://localhost:5000/api/cars/count');
