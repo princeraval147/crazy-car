@@ -8,8 +8,8 @@ function CarRatingAnalysis() {
     useEffect(() => {
         const fetchCarRatingAnalysis = async () => {
             try {
-                const response = await fetch('http://localhost:5000/car-rating-analysis');
-                // const response = await fetch('https://crazycar-backend.onrender.com/car-rating-analysis');
+                // const response = await fetch('http://localhost:5000/car-rating-analysis');
+                const response = await fetch('https://crazycar-backend.onrender.com/car-rating-analysis');
                 const data = await response.json();
                 console.log(data);
                 setTopCars(data.topCars);
