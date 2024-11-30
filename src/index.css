@@ -154,6 +154,29 @@ a.active {
     height: 100%;
 }
 
+.footerIcons {
+
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+}
+
+.fIcon {
+    display: flex;
+    gap: 14px;
+}
+
+.iconText {
+    color: white;
+}
+
+.carsIcon {
+    height: 50px;
+    mix-blend-mode: multiply;
+}
+
 .svg {
     display: flex;
     justify-content: space-evenly;
@@ -789,6 +812,42 @@ a:hover svg {
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+.selectionList {
+    border: none;
+    padding: 10px;
+    border-radius: 24px;
+}
+
+.carsFilter {
+    background: rgba(84, 84, 236, 0.527);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.filterBtns {
+    /* border: 2px solid red; */
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.ClearBtn {
+    padding: 10px;
+    border: none;
+    color: #fefefe;
+    background: gray;
+    font-weight: 900;
+    border-radius: 4px;
+}
+
+.ClearBtn:hover {
+    cursor: pointer;
+    border-radius: 8px;
+    color: black;
+    transition: 1s;
 }
 
 
