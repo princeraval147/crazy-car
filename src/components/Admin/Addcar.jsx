@@ -12,8 +12,8 @@ const Addcar = () => {
   // Check if model exists
   const checkModelAvailability = async (model) => {
     try {
-      // const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
-      const response = await fetch(`https://crazycar-backend.onrender.com/checkmodel/${model}`);
+      const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
+      // const response = await fetch(`https://crazycar-backend.onrender.com/checkmodel/${model}`);
       const result = await response.json();
       if (response.ok && result.exists) {
         setError('model', { type: 'manual', message: 'Model already exists' });
