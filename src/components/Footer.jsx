@@ -18,7 +18,7 @@ const Footer = () => {
                         <img className='carsIcon' src="https://www.iconpacks.net/icons/2/free-car-icon-2897-thumb.png" alt="" />
                         <span>
                             <h3>Car Sold</h3>
-                            <p className='iconText'>Every Single Day</p>
+                            <p>Every Single Day</p>
                         </span>
                     </div>
                     <div className="fIcon">
@@ -111,7 +111,7 @@ const Footer = () => {
                         <NavLink to='/about'>About</NavLink>
                         <NavLink to='/contact'>Contact Us</NavLink>
                         <NavLink to='/car'>Car</NavLink>
-                        {/* <NavLink to='/login'>Login</NavLink> */}
+                        <NavLink to='/signUp'>Create Account</NavLink>
                     </div>
                     <div className="footerLogo">
                         <NavLink className='logo' to='/'>
