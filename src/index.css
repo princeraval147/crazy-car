@@ -140,6 +140,13 @@ a.active {
     border: 2px solid red;
 }
 
+.userName{
+    padding-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 /*  --------------------------------     FOOTER   -------------------------------- */
