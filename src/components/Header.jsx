@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "/Img/Logo.png";
 import Box from "@mui/material/Box";
@@ -17,8 +17,10 @@ import Modal from "@mui/material/Modal";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
+  const [userName, setUserName] = useState("");
   // For Login Modal
   const [loginOpen, loginSetOpen] = React.useState(false);
   const handleOpen = () => loginSetOpen(true);
@@ -50,9 +52,11 @@ const Header = () => {
         method: "GET",
         credentials: "include",
       });
+
       if (response.ok) {
         const data = await response.json();
         setIsLoggedIn(data.isLoggedIn);
+        setUserId(data.userId);
       } else {
         setIsLoggedIn(false);
       }
@@ -82,6 +86,23 @@ const Header = () => {
     }
   };
   checkAdminStatus();
+
+  useEffect(() => {
+    if (userId) {
+      const fetchUserName = async () => {
+        try {
+          const response = await fetch(`http://localhost:5000/user/${userId}`);
+          if (response.ok) {
+            const data = await response.json();
+            setUserName(data.userName); // Set user name
+          }
+        } catch (error) {
+          console.error("Error fetching user name:", error);
+        }
+      };
+      fetchUserName();
+    }
+  }, [userId]);
 
   const handlerLogout = async () => {
     try {
@@ -179,29 +200,9 @@ const Header = () => {
                           <Avatar sx={{ width: 40, height: 40 }}>
                             {isAdmin ? "A" : "U"}
                           </Avatar>
-
-                          {/* <div className="userName">
-                            Prince
-                            <svg
-                              className="w-6 h-6 text-gray-800 dark:text-white"
-                              aria-hidden="true"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="3"
-                                d="m19 9-7 7-7-7"
-                              />
-                            </svg>
-                          </div> */}
                         </IconButton>
                       </Tooltip>
+                      <p style={{ marginLeft: "10px" }}>Hello {userName}</p>
                     </Box>
                     <Menu
                       anchorEl={anchorEl}
@@ -242,13 +243,13 @@ const Header = () => {
                     >
                       <MenuItem onClick={handleClose}>
                         <Avatar />
-                        <NavLink to="#" style={{ color: "#212121" }}>
+                        <NavLink to="/profile" style={{ color: "#212121" }}>
                           Profile
                         </NavLink>
                       </MenuItem>
                       <MenuItem onClick={handleClose}>
                         <Avatar />
-                        <NavLink to="#" style={{ color: "#212121" }}>
+                        <NavLink to="/myaccount" style={{ color: "#212121" }}>
                           My account
                         </NavLink>
                       </MenuItem>
