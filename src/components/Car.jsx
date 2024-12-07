@@ -49,7 +49,7 @@ const Car = ({
             objectFit: "cover",
             borderRadius: "8px",
           }}
-          src={image}
+          src={image[0]}
           alt={title}
         />
         <h3 style={{ margin: "16px 0 8px", fontSize: "18px" }}>{title}</h3>

@@ -84,16 +84,15 @@ const CarInfo = () => {
   const carName = car.brand + " " + car.model;
 
   //  Image Slider
-  const images = [
-    { url: car.image },
-    {
-      url: "https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg?cs=srgb&dl=pexels-mikebirdy-3729464.jpg&fm=jpg",
-    },
-    {
-      url: "https://imgd.aeplcdn.com/642x336/n/cw/ec/139651/curvv-exterior-right-front-three-quarter.jpeg?isig=0&q=80",
-    },
-    { url: "https://static.toiimg.com/photo/80387978.cms" },
-  ];
+  // const images = [
+  //   {
+  //     url: car.image[0],
+  //   },
+  //   {
+  //     url: car.image[1],
+  //   },
+  // ];
+  const images = car.image.map((url, index) => ({ url }));
 
   return (
     <>
