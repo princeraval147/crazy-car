@@ -57,6 +57,7 @@ const Header = () => {
         const data = await response.json();
         setIsLoggedIn(data.isLoggedIn);
         setUserId(data.userId);
+        console.log(data.userId);
       } else {
         setIsLoggedIn(false);
       }
@@ -189,20 +190,24 @@ const Header = () => {
                       }}
                     >
                       <Tooltip title="Account settings">
-                        <IconButton
-                          onClick={handleClick}
-                          size="small"
-                          sx={{ ml: 2 }}
-                          aria-controls={open ? "account-menu" : undefined}
-                          aria-haspopup="true"
-                          aria-expanded={open ? "true" : undefined}
-                        >
-                          <Avatar sx={{ width: 40, height: 40 }}>
-                            {isAdmin ? "A" : "U"}
-                          </Avatar>
-                        </IconButton>
+                        <div className="userName">
+                          <IconButton
+                            onClick={handleClick}
+                            size="small"
+                            sx={{ ml: 2 }}
+                            aria-controls={open ? "account-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                          >
+                            <Avatar sx={{ width: 40, height: 40 }}>
+                              {isAdmin ? "A" : "U"}
+                            </Avatar>
+                            <p style={{ marginLeft: "10px", color: "black" }}>
+                              Hello, {userId}
+                            </p>
+                          </IconButton>
+                        </div>
                       </Tooltip>
-                      <p style={{ marginLeft: "10px" }}>Hello {userName}</p>
                     </Box>
                     <Menu
                       anchorEl={anchorEl}

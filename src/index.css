@@ -135,17 +135,10 @@ a.active {
     justify-content: center;
     align-items: center;
 }
-
-.profileMenu {
-    border: 2px solid red;
-}
-
+/* 
 .userName{
-    padding-left: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    border: 2px solid red;
+} */
 
 
 
