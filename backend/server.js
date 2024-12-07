@@ -39,13 +39,6 @@ const connectDB = async () => {
 connectDB();
 
 const JWT_SECRET = process.env.JWT_SECRET;
-// For Live
-// app.use(cors({
-//     origin: ['https://crazycar-project.netlify.app'], // allow specific domains
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     headers: ['Content-Type', 'Authorization'],
-//     credentials: true, // allow cookies
-// }));
 
 app.use(
   cors({
@@ -96,26 +89,6 @@ const authenticateToken = (req, res, next) => {
     next();
   });
 };
-
-// For live
-// const authenticateToken = (req, res, next) => {
-//     const token = req.header('Authorization');
-//     if (!token) return res.status(401).json({ message: 'Access denied' });
-
-//     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-//         if (err) return res.status(403).json({ message: 'Token expired' });
-//         req.user = user;
-//         next();
-//     });
-// };
-
-// // Example isAdmin middleware for Live
-// const isAdmin = (req, res, next) => {
-//     if (!req.user || req.user.role !== 'admin') {
-//         return res.status(401).json({ message: 'Unauthorized' });
-//     }
-//     next();
-// };
 
 //check isloggedin
 app.get("/auth/check", authenticateToken, (req, res) => {
