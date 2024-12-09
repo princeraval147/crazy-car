@@ -129,7 +129,17 @@ function Cars() {
             <option value="">20 Lakh to 25 Lakh</option>
           </select>
         </div>
-
+        <div className="FualTypes">
+          Fual Types :
+          <input type="radio" name="FualType" id="EV" />
+          <label htmlFor="EV">EV</label>
+          <br />
+          <input type="radio" name="FualType" id="Petrol" />
+          <label htmlFor="Petrol">Petrol</label>
+          <br />
+          <input type="radio" name="FualType" id="Diesel" />
+          <label htmlFor="Diesel">Diesel</label>
+        </div>
         <div className="filterBtns">
           <button className="Btn">Apply Filter</button>
           <button className="ClearBtn">Clear Filter</button>
