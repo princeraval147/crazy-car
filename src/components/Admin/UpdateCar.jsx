@@ -376,6 +376,19 @@ const UpdateCar = () => {
               <span style={styles.error}>{errors.image.message}</span>
             )}
           </label>
+
+          <label style={styles.label}>
+            Image2 URL:
+            <input
+              type="text"
+              {...register("image[1]", { required: "Image URL is required" })}
+              // style={styles.input}
+              className="inputFeild"
+            />
+            {errors.image && (
+              <span style={styles.error}>{errors.image.message}</span>
+            )}
+          </label>
         </div>
         <span style={styles.btnSpan}>
           <button type="submit" style={styles.submitButton}>
