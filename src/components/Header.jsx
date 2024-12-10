@@ -271,7 +271,7 @@ const Header = () => {
                         <ListItemIcon>
                           <IoMdSettings size={24} />
                         </ListItemIcon>
-                        <NavLink to="#" style={{ color: "#212121" }}>
+                        <NavLink to="setting" style={{ color: "#212121" }}>
                           Settings
                         </NavLink>
                       </MenuItem>
