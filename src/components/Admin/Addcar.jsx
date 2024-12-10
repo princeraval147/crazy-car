@@ -108,6 +108,7 @@ const Addcar = () => {
               value={priceUnit}
               onChange={(e) => setPriceUnit(e.target.value)}
               className="inputFeild"
+              required
             >
               <option value="Lakhs">Lakhs</option>
               <option value="Crores">Crores</option>
