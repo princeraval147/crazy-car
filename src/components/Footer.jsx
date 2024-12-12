@@ -6,6 +6,37 @@ const Footer = () => {
     return (
         <>
             <footer className="footer">
+                <div className="footerIcons">
+                    <div className="fIcon">
+                        <img className='carsIcon' src="https://cdn-icons-png.flaticon.com/512/223/223399.png" alt="" />
+                        <span>
+                            <h3>India’s #1</h3>
+                            <p>Largest Auto portal</p>
+                        </span>
+                    </div>
+                    <div className="fIcon">
+                        <img className='carsIcon' src="https://www.iconpacks.net/icons/2/free-car-icon-2897-thumb.png" alt="" />
+                        <span>
+                            <h3>Car Sold</h3>
+                            <p className='iconText'>Every Single Day</p>
+                        </span>
+                    </div>
+                    <div className="fIcon">
+                        <img className='carsIcon' src="https://static.thenounproject.com/png/1926350-200.png" alt="" />
+                        <span>
+                            <h3>Compare</h3>
+                            <p>Decode The Right Car</p>
+                        </span>
+                    </div>
+                    <div className="fIcon">
+                        <img className='carsIcon' src="https://cdn-icons-png.flaticon.com/128/2977/2977921.png" alt="" />
+                        <span>
+                            <h3>Offers</h3>
+                            <p>Stay updated pay less</p>
+                        </span>
+                    </div>
+                </div>
+
                 <div className="svg">
                     <NavLink target='_blank' to='https://instagram.com'>
                         <svg

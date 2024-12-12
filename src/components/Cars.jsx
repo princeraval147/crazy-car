@@ -151,10 +151,22 @@ function Cars() {
                 </div>
             </div>
 
-            <div className="filter">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
-                </svg>
+            <div className="carsFilter">
+                <div className="byPrice">
+                    <select name="" id="" className='selectionList'>
+                        <option value="">1 Lakh to 5 Lakh</option>
+                        <option value="">5 Lakh to 10 Lakh</option>
+                        <option value="">15 Lakh to 15 Lakh</option>
+                        <option value="">15 Lakh to 20 Lakh</option>
+                        <option value="">20 Lakh to 25 Lakh</option>
+                    </select>
+                </div>
+
+
+                <div className="filterBtns">
+                    <button className='Btn'>Apply Filter</button>
+                    <button className='ClearBtn'>Clear Filter</button>
+                </div>
             </div>
 
             <div
