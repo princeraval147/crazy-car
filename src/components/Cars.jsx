@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Autocomplete, CircularProgress, TextField } from "@mui/material";
+import {
+  Autocomplete,
+  CircularProgress,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import Car from "./Car";
 import Pagination from "@mui/material/Pagination";
 
@@ -10,6 +18,7 @@ function Cars() {
   const [models, setModels] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const carsPerPage = 10;
 
@@ -121,14 +130,17 @@ function Cars() {
 
       <div className="carsFilter">
         <div className="byPrice">
-          <select name="" id="" className="selectionList">
-            <option value="">1 Lakh to 5 Lakh</option>
-            <option value="">5 Lakh to 10 Lakh</option>
-            <option value="">15 Lakh to 15 Lakh</option>
-            <option value="">15 Lakh to 20 Lakh</option>
-            <option value="">20 Lakh to 25 Lakh</option>
+          <select className="selectionList">
+            <option hidden>Select Price Range</option>
+            <option value="1-5">1 Lakh to 5 Lakh</option>
+            <option value="5-10">5 Lakh to 10 Lakh</option>
+            <option value="10-15">10 Lakh to 15 Lakh</option>
+            <option value="15-20">15 Lakh to 20 Lakh</option>
+            <option value="20-25">20 Lakh to 25 Lakh</option>
+            <option value="below-25">Above 25 Lakh</option>
           </select>
         </div>
+
         <div className="FualTypes">
           Fual Types :
           <input type="radio" name="FualType" id="EV" />
