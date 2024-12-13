@@ -135,10 +135,10 @@ a.active {
     justify-content: center;
     align-items: center;
 }
-
-.profileMenu {
+/* 
+.userName{
     border: 2px solid red;
-}
+} */
 
 
 
@@ -155,7 +155,6 @@ a.active {
 }
 
 .footerIcons {
-
     padding-bottom: 30px;
     margin-bottom: 40px;
     display: flex;
@@ -825,6 +824,14 @@ a:hover svg {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+.FualTypes{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .filterBtns {
