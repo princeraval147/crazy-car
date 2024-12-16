@@ -21,6 +21,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
   // For Login Modal
   const [loginOpen, loginSetOpen] = useState(false);
   const handleOpen = () => loginSetOpen(true);
@@ -45,7 +46,9 @@ const Header = () => {
       });
       if (response.ok) {
         const data = await response.json();
+        console.log("My data", data);
         setIsLoggedIn(data.isLoggedIn);
+        setUsername(data.userName);
       } else {
         setIsLoggedIn(false);
       }
@@ -54,7 +57,6 @@ const Header = () => {
       setIsLoggedIn(false);
     }
   };
-
   checkLoginStatus();
 
   const checkAdminStatus = async () => {
@@ -165,6 +167,7 @@ const Header = () => {
                           <Avatar sx={{ width: 40, height: 40 }}>
                             {isAdmin ? "A" : "U"}
                           </Avatar>
+                          <span className="HelloUser">Hello, {username}</span>
                         </IconButton>
                       </Tooltip>
                     </Box>

@@ -131,10 +131,12 @@ a.active {
   justify-content: center;
   align-items: center;
 }
-/* 
-.userName{
-    border: 2px solid red;
-} */
+
+.HelloUser {
+  /* border: 2px solid red; */
+  padding: 10px;
+  /* margin: 5px; */
+}
 
 /*  --------------------------------     FOOTER   -------------------------------- */
 
