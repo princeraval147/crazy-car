@@ -72,22 +72,6 @@ const isAdmin = async (req, res, next) => {
   }
 };
 
-// const authenticateToken = (req, res, next) => {
-//   const token = req.cookies.token;
-//   if (!token) {
-//     return res
-//       .status(401)
-//       .json({ message: "Access denied. No token provided." });
-//   }
-//   jwt.verify(token, JWT_SECRET, (err, user) => {
-//     if (err) {
-//       return res.status(403).json({ message: "Invalid token." });
-//     }
-//     req.user = user; // Attach user info to request
-//     next();
-//   });
-// };
-
 const authenticateToken = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) {
@@ -99,8 +83,7 @@ const authenticateToken = (req, res, next) => {
     if (err) {
       return res.status(403).json({ message: "Invalid token." });
     }
-    req.user = user;
-    console.log("Req.user:", req.user);
+    req.user = user; // Attach user info to request
     next();
   });
 };
