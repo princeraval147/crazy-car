@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import '../../index.css';
+import React, { useEffect, useState } from "react";
+import "../../index.css";
 
 const User = () => {
   const [users, setUsers] = useState([]);
@@ -7,35 +7,37 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/users');
+        const response = await fetch("http://localhost:5000/users");
         // const response = await fetch('https://crazycar-backend.onrender.com/users');
         const data = await response.json();
-        console.log("Data = ", data)
+        console.log("Data = ", data);
         setUsers(data);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
     fetchData();
   }, []);
 
   const handleDelete = async (userId) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this user?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this user?"
+    );
     if (confirmDelete) {
       try {
         const response = await fetch(`http://localhost:5000/users/${userId}`, {
           // const response = await fetch(`https://crazycar-backend.onrender.com/users/${userId}`, {
-          method: 'DELETE',
+          method: "DELETE",
         });
-        console.log("Response", response)
+        console.log("Response", response);
         if (response.ok) {
-          setUsers(users.filter(user => user._id !== userId));
-          alert('User deleted successfully.');
+          setUsers(users.filter((user) => user._id !== userId));
+          alert("User deleted successfully.");
         } else {
-          alert('Error deleting user.');
+          alert("Error deleting user.");
         }
       } catch (error) {
-        console.error('Error deleting user:', error);
+        console.error("Error deleting user:", error);
       }
     }
   };
@@ -62,8 +64,7 @@ const User = () => {
                 <td>{user.isadmin.toString()}</td>
                 <td>
                   <button
-                    className="delete-button"
-                    style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px', cursor: "pointer" }}
+                    className="deleteBtn"
                     onClick={() => handleDelete(user._id)}
                   >
                     Delete

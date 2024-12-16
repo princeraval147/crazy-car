@@ -1013,7 +1013,7 @@ a:hover svg {
   background-color: #45a049;
 }
 
-/*  --------------------------------     USER   -------------------------------- */
+/*  --------------------------------     USERS   -------------------------------- */
 
 .userContainer {
   display: flex;
@@ -1061,6 +1061,22 @@ table td {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
+}
+
+.deleteBtn {
+  background-color: rgba(255, 0, 0, 0.747);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  transition: 0.5s;
+  font-weight: 600;
+}
+
+.deleteBtn:hover {
+  background-color: red;
+  border-radius: 8px;
 }
 
 /*  --------------------------------     SLIDEBAR   -------------------------------- */
