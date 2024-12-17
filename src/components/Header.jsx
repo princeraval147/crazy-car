@@ -46,7 +46,6 @@ const Header = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        console.log("My data", data);
         setIsLoggedIn(data.isLoggedIn);
         setUsername(data.userName);
       } else {
@@ -90,7 +89,6 @@ const Header = () => {
       console.error(error);
       navigate("/", { replace: true }); // For Login Modal
     } finally {
-      console.log("Click Logout");
       setIsLoggedIn(false);
       navigate("/"); // For Login Modal
     }

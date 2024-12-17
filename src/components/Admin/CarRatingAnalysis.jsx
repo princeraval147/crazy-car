@@ -15,7 +15,6 @@ function CarRatingAnalysis() {
         );
         // const response = await fetch('https://crazycar-backend.onrender.com/car-rating-analysis');
         const data = await response.json();
-        console.log(data);
         setTopCars(data.topCars);
         setCarRatingsWithPercentages(data.carRatingsWithPercentages);
       } catch (error) {

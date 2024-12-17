@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import {
   Autocomplete,
   CircularProgress,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
+  Pagination,
 } from "@mui/material";
 import Car from "./Car";
-import Pagination from "@mui/material/Pagination";
 
 function Cars() {
   const [originalCarsData, setOriginalCarsData] = useState([]);

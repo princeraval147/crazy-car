@@ -10,7 +10,6 @@ const User = () => {
         const response = await fetch("http://localhost:5000/users");
         // const response = await fetch('https://crazycar-backend.onrender.com/users');
         const data = await response.json();
-        console.log("Data = ", data);
         setUsers(data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -29,7 +28,6 @@ const User = () => {
           // const response = await fetch(`https://crazycar-backend.onrender.com/users/${userId}`, {
           method: "DELETE",
         });
-        console.log("Response", response);
         if (response.ok) {
           setUsers(users.filter((user) => user._id !== userId));
           alert("User deleted successfully.");

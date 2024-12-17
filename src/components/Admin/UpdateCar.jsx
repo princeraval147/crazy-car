@@ -23,9 +23,6 @@ const UpdateCar = () => {
         // const response = await fetch(`https://crazycar-backend.onrender.com/getcardata/${id}`);
         const data = await response.json();
 
-        // Log the response to check if 'engineCapacity' exists
-        console.log("Fetched Car Data:", data);
-
         // Split price into two parts (number and unit)
         const priceNumber = parseFloat(data.price);
         const priceUnit = data.price.includes("Lakhs") ? "Lakhs" : "Crores";
