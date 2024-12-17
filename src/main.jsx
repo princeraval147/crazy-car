@@ -1,12 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import Login from "./components/Login.jsx";
-import SignUp from "./components/SignUp.jsx";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import Contact from "./components/Contact.jsx";
-import Error from "./components/Error.jsx";
 import "./index.css";
 import {
   createBrowserRouter,
@@ -14,18 +7,22 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import App from "./App.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
+import Contact from "./components/Contact.jsx";
+import Error from "./components/Error.jsx";
 import Cars from "./components/Cars.jsx";
-import Dashboard from "./components/Admin/Dashboard.jsx";
-import CarManage from "./components/Admin/CarManage.jsx";
-import AdminPanel from "./components/Admin/AdminPanel.jsx";
-import UpdateCar from "./components/Admin/UpdateCar.jsx";
-import User from "./components/Admin/User.jsx";
-import Addcar from "./components/Admin/Addcar.jsx";
-import ProtectedRoute from "./ProtectedRoute.jsx";
 import CarInfo from "./components/CarInfo.jsx";
+import ProtectedRoute from "./ProtectedRoute.jsx";
+import Dashboard from "./components/Admin/Dashboard.jsx";
+import AdminPanel from "./components/Admin/AdminPanel.jsx";
+import CarManage from "./components/Admin/CarManage.jsx";
+import UpdateCar from "./components/Admin/UpdateCar.jsx";
+import Addcar from "./components/Admin/Addcar.jsx";
+import User from "./components/Admin/User.jsx";
 import CarRatingAnalysis from "./components/Admin/CarRatingAnalysis.jsx";
-// import LoginPopUp from './components/LoginPopUp.jsx'
-import LoginModal from "./components/LoginModal.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
