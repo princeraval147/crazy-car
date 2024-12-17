@@ -42,8 +42,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", //  Frontend
-    // origin: "https://crazycar-project.netlify.app",    //  Frontend
+    // origin: "http://localhost:5173", //  Frontend
+    origin: "https://crazycar-project.netlify.app", //  Frontend
     credentials: true,
   })
 );
@@ -525,6 +525,8 @@ app.post("/contact", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-  // console.log(`Server running on https://crazycar-backend.onrender.com:${port}`);
+  // console.log(`Server running on http://localhost:${port}`);
+  console.log(
+    `Server running on https://crazycar-backend.onrender.com:${port}`
+  );
 });

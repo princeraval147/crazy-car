@@ -22,17 +22,25 @@ const CarInfo = () => {
     const fetchCarInfo = async () => {
       try {
         // Fetch car info by ID, which also includes the user's rating
-        const carResponse = await fetch(`http://localhost:5000/cardata/${id}`, {
-          credentials: "include",
-        });
+        // const carResponse = await fetch(`http://localhost:5000/cardata/${id}`, {
+        const carResponse = await fetch(
+          `https://crazycar-backend.onrender.com/cardata/${id}`,
+          {
+            credentials: "include",
+          }
+        );
         // const carResponse = await fetch(`https://crazycar-backend.onrender.com/cardata/${id}`, { credentials: 'include' });
         const data = await carResponse.json();
         setCar(data.car); // Set car details
         setRating(data.rating); // Set user's existing rating
         // Fetch logged-in user's info (assuming you have an endpoint that returns user details from token)
-        const userResponse = await fetch("http://localhost:5000/auth/check", {
-          credentials: "include",
-        });
+        // const userResponse = await fetch("http://localhost:5000/auth/check", {
+        const userResponse = await fetch(
+          "https://crazycar-backend.onrender.com/auth/check",
+          {
+            credentials: "include",
+          }
+        );
         // const userResponse = await fetch('https://crazycar-backend.onrender.com/auth/check', { credentials: 'include' });
         const userData = await userResponse.json();
         if (userData && userData.isLoggedIn) {
@@ -50,15 +58,18 @@ const CarInfo = () => {
   const onStarClick = async (newRating) => {
     setRating(newRating); // Set the selected rating immediately
     try {
-      const response = await fetch("http://localhost:5000/rate", {
-        // const response = await fetch('https://crazycar-backend.onrender.com/rate', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ carId: id, userId, rating: newRating }),
-        credentials: "include", // Ensure cookies (JWT token) are included
-      });
+      // const response = await fetch("http://localhost:5000/rate", {
+      const response = await fetch(
+        "https://crazycar-backend.onrender.com/rate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ carId: id, userId, rating: newRating }),
+          credentials: "include", // Ensure cookies (JWT token) are included
+        }
+      );
 
       const result = await response.json();
       if (!response.ok) {

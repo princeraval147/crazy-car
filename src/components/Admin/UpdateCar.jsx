@@ -19,8 +19,10 @@ const UpdateCar = () => {
   useEffect(() => {
     const fetchCarData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/getcardata/${id}`);
-        // const response = await fetch(`https://crazycar-backend.onrender.com/getcardata/${id}`);
+        // const response = await fetch(`http://localhost:5000/getcardata/${id}`);
+        const response = await fetch(
+          `https://crazycar-backend.onrender.com/getcardata/${id}`
+        );
         const data = await response.json();
 
         // Split price into two parts (number and unit)
@@ -68,14 +70,17 @@ const UpdateCar = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:5000/updatecar/${id}`, {
-        // const response = await fetch(`https://crazycar-backend.onrender.com/updatecar/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedCarData),
-      });
+      // const response = await fetch(`http://localhost:5000/updatecar/${id}`, {
+      const response = await fetch(
+        `https://crazycar-backend.onrender.com/updatecar/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedCarData),
+        }
+      );
 
       if (response.ok) {
         navigate("/car");

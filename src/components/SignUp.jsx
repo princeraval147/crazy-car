@@ -13,19 +13,22 @@ const SignUp = () => {
   const onSubmitFun = async (data) => {
     if (data.password === data.conformPassword) {
       try {
-        const response = await fetch("http://localhost:5000/signUp", {
-          // const response = await fetch('https://crazycar-backend.onrender.com/signUp', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify({
-            userName: data.userName,
-            email: data.email,
-            password: data.password,
-          }),
-        });
+        // const response = await fetch("http://localhost:5000/signUp", {
+        const response = await fetch(
+          "https://crazycar-backend.onrender.com/signUp",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+            body: JSON.stringify({
+              userName: data.userName,
+              email: data.email,
+              password: data.password,
+            }),
+          }
+        );
 
         const result = await response.json();
         if (result.success) {

@@ -8,11 +8,14 @@ const ProtectedRoute = () => {
   useEffect(() => {
     const checkAdminStatus = async () => {
       try {
-        const response = await fetch("http://localhost:5000/admin/check", {
-          // const response = await fetch('https://crazycar-backend.onrender.com/admin/check', {
-          method: "GET",
-          credentials: "include",
-        });
+        // const response = await fetch("http://localhost:5000/admin/check", {
+        const response = await fetch(
+          "https://crazycar-backend.onrender.com/admin/check",
+          {
+            method: "GET",
+            credentials: "include",
+          }
+        );
         if (response.ok) {
           const data = await response.json();
           setIsAdmin(data.isadmin);
