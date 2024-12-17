@@ -14,7 +14,6 @@ const UpdateCar = () => {
   } = useForm();
 
   const [priceUnit, setPriceUnit] = useState("Lakhs");
-  const [modelExists, setModelExists] = useState(false);
 
   // Fetch car data by ID
   useEffect(() => {
@@ -91,17 +90,6 @@ const UpdateCar = () => {
     }
   };
 
-  const checkModelAvailability = async (model) => {
-    try {
-      const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
-      // const response = await fetch(`https://crazycar-backend.onrender.com/checkmodel/${model}`);
-      const result = await response.json();
-      setModelExists(result.exists);
-    } catch (error) {
-      console.error("Error checking model availability:", error);
-    }
-  };
-
   return (
     <div className="UpdateContainer">
       <h1 className="UpdateTitle">Update Car</h1>
@@ -113,13 +101,18 @@ const UpdateCar = () => {
               type="text"
               className="inputFeild"
               disabled
-              onBlur={(e) => checkModelAvailability(e.target.value)}
+              {...register("model", { required: "Model is required" })}
             />
           </label>
 
           <label className="UpdateLabel">
             Brand:
-            <input type="text" className="inputFeild" disabled />
+            <input
+              type="text"
+              className="inputFeild"
+              {...register("brand", { required: "Brand is required" })}
+              disabled
+            />
           </label>
 
           <label className="UpdateLabel">
@@ -171,7 +164,7 @@ const UpdateCar = () => {
 
           <label className="UpdateLabel">
             Fuel Type:
-            <div className="updateRadio">
+            <div className="radioBtn">
               <input
                 id="Electric"
                 type="radio"
@@ -213,7 +206,7 @@ const UpdateCar = () => {
           </label>
           <label className="UpdateLabel">
             Transmission:
-            <div className="updateRadio">
+            <div className="radioBtn">
               <input
                 id="Automatic"
                 type="radio"
@@ -222,7 +215,7 @@ const UpdateCar = () => {
                 {...register("transmission", {
                   required: "Transmission is required",
                 })}
-              />{" "}
+              />
               <label htmlFor="Automatic">Automatic</label>
               <input
                 id="Manual"
