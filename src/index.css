@@ -79,6 +79,16 @@ a.active {
   background: rgba(211, 209, 209, 0.76);
 }
 
+.radioBtn {
+  display: flex;
+  gap: 10px;
+}
+
+.radioBtn label,
+input {
+  cursor: pointer;
+}
+
 /*  --------------------------------     HEADER   -------------------------------- */
 
 .header {
@@ -1156,12 +1166,6 @@ table td {
   margin-bottom: 10px;
   font-weight: bold;
   color: #444;
-}
-
-.updateRadio {
-  /* border: 2px solid red; */
-  display: flex;
-  gap: 10px;
 }
 
 .UpdateButton {
