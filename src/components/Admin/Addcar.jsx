@@ -208,8 +208,8 @@ const Addcar = () => {
               })}
             />
             <label htmlFor="7">7</label>
-            <br></br>
           </div>
+          <br></br>
           <div>
             <label>
               Body Type:
