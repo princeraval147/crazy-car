@@ -84,8 +84,7 @@ a.active {
   gap: 10px;
 }
 
-.radioBtn label,
-input {
+.radioBtn label {
   cursor: pointer;
 }
 
@@ -586,65 +585,6 @@ a:hover svg {
   align-items: center;
   gap: 30px;
   height: 31vw;
-}
-
-/*  --------------------------------     LOGIN   -------------------------------- */
-/* // Removeable */
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.loginBox {
-  border: 2px solid rgba(0, 0, 0, 0.288);
-  border-radius: 14px;
-  -webkit-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
-  box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
-  padding: 50px;
-  width: 500px;
-}
-
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 40px;
-}
-
-.remember {
-  display: flex;
-  justify-items: start;
-  gap: 5px;
-}
-
-.rf {
-  display: flex;
-  justify-content: space-around;
-  gap: 60px;
-  margin-bottom: 10px;
-}
-
-.signUpBtn {
-  padding: 10px;
-  color: #2e3944;
-  font-weight: 600;
-  font-size: 16px;
-  transition: 0.5s;
-}
-
-.signUpBtn:hover {
-  background: rgba(128, 128, 128, 0.288);
-  color: black;
-  border-radius: 10px;
-}
-
-.alreadyLine {
-  margin-top: 25px;
 }
 
 /*  --------------------------------     SIGNUP   -------------------------------- */
