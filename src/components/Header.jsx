@@ -39,14 +39,13 @@ const Header = () => {
 
   const checkLoginStatus = async () => {
     try {
-      // const response = await fetch("http://localhost:5000/auth/check", {
-      const response = await fetch(
-        "https://crazycar-backend.onrender.com/auth/check",
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
+      const response = await fetch("http://localhost:5000/auth/check", {
+        // const response = await fetch(
+        //   "https://crazycar-backend.onrender.com/auth/check",
+        //   {
+        method: "GET",
+        credentials: "include",
+      });
       if (response.ok) {
         const data = await response.json();
         setIsLoggedIn(data.isLoggedIn);
@@ -63,14 +62,13 @@ const Header = () => {
 
   const checkAdminStatus = async () => {
     try {
-      // const response = await fetch("http://localhost:5000/admin/check", {
-      const response = await fetch(
-        "https://crazycar-backend.onrender.com/admin/check",
-        {
-          method: "GET",
-          credentials: "include",
-        }
-      );
+      const response = await fetch("http://localhost:5000/admin/check", {
+        // const response = await fetch(
+        //   "https://crazycar-backend.onrender.com/admin/check",
+        //   {
+        method: "GET",
+        credentials: "include",
+      });
       if (response.ok) {
         const data = await response.json();
         setIsAdmin(data.isadmin);
@@ -85,8 +83,8 @@ const Header = () => {
 
   const handlerLogout = async () => {
     try {
-      // await fetch("http://localhost:5000/logout", {
-      await fetch("https://crazycar-backend.onrender.com/logout", {
+      await fetch("http://localhost:5000/logout", {
+        // await fetch("https://crazycar-backend.onrender.com/logout", {
         method: "GET",
         credentials: "include",
       });

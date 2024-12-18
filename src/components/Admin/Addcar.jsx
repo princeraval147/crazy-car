@@ -18,10 +18,10 @@ const Addcar = () => {
   // Check if model exists
   const checkModelAvailability = async (model) => {
     try {
-      // const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
-      const response = await fetch(
-        `https://crazycar-backend.onrender.com/checkmodel/${model}`
-      );
+      const response = await fetch(`http://localhost:5000/checkmodel/${model}`);
+      // const response = await fetch(
+      //   `https://crazycar-backend.onrender.com/checkmodel/${model}`
+      // );
       const result = await response.json();
       if (response.ok && result.exists) {
         setError("model", { type: "manual", message: "Model already exists" });
@@ -46,17 +46,16 @@ const Addcar = () => {
     data.price = `${data.price} ${priceUnit}`;
 
     try {
-      // const response = await fetch("http://localhost:5000/cardata", {
-      const response = await fetch(
-        "https://crazycar-backend.onrender.com/cardata",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch("http://localhost:5000/cardata", {
+        // const response = await fetch(
+        //   "https://crazycar-backend.onrender.com/cardata",
+        //   {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       const result = await response.json();
       if (response.ok) {
         alert("Car Added Successelly");

@@ -9,20 +9,20 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         // Fetch total users
-        // const userResponse = await fetch(
-        //   "http://localhost:5000/api/users/count"
-        // );
         const userResponse = await fetch(
-          "https://crazycar-backend.onrender.com/api/users/count"
+          "http://localhost:5000/api/users/count"
         );
+        // const userResponse = await fetch(
+        //   "https://crazycar-backend.onrender.com/api/users/count"
+        // );
         const userData = await userResponse.json();
         setUserCount(userData.totalUsers);
 
         // Fetch total car data
-        // const carResponse = await fetch("http://localhost:5000/api/cars/count");
-        const carResponse = await fetch(
-          "https://crazycar-backend.onrender.com/api/cars/count"
-        );
+        const carResponse = await fetch("http://localhost:5000/api/cars/count");
+        // const carResponse = await fetch(
+        //   "https://crazycar-backend.onrender.com/api/cars/count"
+        // );
         const carData = await carResponse.json();
         setCarCount(carData.totalCars);
       } catch (error) {
