@@ -1,6 +1,4 @@
-# React + Vite
-
-Crazy Car
+# Crazy Car
 
 A React-based web application for car rental or sales.
 
