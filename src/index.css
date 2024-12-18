@@ -1185,3 +1185,9 @@ table td {
   width: 100%;
   border-collapse: collapse;
 }
+
+.ratingTblHeading {
+  padding: 10px;
+  font-weight: 900;
+  font-size: larger;
+}

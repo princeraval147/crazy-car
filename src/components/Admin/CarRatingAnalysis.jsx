@@ -75,12 +75,13 @@ function CarRatingAnalysis() {
 
       <section className="allCarsSection">
         <h2>All Cars Rating in Percentage</h2>
+        <br />
         <table className="RatingTable" border={2}>
           <thead>
             <tr>
-              <th className="RatingTableHeading">Car</th>
-              <th>Total Ratings</th>
-              <th>Rating Percentage</th>
+              <th className="ratingTblHeading">Car</th>
+              <th className="ratingTblHeading">Total Ratings</th>
+              <th className="ratingTblHeading">Rating Percentage</th>
             </tr>
           </thead>
           <tbody>
