@@ -15,6 +15,7 @@ function Cars() {
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
+  const [selectedFuelType, setSelectedFuelType] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const carsPerPage = 10;
 
@@ -62,10 +63,19 @@ function Cars() {
     const filteredCars = originalCarsData.filter(
       (car) =>
         (selectedBrand ? car.brand === selectedBrand : true) &&
-        (selectedModel ? car.model === selectedModel : true)
+        (selectedModel ? car.model === selectedModel : true) &&
+        (selectedFuelType ? car.fuelType === selectedFuelType : true)
     );
     setCarsData(filteredCars);
     setCurrentPage(1); // Reset to first page after filtering
+  };
+
+  // Handle Clear Filter
+  const clearFilters = () => {
+    setSelectedBrand("");
+    setSelectedModel("");
+    setSelectedFuelType("");
+    setCarsData(originalCarsData);
   };
 
   // Pagination Logic
@@ -142,18 +152,43 @@ function Cars() {
 
         <div className="FualTypes">
           Fual Types :
-          <input type="radio" name="FualType" id="EV" />
+          <input
+            type="radio"
+            name="FualType"
+            id="EV"
+            value="Electric"
+            checked={selectedFuelType === "Electric"}
+            onChange={(e) => setSelectedFuelType(e.target.value)}
+          />
           <label htmlFor="EV">EV</label>
           <br />
-          <input type="radio" name="FualType" id="Petrol" />
+          <input
+            type="radio"
+            name="FualType"
+            id="Petrol"
+            value="Petrol"
+            checked={selectedFuelType === "Petrol"}
+            onChange={(e) => setSelectedFuelType(e.target.value)}
+          />
           <label htmlFor="Petrol">Petrol</label>
           <br />
-          <input type="radio" name="FualType" id="Diesel" />
+          <input
+            type="radio"
+            name="FualType"
+            id="Diesel"
+            value="Diesel"
+            checked={selectedFuelType === "Diesel"}
+            onChange={(e) => setSelectedFuelType(e.target.value)}
+          />
           <label htmlFor="Diesel">Diesel</label>
         </div>
         <div className="filterBtns">
-          <button className="Btn">Apply Filter</button>
-          <button className="ClearBtn">Clear Filter</button>
+          <button className="Btn" onClick={handleSearch}>
+            Apply Filter
+          </button>
+          <button className="ClearBtn" onClick={clearFilters}>
+            Clear Filter
+          </button>
         </div>
       </div>
 
