@@ -3,3 +3,6 @@ npm run dev
 
 For Backend :-
 npx nodemon server.js
+
+must have VITE_ in environment variable
+import.meta.env.VITE_VARIABLE to access variable
