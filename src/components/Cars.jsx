@@ -58,8 +58,19 @@ function Cars() {
     }
   }, [selectedBrand, originalCarsData]);
 
-  // Handle search/filter
-  const handleSearch = () => {
+  // // Handle search/filter
+  // const handleSearch = () => {
+  //   const filteredCars = originalCarsData.filter(
+  //     (car) =>
+  //       (selectedBrand ? car.brand === selectedBrand : true) &&
+  //       (selectedModel ? car.model === selectedModel : true) &&
+  //       (selectedFuelType ? car.fuelType === selectedFuelType : true)
+  //   );
+  //   setCarsData(filteredCars);
+  //   setCurrentPage(1); // Reset to first page after filtering
+  // };
+
+  useEffect(() => {
     const filteredCars = originalCarsData.filter(
       (car) =>
         (selectedBrand ? car.brand === selectedBrand : true) &&
@@ -68,7 +79,7 @@ function Cars() {
     );
     setCarsData(filteredCars);
     setCurrentPage(1); // Reset to first page after filtering
-  };
+  }, [selectedBrand, selectedModel, selectedFuelType, originalCarsData]);
 
   // Handle Clear Filter
   const clearFilters = () => {
@@ -130,9 +141,9 @@ function Cars() {
               value={selectedModel}
               onChange={(e, newVal) => setSelectedModel(newVal)}
             />
-            <button className="Btn" onClick={handleSearch}>
+            {/* <button className="Btn" onClick={handleSearch}>
               Search
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -183,9 +194,9 @@ function Cars() {
           <label htmlFor="Diesel">Diesel</label>
         </div>
         <div className="filterBtns">
-          <button className="Btn" onClick={handleSearch}>
+          {/* <button className="Btn" onClick={handleSearch}>
             Apply Filter
-          </button>
+          </button> */}
           <button className="ClearBtn" onClick={clearFilters}>
             Clear Filter
           </button>
