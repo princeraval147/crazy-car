@@ -29,7 +29,9 @@ const UpdateCar = () => {
         const priceNumber = parseFloat(data.price);
         const priceUnit = data.price.includes("Lakhs") ? "Lakhs" : "Crores";
         const priceValue = priceNumber ? priceNumber : 0;
-
+        const images = data.image || [];
+        const image1 = images[0] || ""; // Set the first image URL if available
+        const image2 = images[1] || ""; // Set the second image URL if available
         // Set form values
         reset({
           model: data.model,
@@ -47,7 +49,8 @@ const UpdateCar = () => {
           features: data.features.join(", "),
           warranty: data.warranty,
           description: data.description,
-          image: data.image,
+          image1: data.image[0],
+          image2: data.image[1],
         });
 
         setPriceUnit(priceUnit);
@@ -353,7 +356,7 @@ const UpdateCar = () => {
             Image URL:
             <input
               type="text"
-              {...register("image", { required: "Image URL is required" })}
+              {...register("image1", { required: "Image URL is required" })}
               className="inputFeild"
             />
             {errors.image && (
@@ -364,7 +367,7 @@ const UpdateCar = () => {
             Image 2 URL:
             <input
               type="text"
-              {...register("image[1]", { required: "Image 2 URL is required" })}
+              {...register("image2", { required: "Image 2 URL is required" })}
               className="inputFeild"
             />
             {errors.image && (

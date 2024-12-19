@@ -138,6 +138,7 @@ const Addcar = () => {
             )}
           </label>
           <label>Fuel Type:</label>
+          <br></br>
           <div className="radioBtn">
             <input
               id="Electric"
@@ -166,6 +167,7 @@ const Addcar = () => {
           )}
           <br></br>
           <label>Transmission:</label>
+          <br></br>
           <div className="radioBtn">
             <input
               id="Auto"
@@ -191,6 +193,7 @@ const Addcar = () => {
           )}
           <br></br>
           <label>Seating Capacity:</label>
+          <br></br>
           <div className="radioBtn">
             <input
               id="5"
@@ -211,6 +214,11 @@ const Addcar = () => {
             />
             <label htmlFor="7">7</label>
           </div>
+          {errors.seatingCapacity && (
+            <span style={{ color: "red" }}>
+              {errors.seatingCapacity.message}
+            </span>
+          )}
           <br></br>
           <div>
             <label>
@@ -222,14 +230,9 @@ const Addcar = () => {
               />
             </label>
           </div>
-          {errors.seatingCapacity && (
-            <span style={{ color: "red" }}>
-              {errors.seatingCapacity.message}
-            </span>
+          {errors.bodyType && (
+            <span style={{ color: "red" }}>{errors.bodyType.message}</span>
           )}
-        </div>
-
-        <div className="form-right">
           <label>
             Mileage (km/l):
             <input
@@ -238,16 +241,27 @@ const Addcar = () => {
               className="inputFeild"
             />
           </label>
+          {errors.mileage && (
+            <span style={{ color: "red" }}>{errors.mileage.message}</span>
+          )}
+        </div>
 
+        <div className="form-right">
           <label>
             Engine Capacity (cc):
             <input
               type="text"
-              {...register("engineCapacity")}
+              {...register("engineCapacity", {
+                required: "Engine capacity is required",
+              })}
               className="inputFeild"
             />
           </label>
-
+          {errors.engineCapacity && (
+            <span style={{ color: "red" }}>
+              {errors.engineCapacity.message}
+            </span>
+          )}
           <label>
             Boot Space (liters):
             <input
@@ -273,6 +287,11 @@ const Addcar = () => {
               className="inputFeild"
             />
           </label>
+          {errors.safetyFeatures && (
+            <span style={{ color: "red" }}>
+              {errors.safetyFeatures.message}
+            </span>
+          )}
           <label>
             Features:
             <input
@@ -281,6 +300,9 @@ const Addcar = () => {
               className="inputFeild"
             />
           </label>
+          {errors.features && (
+            <span style={{ color: "red" }}>{errors.features.message}</span>
+          )}
           <label>
             Warranty:
             <input
@@ -289,6 +311,9 @@ const Addcar = () => {
               className="inputFeild"
             />
           </label>
+          {errors.warranty && (
+            <span style={{ color: "red" }}>{errors.warranty.message}</span>
+          )}
           <label>
             Description:
             <textarea
@@ -298,14 +323,31 @@ const Addcar = () => {
               className="inputFeild textarea-input"
             />
           </label>
+          {errors.description && (
+            <span style={{ color: "red" }}>{errors.description.message}</span>
+          )}
           <label>
             Image URL:
             <input
               type="text"
-              {...register("image", { required: "Image URL is required" })}
+              {...register("image1", { required: "Image URL is required" })}
               className="inputFeild"
             />
           </label>
+          {errors.image && (
+            <span style={{ color: "red" }}>{errors.image.message}</span>
+          )}
+          <label>
+            Image2 URL:
+            <input
+              type="text"
+              {...register("image2", { required: "Image URL is required" })}
+              className="inputFeild"
+            />
+          </label>
+          {errors.image2 && (
+            <span style={{ color: "red" }}>{errors.image2.message}</span>
+          )}
         </div>
         <div className="form-button-container">
           <button type="submit" className="form-button">

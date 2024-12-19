@@ -158,7 +158,7 @@ app.post("/logout", (req, res) => {
   res.status(200).json({ success: true, message: "Logged out successfully" });
 });
 
-// POST route to add a new car
+// POST route to add a new car - ADD CAR
 app.post("/cardata", async (req, res) => {
   try {
     const {
@@ -166,7 +166,8 @@ app.post("/cardata", async (req, res) => {
       brand,
       price,
       description,
-      image,
+      image1,
+      image2,
       year,
       fuelType,
       mileage,
@@ -194,7 +195,7 @@ app.post("/cardata", async (req, res) => {
       brand,
       price,
       description,
-      image,
+      image: [image1, image2],
       year,
       fuelType,
       mileage,
@@ -287,7 +288,8 @@ app.put("/updatecar/:id", async (req, res) => {
     features,
     warranty,
     description,
-    image,
+    image1,
+    image2,
   } = req.body;
 
   try {
@@ -309,15 +311,13 @@ app.put("/updatecar/:id", async (req, res) => {
         features,
         warranty,
         description,
-        image,
+        image: [image1, image2],
       },
       { new: true }
     );
-
     if (!updatedCar) {
       return res.status(404).json({ message: "Car not found" });
     }
-
     res.json(updatedCar);
   } catch (error) {
     console.error("Error updating car data:", error);
