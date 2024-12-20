@@ -739,18 +739,14 @@ a:hover svg {
 }
 
 .FualTypes {
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
 
-.filterBtns {
-  /* border: 2px solid red; */
-  display: flex;
-  /* flex-direction: column; */
-  gap: 10px;
+.FualTypes label {
+  cursor: pointer;
 }
 
 .ClearBtn {
