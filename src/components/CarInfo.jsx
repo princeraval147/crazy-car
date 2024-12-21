@@ -11,6 +11,7 @@ const CarInfo = () => {
   const [car, setCar] = useState(null); // Car data
   const [rating, setRating] = useState(0); // User's rating for the car
   const [userId, setUserId] = useState(null); // User ID from JWT
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function handleClick(event) {
     event.preventDefault();
@@ -79,12 +80,43 @@ const CarInfo = () => {
     }
   };
 
-  // If the car data is not yet loaded, show a loading message
-  if (!car) {
+  const checkLoginStatus = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/auth/check", {
+        // const response = await fetch(
+        //   "https://crazycar-backend.onrender.com/auth/check",
+        //   {
+        method: "GET",
+        credentials: "include",
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setIsLoggedIn(data.isLoggedIn);
+        console.log("Login Status : ", data.isLoggedIn);
+      } else {
+        setIsLoggedIn(false);
+      }
+    } catch (error) {
+      console.error("Error checking login status:", error);
+      setIsLoggedIn(false);
+    }
+  };
+  checkLoginStatus();
+
+  // If the user is not login and access view more
+  if (!car && isLoggedIn === false) {
     return (
       <div className="Loading">
         <p>Please Login to View More Details</p>
-        {/* <CircularProgress /> */}
+      </div>
+    );
+  }
+
+  // Show loadinng effect if data is not loaded
+  if (!car && isLoggedIn === true) {
+    return (
+      <div className="Loading">
+        <CircularProgress />
       </div>
     );
   }
