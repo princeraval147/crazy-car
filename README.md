@@ -1,6 +1,6 @@
 # Crazy Car
 
-A React-based web application for car rental or sales.
+A MERN stack web application for Car Information System.
 
 Features
 
