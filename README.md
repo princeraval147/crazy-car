@@ -6,6 +6,11 @@ Features
 
 - Fetches car data from API
 - Displays car data in a list
+- Login / Logout
+- Admin can insert, update and delete car
+- User can give review
+- Admin see review analysis and user's data
+- User can search specific car
 
 Installation
 
