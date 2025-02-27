@@ -15,9 +15,12 @@ Features
 Installation
 
 1. Clone the repository: `git clone https://github.com/princeraval147/crazy-car
-2. Install dependencies: npm install, cd backend - npm i
-3. Start the application: npm run dev, npx nodemon server.js
-4. Add .env
+2. Install dependencies:
+3. ``` npm install```
+4. ``` cd backend ```
+5. ``` npm i ```
+6. Start the application: npm run dev, npx nodemon server.js
+7. Add .env
 
 Contributing
 
