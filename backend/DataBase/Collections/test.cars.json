@@ -1,0 +1,962 @@
+[{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc9"
+  },
+  "model": "Altroz",
+  "brand": "Tata",
+  "price": "7 Lakhs",
+  "description": "A stylish and safe premium hatchback with a 5-star safety rating.",
+  "image": [
+    "/images/1736187943004-49866822.jpg",
+    "/images/1736187943014-460612456.jpeg"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "23 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1497 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Hatchback",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS with EBD",
+    "rear parking sensors"
+  ],
+  "bootSpace": 345,
+  "features": [
+    "Touchscreen infotainment",
+    "keyless entry",
+    "cruise control"
+  ],
+  "warranty": "2 years or 75,000 km",
+  "__v": 2,
+  "updatedAt": {
+    "$date": "2025-01-06T18:25:43.648Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc7"
+  },
+  "model": "Harrier",
+  "brand": "Tata",
+  "price": "20 Lakhs",
+  "description": "A rugged SUV built on Land Rover's platform, offering great performance.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Tata/Harrier/9368/1697532960290/front-left-side-47.jpg",
+    "https://imgd.aeplcdn.com/664x374/n/cw/ec/139139/harrier-facelift-exterior-right-rear-three-quarter-19.jpeg?isig=0&q=80"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "16.5 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1956 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS with EBD",
+    "Hill Descent Control"
+  ],
+  "bootSpace": 425,
+  "features": [
+    "Panoramic sunroof",
+    "JBL sound system",
+    "cruise control"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "__v": 1,
+  "updatedAt": {
+    "$date": "2024-10-07T04:12:17.150Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dcc"
+  },
+  "model": "Ertiga",
+  "brand": "Maruti Suzuki",
+  "price": "9 Lakhs",
+  "description": "A spacious and fuel-efficient MPV ideal for families.",
+  "image": [
+    "https://imgd.aeplcdn.com/1056x594/n/c6es93a_1572125.jpg?q=80",
+    "https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/115823/ertiga-right-front-three-quarter-3.jpeg?isig=0&q=80"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "19 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1462 cc",
+  "seatingCapacity": 7,
+  "bodyType": "MPV",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS with EBD",
+    "rear parking sensors"
+  ],
+  "bootSpace": 209,
+  "features": [
+    "Touchscreen infotainment",
+    "keyless entry",
+    "rear AC vents"
+  ],
+  "warranty": "2 years or 40,000 km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:20:07.122Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dca"
+  },
+  "model": "Kwid",
+  "brand": "Renault",
+  "price": "5 Lakhs",
+  "description": "A budget hatchback with SUV-inspired styling and modern features.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Renault/KWID/10076/1717586320303/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/Galleries/20160823042647_PPC_6847.jpg&w=736&h=488&q=75&c=1"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "21 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "999 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Hatchback",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS",
+    "reverse parking sensors"
+  ],
+  "bootSpace": 279,
+  "features": [
+    "Touchscreen infotainment",
+    "LED DRLs",
+    "digital instrument cluster"
+  ],
+  "warranty": "2 years or 50,000 km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:17:46.350Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd0"
+  },
+  "model": "Compass",
+  "brand": "Jeep",
+  "price": "25 Lakhs",
+  "description": "A premium SUV with a rugged build and luxurious interior.",
+  "image": [
+    "https://www.jeep.com/content/dam/fca-brands/na/jeep/en_us/2024/compass/vlp/desktop/my24-jeep-compass-vpl-alfa-gallery-phase2-image-01-desktop.jpg",
+    "https://www.jeep-india.com/content/dam/cross-regional/apac/jeep/en_in/allnewjeepcompass7thjan/new-compass-price-reveal-23Jan/2.png.img.1440.png"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "16 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1956 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS with EBD",
+    "rear camera"
+  ],
+  "bootSpace": 438,
+  "features": [
+    "Panoramic sunroof",
+    "touchscreen infotainment",
+    "4x4 drivetrain"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-12-19T13:04:51.728Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc8"
+  },
+  "model": "Venue",
+  "brand": "Hyundai",
+  "price": "9 Lakhs",
+  "description": "A compact SUV designed for city driving with a youthful appeal.",
+  "image": [
+    "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/141113/venue-exterior-right-front-three-quarter-16.jpeg?isig=0&q=80&q=80",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Venue/10142/1684739946788/rear-left-view-121.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "17 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1197 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS",
+    "rear parking sensors"
+  ],
+  "bootSpace": 350,
+  "features": [
+    "Sunroof",
+    "touchscreen infotainment",
+    "wireless charging"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:12:59.705Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc0"
+  },
+  "model": "Nexon EV",
+  "brand": "Tata",
+  "price": "14.5 Lakhs",
+  "description": "A stylish electric SUV with top-notch features and long range.",
+  "image": [
+    "/images/1737444778389-675218947.png",
+    "/images/1737444778392-831502683.png"
+  ],
+  "year": 2023,
+  "fuelType": "Electric",
+  "mileage": "312 km per charge",
+  "transmission": "Automatic",
+  "engineCapacity": "30.2 kWh battery",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "5-star Global NCAP rating",
+    "6 airbags",
+    "ABS",
+    "EBD"
+  ],
+  "bootSpace": 350,
+  "features": [
+    "Sunroof",
+    "7-inch infotainment system",
+    "climate control"
+  ],
+  "warranty": "8 years or 1.6 lakh km on battery",
+  "__v": 2,
+  "updatedAt": {
+    "$date": "2025-01-21T07:32:59.022Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dcf"
+  },
+  "model": "Tiago EV",
+  "brand": "Tata",
+  "price": "9 Lakhs",
+  "description": "An affordable electric hatchback with a solid range and feature set.",
+  "image": [
+    "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/40453/tiago-ev-exterior-right-front-three-quarter-11.jpeg?isig=0&q=80&q=80",
+    "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=http://img.haymarketsac.in/autocarpro/31f33177-1321-4a01-9929-c6e05fbc8217_web-press28sep2201.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Electric",
+  "mileage": "250 km per charge",
+  "transmission": "Automatic",
+  "engineCapacity": "24 kWh battery",
+  "seatingCapacity": 5,
+  "bodyType": "Hatchback",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS with EBD",
+    "reverse camera"
+  ],
+  "bootSpace": 242,
+  "features": [
+    "Touchscreen infotainment",
+    "connected car features",
+    "regenerative braking"
+  ],
+  "warranty": "8 years or 1.6 lakh km on battery",
+  "updatedAt": {
+    "$date": "2024-10-07T04:22:09.003Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd2"
+  },
+  "model": "Verna",
+  "brand": "Hyundai",
+  "price": "11 Lakhs",
+  "description": "A stylish sedan offering comfort, performance, and tech-savvy features.",
+  "image": [
+    "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/41197/hyundai-verna-right-front-three-quarter7.jpeg?q=80&q=80",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Hyundai/Verna/9744/1694602806760/front-left-side-47.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "19 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1497 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Sedan",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS",
+    "rear parking sensors"
+  ],
+  "bootSpace": 480,
+  "features": [
+    "Wireless charging",
+    "ventilated seats",
+    "sunroof"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:30:52.134Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc1"
+  },
+  "model": "Creta",
+  "brand": "Hyundai",
+  "price": "12.4 Lakhs",
+  "description": "A premium mid-size SUV offering top-class comfort and safety.",
+  "image": [
+    "https://imgd.aeplcdn.com/370x208/n/cw/ec/106815/creta-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80",
+    "https://img.gaadicdn.com/images/carexteriorimages/large/Hyundai/Creta/8667/1705465218824/rear-right-side-48.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "21 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1497 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS with EBD",
+    "rear camera"
+  ],
+  "bootSpace": 433,
+  "features": [
+    "Panoramic sunroof",
+    "touchscreen infotainment system",
+    "wireless charging"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:35:27.172Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc2"
+  },
+  "model": "Seltos",
+  "brand": "Kia",
+  "price": "13 Lakhs",
+  "description": "A feature-packed compact SUV with bold styling and performance.",
+  "image": [
+    "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/seltos/KIA_Seltos_KV_1920.jpg",
+    "https://www.kia.com/content/dam/kia2/in/en/our-vehicles/showroom/seltos-gallery/3.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "18 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1353 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "4 airbags",
+    "ABS"
+  ],
+  "bootSpace": 501,
+  "features": [
+    "UVO connected car tech",
+    "ventilated seats",
+    "ambient lighting"
+  ],
+  "warranty": "5 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-11-08T12:04:51.140Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc5"
+  },
+  "model": "XUV700",
+  "brand": "Mahindra",
+  "price": "22 Lakhs",
+  "description": "A modern and tech-loaded SUV with superior driving dynamics.",
+  "image": [
+    "https://img.gaadicdn.com/images/carexteriorimages/large/Mahindra/XUV700/10787/1705466588115/front-view-118.jpg",
+    "https://d308ljkq6e62o1.cloudfront.net/img/P2Hp70gkQamg01K8SXUU5A/raw/file.jfif"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "15.5 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1999 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ESP",
+    "ADAS features"
+  ],
+  "bootSpace": 360,
+  "features": [
+    "Panoramic sunroof",
+    "advanced driver assistance systems"
+  ],
+  "warranty": "5 years or 1.5 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:08:58.280Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc6"
+  },
+  "model": "City",
+  "brand": "Honda",
+  "price": "13 Lakhs",
+  "description": "A mid-size sedan known for its comfort, fuel efficiency, and premium features.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Honda/City/9710/1677914238296/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/134287/city-exterior-left-rear-three-quarter.jpeg?isig=0&q=80&q=80",
+    "https://www.rushlane.com/wp-content/uploads/2024/05/2024-honda-city-hatchback-launch-price-11.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "18.4 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1498 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Sedan",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS with EBD",
+    "rear parking camera"
+  ],
+  "bootSpace": 506,
+  "features": [
+    "Touchscreen infotainment",
+    "automatic climate control"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:11:09.096Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dcd"
+  },
+  "model": "Thar",
+  "brand": "Mahindra",
+  "price": "15 Lakhs",
+  "description": "A rugged off-road SUV with iconic styling and versatile features.",
+  "image": [
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mahindra_Thar_Photoshoot_At_Perupalem_Beach_%28West_Godavari_District%2CAP%2CIndia_%29_Djdavid.jpg/800px-Mahindra_Thar_Photoshoot_At_Perupalem_Beach_%28West_Godavari_District%2CAP%2CIndia_%29_Djdavid.jpg",
+    "https://media.zigcdn.com/media/model/2024/Aug/thar-roxx_600x400.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "13 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "2184 cc",
+  "seatingCapacity": 4,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS with EBD",
+    "rollover protection"
+  ],
+  "bootSpace": 300,
+  "features": [
+    "Touchscreen infotainment",
+    "4x4 drivetrain",
+    "removable top"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:21:18.285Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd4"
+  },
+  "model": "ZS EV",
+  "brand": "MG",
+  "price": "22 Lakhs",
+  "description": "An electric SUV offering high range and loaded with tech features.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/MG/ZS-EV/11503/1719393099348/front-left-side-47.jpg",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/MG/ZS-EV/11722/MG-ZS-EV-100-Year-Limited-Edition/1719410860606/front-view-118.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Electric",
+  "mileage": "419 km per charge",
+  "transmission": "Automatic",
+  "engineCapacity": "50.3 kWh battery",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": "6 airbags, ABS, ESP, rear camera",
+  "bootSpace": 470,
+  "features": "Panoramic sunroof, i-SMART connected car features, 360-degree camera",
+  "warranty": "8 years or 1.5 lakh km on battery"
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd5"
+  },
+  "model": "EcoSport",
+  "brand": "Ford",
+  "price": "11 Lakhs",
+  "description": "A compact SUV known for its sporty handling and premium features.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Ford/EcoSport/7323/1609839628163/front-left-side-47.jpg",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Ford/EcoSport/7323/1609839628163/front-left-side-47.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "17 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "1496 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ABS",
+    "hill assist"
+  ],
+  "bootSpace": 352,
+  "features": [
+    "SYNC 3 infotainment",
+    "keyless entry",
+    "rear parking camera"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:34:57.913Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc3"
+  },
+  "model": "Baleno",
+  "brand": "Maruti Suzuki",
+  "price": "6 Lakhs",
+  "description": "A premium hatchback with excellent performance and spacious interiors.",
+  "image": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5l0hO-gcbi3-zPbyCK-pzc80yv1PdylLr3g&s",
+    "https://cdni.autocarindia.com/ExtraImages/20220228061914_Maruti_Baleno_2022_front.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "23 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1197 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Hatchback",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS",
+    "rear parking sensors"
+  ],
+  "bootSpace": 339,
+  "features": [
+    "SmartPlay infotainment",
+    "keyless entry",
+    "LED projector headlamps"
+  ],
+  "warranty": "2 years or 40,000 km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:07:43.810Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc4"
+  },
+  "model": "Fortuner",
+  "brand": "Toyota",
+  "price": "35 Lakhs",
+  "description": "A powerful, full-size SUV with premium features and off-road capabilities.",
+  "image": [
+    "https://www.financialexpress.com/wp-content/uploads/2024/10/toyota-fortuner-leader-edition_20241001131301.jpg?w=1024",
+    "https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=http://img.haymarketsac.in/autocarpro/68505c70-e1a6-4bab-8b65-4c123b64c1a9.jpg&w=750&h=490&q=75&c=1"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "15 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "2755 cc",
+  "seatingCapacity": 7,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "7 airbags",
+    "ABS with EBD",
+    "Hill assist"
+  ],
+  "bootSpace": 296,
+  "features": [
+    "Power tailgate",
+    "touchscreen infotainment",
+    "cruise control"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T03:59:22.609Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dcb"
+  },
+  "model": "Scorpio N",
+  "brand": "Mahindra",
+  "price": "17 Lakhs",
+  "description": "A muscular SUV designed for rugged terrain and daily driving.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Scorpio-N/10817/1690351800434/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/40432/scorpio-n-exterior-left-side-view-2.jpeg?isig=0&q=80"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "14.5 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "2184 cc",
+  "seatingCapacity": 7,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "6 airbags",
+    "ESP",
+    "hill assist",
+    "roll-over mitigation"
+  ],
+  "bootSpace": 460,
+  "features": [
+    "Sunroof",
+    "8-inch infotainment system",
+    "4x4 drivetrain"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:19:00.072Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd3"
+  },
+  "model": "Amaze",
+  "brand": "Honda",
+  "price": "8 Lakhs",
+  "description": "A compact sedan with spacious interiors and excellent fuel efficiency.",
+  "image": [
+    "https://imgd.aeplcdn.com/1280x720/n/cw/ec/45951/amaze-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80",
+    "https://5.imimg.com/data5/BV/UY/GLADMIN-6210852/honda-amaze-car.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Diesel",
+  "mileage": "24.7 km/l",
+  "transmission": "Manual",
+  "engineCapacity": "1498 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Sedan",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS with EBD",
+    "rear parking camera"
+  ],
+  "bootSpace": 420,
+  "features": [
+    "Touchscreen infotainment",
+    "keyless entry",
+    "cruise control"
+  ],
+  "warranty": "3 years or unlimited km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:32:32.830Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd1"
+  },
+  "model": "Kiger",
+  "brand": "Renault",
+  "price": "8 Lakhs",
+  "description": "A compact SUV with sporty styling and a feature-rich interior.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Renault/Kiger/10042/1717592388399/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fimages.carandbike.com%2Fcar-images%2Fcolors%2Frenault%2Fkiger%2Frenault-kiger-planet-grey.png%3Fv%3D1614141060&w=750&q=75"
+  ],
+  "year": 2020,
+  "fuelType": "Petrol",
+  "mileage": "20 km/l",
+  "transmission": "Automatic",
+  "engineCapacity": "999 cc",
+  "seatingCapacity": 5,
+  "bodyType": "SUV",
+  "safetyFeatures": [
+    "4 airbags",
+    "ABS",
+    "rear parking sensors"
+  ],
+  "bootSpace": 405,
+  "features": [
+    "Wireless charging",
+    "touchscreen infotainment",
+    "keyless entry"
+  ],
+  "warranty": "3 years or 1 lakh km",
+  "updatedAt": {
+    "$date": "2024-10-07T04:31:25.511Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66feeaf7c5dcbdf757b3241e"
+  },
+  "model": "Urus",
+  "brand": "Lamborghini",
+  "price": "4 Crores",
+  "description": "Lamborghini Urus is the first Super Sport Utility, merging the soul of a car with the practical of an SUV.",
+  "image": [
+    "https://imgd.aeplcdn.com/370x208/n/cw/ec/53859/urus-performante-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Lamborghini/Urus/10635/1724844423793/front-left-side-47.jpg?imwidth=420&impolicy=resize"
+  ],
+  "year": 2019,
+  "fuelType": "Petrol",
+  "mileage": "24",
+  "transmission": "Automatic",
+  "engineCapacity": "4.0-liter twin turbo V8 engine",
+  "seatingCapacity": 5,
+  "bodyType": "Sport Utility",
+  "safetyFeatures": [
+    "driving dynamics"
+  ],
+  "bootSpace": 40,
+  "features": [
+    "A declaration of freedom"
+  ],
+  "warranty": "2 Year or 1 lakh km",
+  "createdAt": {
+    "$date": "2024-10-03T19:05:27.942Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-07T04:04:22.676Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670367c50a8bd3392080fcac"
+  },
+  "model": "A6",
+  "brand": "AUDI",
+  "price": "45 Lakhs",
+  "description": "The Audi A6 has 1 Petrol Engine on offer. The Petrol engine is 1984 cc . ",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Audi/A6/10552/1700631019657/front-view-118.jpg",
+    "https://uploads.audi-mediacenter.com/system/production/media/58222/images/9e0e7727843ea1935282b2556b721e677130fb32/A181734_web_2880.jpg?1698302369"
+  ],
+  "year": 2022,
+  "fuelType": "Petrol",
+  "mileage": "20",
+  "transmission": "Automatic",
+  "engineCapacity": "1984 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Sedan",
+  "safetyFeatures": [
+    "Audi side assist"
+  ],
+  "bootSpace": 530,
+  "features": [
+    "Power Steering",
+    "Power Windows Front",
+    "Anti-lock Braking System (ABS)",
+    "Air Conditioner",
+    "Driver Airbag",
+    "Passenger Airbag",
+    "Automatic Climate Control",
+    "Fog Lights - Front",
+    "Alloy Wheels"
+  ],
+  "warranty": "2 yr/unlimited km",
+  "createdAt": {
+    "$date": "2024-10-07T04:47:01.372Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-10T07:12:19.984Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6719f42484b88cf89616be4d"
+  },
+  "model": "XM",
+  "brand": "BMW",
+  "price": "3 Crores",
+  "description": "this is best car for driving expriance",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/BMW/XM/10570/1689672872537/front-left-side-47.jpg",
+    "https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/magazine-article-pool/2023/m-award-xm/bmw-xm-label-red-m-award-si.jpg",
+    "https://d2m3nfprmhqjvd.cloudfront.net/blog/20221210175706/BMW-XM-Rear-jpg.webp"
+  ],
+  "year": 2022,
+  "fuelType": "Petrol",
+  "mileage": "20",
+  "transmission": "Automatic",
+  "engineCapacity": "350",
+  "seatingCapacity": 5,
+  "bodyType": "METAL",
+  "safetyFeatures": [
+    "full safty"
+  ],
+  "bootSpace": 2,
+  "features": [
+    "fuf"
+  ],
+  "warranty": "5",
+  "createdAt": {
+    "$date": "2024-10-24T07:15:48.781Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-09T07:15:07.525Z"
+  },
+  "__v": 8
+},
+{
+  "_id": {
+    "$oid": "6757e8dbefff7d09d276c58d"
+  },
+  "model": "911",
+  "brand": "porsche",
+  "price": "3 Crores",
+  "description": "The Porsche 911 is considered to be a dream sports car by many. It is bound to put a smile on your face whether you are sprinting across a race track, driving it around the city or even out in it for a weekend stint. Potent engines, an excellent ride and handling, and yet, high on practicality make it extremely desirable.",
+  "image": [
+    "https://www.topgear.com/sites/default/files/2024/10/04_911_GT3_Static..jpg",
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Porsche/911/11757/1717680690776/front-left-side-47.jpg?imwidth=420&impolicy=resize"
+  ],
+  "year": 2022,
+  "fuelType": "Petrol",
+  "mileage": "9.17 kmpl",
+  "transmission": "Automatic",
+  "engineCapacity": "2981 cc, 3745 cc & 3996 cc",
+  "seatingCapacity": 5,
+  "bodyType": "Coupe",
+  "safetyFeatures": [
+    "6 Airbags",
+    "Overspeed Warning",
+    "Speed Sensing Door Lock",
+    "Anti theft Engine immobilizer"
+  ],
+  "bootSpace": 132,
+  "features": [
+    "Alloy Wheels",
+    "Air Conditioner",
+    "Power Windows Front",
+    "Multi-function Steering Wheel"
+  ],
+  "warranty": "2 yr/unlimited km",
+  "createdAt": {
+    "$date": "2024-12-10T07:08:11.888Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-13T12:24:06.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6762ccfa912b6d64208f2647"
+  },
+  "model": "i20",
+  "brand": "Hyundai",
+  "price": "8 Lakhs",
+  "description": "The Hyundai i20 is a hatchback car that offers a combination of style and performance. Here are some of its features",
+  "image": [
+    "https://imgd.aeplcdn.com/370x208/n/cw/ec/150603/i20-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80",
+    "https://images.livemint.com/img/2020/02/20/1600x900/hyundai-i20-2021---fotos-vazadas_(3)_1582018912930_1582181092871.jpg"
+  ],
+  "year": 2023,
+  "fuelType": "Petrol",
+  "mileage": "20",
+  "transmission": "Manual",
+  "engineCapacity": "1197",
+  "seatingCapacity": 5,
+  "bodyType": "Hatchback",
+  "safetyFeatures": [
+    "Tyre pressure monitoring system (highline)",
+    "Anti-lock braking system (ABS) with EBD",
+    "Puddle lamps",
+    "Airbags"
+  ],
+  "bootSpace": 311,
+  "features": [
+    "LED Lamps",
+    "Headlamps",
+    "Roof Antenna",
+    "Skid plate"
+  ],
+  "warranty": "3 yr/100,000 km",
+  "createdAt": {
+    "$date": "2024-12-18T13:24:10.372Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-19T13:06:04.601Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6763c60917b84f8c26e0a365"
+  },
+  "model": "Brezza",
+  "brand": "Suzuki",
+  "description": "The Maruti Suzuki Brezza is a compact SUV that offers a blend of modern design, performance, and efficiency for urban drivers.",
+  "image": [
+    "https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Brezza/10388/1694424068944/front-left-side-47.jpg?imwidth=420&impolicy=resize",
+    "https://imgd.aeplcdn.com/664x374/n/cw/ec/107543/brezza-exterior-right-rear-three-quarter.jpeg?isig=0&q=80"
+  ],
+  "year": 2020,
+  "fuelType": "Petrol",
+  "mileage": "18",
+  "transmission": "Automatic",
+  "engineCapacity": "2100",
+  "seatingCapacity": 5,
+  "bodyType": "Sedan",
+  "safetyFeatures": [
+    "2 airbags",
+    "ABS",
+    "rear parking sensors"
+  ],
+  "bootSpace": 450,
+  "features": [
+    "4WD",
+    "Tow Package",
+    "Touchscreen Display"
+  ],
+  "warranty": "2 years or 40,000 km",
+  "createdAt": {
+    "$date": "2024-12-19T07:06:49.354Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-19T13:07:03.596Z"
+  },
+  "__v": 0,
+  "pricePerDay": "5000"
+}]

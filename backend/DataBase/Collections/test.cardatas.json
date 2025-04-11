@@ -1,0 +1,161 @@
+[{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f3"
+  },
+  "brand": "Toyota",
+  "model": "Fortuner",
+  "price": "32.59 - 50.34 Lakh",
+  "description": "A symbol of luxury and power, the Toyota Fortuner dominates with its rugged build, off-road capabilities, and opulent interiors.",
+  "image": "https://5.imimg.com/data5/SELLER/Default/2023/11/363215902/QM/PH/TQ/83088084/toyota-fortuner-legender-car.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f2"
+  },
+  "brand": "Kia",
+  "model": "Seltos",
+  "price": "10.50 - 19.20 Lakh",
+  "description": "The Kia Seltos blends sharp design with cutting-edge technology, offering a premium driving experience in the SUV segment.",
+  "image": "https://e0.pxfuel.com/wallpapers/107/892/desktop-wallpaper-kia-seltos-car.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f8"
+  },
+  "brand": "Maruti Suzuki",
+  "model": "Swift",
+  "price": "6.10 - 8.89 Lakh",
+  "description": "Maruti's Swift is a compact and sporty hatchback known for its agility, peppy performance, and excellent fuel efficiency.",
+  "image": "https://c4.wallpaperflare.com/wallpaper/52/318/440/2018-suzuki-swift-wallpaper-preview.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870fc"
+  },
+  "brand": "Hyundai",
+  "model": "i20",
+  "price": "7.50 - 11.88 Lakh",
+  "description": "The Hyundai i20 stands out in the premium hatchback segment with its dynamic styling, advanced tech, and comfortable ride.",
+  "image": "https://shreenath-kia.in/Web/content/dam/kia2/in/en/images/our-vehicles/sonet/gallery/exterior/sonet_gallery_3.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f6"
+  },
+  "brand": "Tata",
+  "model": "Harrier",
+  "price": "15.19 - 24.26 Lakh",
+  "description": "The Tata Harrier impresses with its aggressive stance, spacious interiors, and the latest infotainment and connectivity options.",
+  "image": "https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/139139/harrier-facelift-exterior-front-view-3.jpeg?isig=0&q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f9"
+  },
+  "brand": "Renault",
+  "model": "Kiger",
+  "price": "6.50 - 11.23 Lakh",
+  "description": "The Renault Kiger brings a fresh design and a spacious interior, perfect for urban driving with a touch of adventure.",
+  "image": "https://imgd.aeplcdn.com/1056x594/n/7b8keeb_1759901.png?q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f7"
+  },
+  "brand": "Hyundai",
+  "model": "Venue",
+  "price": "7.72 - 13.18 Lakh",
+  "description": "Hyundai Venue, a compact SUV, combines convenience with a stylish design, offering a smooth city driving experience.",
+  "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/141113/venue-exterior-right-front-three-quarter-16.jpeg?isig=0&q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f4"
+  },
+  "brand": "Honda",
+  "model": "City",
+  "price": "12.42 - 15.97 Lakh",
+  "description": "Honda City continues to be a favorite in the sedan market, offering a refined driving experience with its efficient engines and comfortable seating.",
+  "image": "https://wallpapercave.com/wp/wp1972613.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870fe"
+  },
+  "brand": "Maruti Suzuki",
+  "model": "Brezza",
+  "price": "8.29 - 14.14 Lakh",
+  "description": "The Maruti Suzuki Brezza is a compact SUV known for its reliability, fuel efficiency, and value-for-money proposition.",
+  "image": "https://i.pinimg.com/originals/b2/e2/2d/b2e22d0186142073391d7c3bd061b498.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870ff"
+  },
+  "brand": "MG",
+  "model": "Hector",
+  "price": "14.98 - 22.34 Lakh",
+  "description": "MG Hector impresses with its bold design, spacious interiors, and a host of connected car features, making it a smart choice in the SUV segment.",
+  "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/130583/hector-exterior-right-front-three-quarter-75.jpeg?isig=0&q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870fd"
+  },
+  "brand": "Kia",
+  "model": "Sonet",
+  "price": "7.79 - 14.39 Lakh",
+  "description": "Kia Sonet, a compact SUV, offers a youthful design, feature-packed interiors, and multiple engine options for varied driving preferences.",
+  "image": "https://www.kia.com/content/dam/kia2/in/en/images/our-vehicles/sonet/sonet_gallery/exterior/sonet_gallery_2.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870ef"
+  },
+  "brand": "Tata",
+  "model": "Nexon",
+  "price": "7.80 - 14.50 Lakh",
+  "description": "A stylish compact SUV with safety features, Tata Nexon offers a smooth drive with both petrol and diesel engine ",
+  "image": "https://imgd-ct.aeplcdn.com/1056x660/n/cw/ec/141867/nexon-facelift-exterior-right-side-view.jpeg?isig=0&q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f0"
+  },
+  "brand": "Hyundai",
+  "model": "Creta",
+  "price": "10.87 - 19.20 Lakh",
+  "description": "Hyundai's bestseller, the Creta, is known for its premium interior, modern features, and powerful engine lineup.",
+  "image": "https://i.pinimg.com/736x/91/7b/60/917b6087bdad1c1b1798e389120e37ba.jpg"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f1"
+  },
+  "brand": "Maruti Suzuki",
+  "model": "Baleno",
+  "price": "6.70 - 9.50 Lakh",
+  "description": "A popular hatchback, the Baleno stands out with its spacious cabin, fuel efficiency, and advanced infotainment system.",
+  "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/102663/baleno-exterior-right-side-view.jpeg?isig=0&q=80"
+},
+{
+  "_id": {
+    "$oid": "66c4dac5f9c637f8800870f5"
+  },
+  "brand": "Mahindra",
+  "model": "XUV700",
+  "price": "14.00 - 25.25 Lakh",
+  "description": "Packed with advanced tech and safety features, The Mahindra XUV700 redefines the modern SUV with its bold design and powerful performance.",
+  "image": "https://imgd.aeplcdn.com/370x208/n/cw/ec/105182/left-front-three-quarter0.jpeg?isig=0&wm=1&q=80"
+},
+{
+  "_id": {
+    "$oid": "66fab11c778a4003c6b59b43"
+  },
+  "model": "Octavia",
+  "brand": "Skoda",
+  "price": "30 L - 35 L",
+  "description": "Skoda has updated the big-selling Octavia saloon and estate for 2024, and it's coming with a new face and an interior upgrade.",
+  "image": "https://www.completecar.ie/img/news/13034_large.jpg",
+  "__v": 0
+}]

@@ -1,0 +1,231 @@
+[{
+  "_id": {
+    "$oid": "66fe1051dd5db00172383a25"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc0"
+  },
+  "userId": "user@user.com",
+  "rating": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fe14ffd2ff8c6a333450c5"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dbf"
+  },
+  "userId": "user@user.com",
+  "rating": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fe44690e5ae40f21dd4083"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dbf"
+  },
+  "userId": "admin@gmail.com",
+  "rating": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fe457c0e5ae40f21dd4114"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd4"
+  },
+  "userId": "user@user.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fee6b9c5dcbdf757b3239f"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc9"
+  },
+  "userId": "user@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66ff941bb81a0c42fe1faac7"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dbf"
+  },
+  "userId": "princeraval147@gmail.com",
+  "rating": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670032beb0108b7c73d34128"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dca"
+  },
+  "userId": "princeraval147@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67003d32b12de6b3a41fd4a4"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc9"
+  },
+  "userId": "princeraval147@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67018678dd35d9e4ed43dd2e"
+  },
+  "carId": {
+    "$oid": "67018666dd35d9e4ed43dd11"
+  },
+  "userId": "princeraval147@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ca13203512766b95c4726"
+  },
+  "carId": {
+    "$oid": "66feeaf7c5dcbdf757b3241e"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ca1b703512766b95c4767"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc9"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670ca20003512766b95c47aa"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dd4"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6710d198ad2de16f084c75d6"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc6"
+  },
+  "userId": "user@user.com",
+  "rating": 2,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671332cacd59422a6f44a0db"
+  },
+  "carId": {
+    "$oid": "670367c50a8bd3392080fcac"
+  },
+  "userId": "devang@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6714cc879d6b69c16e937253"
+  },
+  "carId": {
+    "$oid": "670367c50a8bd3392080fcac"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6714cccf9d6b69c16e937276"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dca"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6714d1899d6b69c16e937306"
+  },
+  "carId": {
+    "$oid": "6714d17d9d6b69c16e9372f7"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67174133b7492d2628a060c3"
+  },
+  "carId": {
+    "$oid": "66feeaf7c5dcbdf757b3241e"
+  },
+  "userId": "user@gmail.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671a2674341ce362842f7229"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dbf"
+  },
+  "userId": "jaydip@gmain.com",
+  "rating": 5,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "671b0856732f0efd2c1fc5ba"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dbf"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 4,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "676a9d0b9ce797d0755f6861"
+  },
+  "carId": {
+    "$oid": "66fc0c05dedad5ba0e1b5dc4"
+  },
+  "userId": "jaydip17@gmail.com",
+  "rating": 5,
+  "__v": 0
+}]
