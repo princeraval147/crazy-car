@@ -2,7 +2,7 @@
 
 A MERN stack web application for Car Information System.
 
-Features
+#Features
 
 - Fetches car data from API
 - Displays car data in a list
@@ -12,7 +12,7 @@ Features
 - Admin see review analysis and user's data
 - User can search specific car
 
-Installation
+#Installation
 
 1. Clone the repository: `git clone https://github.com/princeraval147/crazy-car
 2. Install dependencies:
@@ -25,10 +25,10 @@ Installation
    `npx nodemon server.js`
 4. Add .env
 
-Contributing
+#Contributing
 
 Contributions are welcome! Please submit a pull request with your changes.
 
-License
+#License
 
 This project is licensed under the MIT License.
