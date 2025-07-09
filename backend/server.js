@@ -18,9 +18,8 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+
+
 
 // Connect to MongoDB
 const connectDB = async () => {
@@ -29,14 +28,52 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("MongoDB connected");
+
+    mongoose.connection.once("open", () => {
+      console.log("MongoDB connected");
+      console.log("Connected to DB:", mongoose.connection.name); // ✅ Proper way to log DB name
+      mongoose.connection.db.listCollections().toArray(function (err, names) {
+        if (err) {
+          console.error("Error listing collections:", err);
+        } else {
+          console.log("Collections in DB:", names.map(c => c.name));
+        }
+      });
+
+    });
   } catch (error) {
     console.error("MongoDB connection failed:", error.message);
     process.exit(1);
   }
 };
 
+app.get("/debug/count", async (req, res) => {
+  const count = await Car.countDocuments();
+  res.json({ count });
+});
+
+
+// const connectDB = async () => {
+//   try {
+//     await mongoose.connect(process.env.MONGODB_URI, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     });
+//     console.log("MongoDB connected");
+//     console.log("Connected to DB:", mongoose.connection.name);
+
+//   } catch (error) {
+//     console.error("MongoDB connection failed:", error.message);
+//     process.exit(1);
+//   }
+// };
+
 connectDB();
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -63,6 +100,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+
 const isAdmin = async (req, res, next) => {
   try {
     const token = req.cookies.token;
@@ -80,7 +118,7 @@ const isAdmin = async (req, res, next) => {
       return res.status(403).json({ message: "Access denied" });
     }
   } catch (error) {
-    console.error("Error in isAdmin middleware:", error);
+    console.error("Error in isAdmin middleware:", error.message);
     return res.status(500).json({ message: "Internal Server Error" });
   }
 };
@@ -180,6 +218,7 @@ app.post("/cardata", async (req, res) => {
       features,
       warranty,
     } = req.body;
+
 
     // Check if the car model already exists in the database
     const existingCar = await Car.findOne({ model });
