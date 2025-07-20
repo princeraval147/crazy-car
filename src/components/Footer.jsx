@@ -188,7 +188,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="FooterLastText">
-          <span>CrazyCar &copy; 2024 @All Rights Reserved</span>
+          <span>CrazyCar &copy; {new Date().getFullYear()} @ All Rights Reserved</span>
         </div>
       </footer>
     </>
