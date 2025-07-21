@@ -8,9 +8,6 @@ const User = () => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:5000/users");
-        // const response = await fetch(
-        //   "https://crazycar-backend.onrender.com/users"
-        // );
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -27,9 +24,6 @@ const User = () => {
     if (confirmDelete) {
       try {
         const response = await fetch(`http://localhost:5000/users/${userId}`, {
-          // const response = await fetch(
-          //   `https://crazycar-backend.onrender.com/users/${userId}`,
-          //   {
           method: "DELETE",
         });
         if (response.ok) {

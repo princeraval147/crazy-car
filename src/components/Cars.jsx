@@ -24,9 +24,6 @@ function Cars() {
     const fetchCarData = async () => {
       try {
         const response = await fetch("http://localhost:5000/cardata");
-        // const response = await fetch(
-        //   "https://crazycar-backend.onrender.com/cardata"
-        // );
         const data = await response.json();
         setOriginalCarsData(data);
         setCarsData(data);
@@ -57,18 +54,6 @@ function Cars() {
       setModels(uniqueModels);
     }
   }, [selectedBrand, originalCarsData]);
-
-  // // Handle search/filter
-  // const handleSearch = () => {
-  //   const filteredCars = originalCarsData.filter(
-  //     (car) =>
-  //       (selectedBrand ? car.brand === selectedBrand : true) &&
-  //       (selectedModel ? car.model === selectedModel : true) &&
-  //       (selectedFuelType ? car.fuelType === selectedFuelType : true)
-  //   );
-  //   setCarsData(filteredCars);
-  //   setCurrentPage(1); // Reset to first page after filtering
-  // };
 
   useEffect(() => {
     const filteredCars = originalCarsData.filter(

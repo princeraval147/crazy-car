@@ -28,9 +28,6 @@ const CarManage = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(`http://localhost:5000/cardata/${id}`, {
-        // const response = await fetch(
-        //   `https://crazycar-backend.onrender.com/cardata/${id}`,
-        //   {
         method: "DELETE",
       });
       if (response.ok) {
@@ -48,9 +45,6 @@ const CarManage = () => {
     const fetchCarData = async () => {
       try {
         const response = await fetch("http://localhost:5000/cardataadmin");
-        // const response = await fetch(
-        //   "https://crazycar-backend.onrender.com/cardataadmin"
-        // );
         const data = await response.json();
         setCars(data);
       } catch (error) {
