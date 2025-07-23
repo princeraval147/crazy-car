@@ -32,6 +32,8 @@ const Home = () => {
         },
     ];
 
+
+
     return (
         <>
             {/* SlideShow */}
@@ -48,107 +50,31 @@ const Home = () => {
                 </Slide>
             </div>
 
-            {/* <---------------------------  Animation Content ------------------------------> */}
-
-            <div className="animationContainer">
-                <div className="circles">
-                    <div className="mainCircle">
-                        <div className="innerCircleWrapper">
-                            <div className="innerCircleAnim" />
+            {/* --------------------- */}
+            <div className="homepage-content">
+                <section className="featured-cars">
+                    <h2>Featured Cars This Week</h2>
+                    <div className="car-grid">
+                        <div className="car-card">
+                            <h3>🚗 Tata Nexon EV</h3>
+                            <p>₹14.7L – 2024 Model</p>
                         </div>
-                        <div className="firstCircle">
-                            <div className="dot1"></div>
+                        <div className="car-card">
+                            <h3>🚙 Hyundai Creta</h3>
+                            <p>₹13.2L – 2023 Model</p>
                         </div>
-                        <div className="secondCircle">
-                            <div className="dot2"></div>
-                            <div className="dot3"></div>
-                        </div>
-                        <div className="thirdCircle">
-                            <div className="dot4"></div>
-                        </div>
-
-                        <div className="fourthCircle">
-                            <div className="anii">
-                                <p className="animationText">10+</p>
-                                <p className="animationContent">Years of Excellence</p>
-                            </div>
-                            <div className="anii">
-                                <p className="animationText" style={{ color: "#02BCD2" }}>
-                                    100+
-                                </p>
-                                <p className="animationContent">Happy Clients</p>
-                            </div>
-                            <div className="anii">
-                                <p className="animationText" style={{ color: "#7ED602" }}>
-                                    25+
-                                </p>
-                                <p className="animationContent">CAR EXPERTS</p>
-                            </div>
+                        <div className="car-card">
+                            <h3>🚘 Maruti Fronx</h3>
+                            <p>₹9.5L – 2024 Model</p>
                         </div>
                     </div>
-                </div>
+                    <button className="view-all-btn">View All Cars →</button>
+                </section>
 
-                <div style={{ marginTop: 0 }}>
-                    <div className="titles">
-                        <div className="mainTitle">INNOVATION</div>
-                        <div className="both">
-                            <div className="centerTitle">EXPERTISE EXCELLENCE</div>
-                            <div className="lastTitle" style={{ marginLeft: 15 }}>
-                                RESULTS
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mixDiv">
-                        <div className="Circles">
-                            <div className="mainCircle">
-                                <div className="innerCircleWrapper">
-                                    <div className="innerCircleAnim" />
-                                </div>
-                                <div className="firstCircle">
-                                    <div className="dot1"></div>
-                                </div>
-                                <div className="secondCircle">
-                                    <div className="dot2"></div>
-                                    <div className="dot3"></div>
-                                </div>
-                                <div className="thirdCircle">
-                                    <div className="dot4"></div>
-                                </div>
+            </div>
 
-                                <div className="fourthCircle">
-                                    <div className="anii">
-                                        <p className="animationText">10+</p>
-                                        <p className="animationContent">Years of Excellence</p>
-                                    </div>
-                                    <div className="anii">
-                                        <p
-                                            className="animationText"
-                                            style={{ color: "#02BCD2" }}
-                                        >
-                                            100+
-                                        </p>
-                                        <p className="animationContent">Happy Clients</p>
-                                    </div>
-                                    <div className="anii">
-                                        <p
-                                            className="animationText"
-                                            style={{ color: "#7ED602" }}
-                                        >
-                                            25+
-                                        </p>
-                                        <p className="animationContent">CAR EXPERTS</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="desc">
-                            <p>
-                                CrazyCar brings a complete range of new cars in 2024 in India with prices. You can search cars by applying filters such as by price, by bodytype, by brand, by seating capacity & more. Also, stay updated with upcoming cars, electric cars in India, compare cars in your price range.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div >
+
+
         </>
     )
 }

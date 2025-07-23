@@ -243,322 +243,42 @@ a:hover svg {
 
 /*  --------------------------------     HOME   -------------------------------- */
 
-.animationContainer {
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-  align-items: center;
-  height: 430px;
-}
-
-.Circles {
-  display: none;
-}
-
-.mobile {
-  display: flex;
-}
-
-.titles {
-  text-align: right;
-}
-
-.mainTitle {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: right;
-  letter-spacing: 0.1em;
-  text-transform: capitalize;
-  color: #6e7e83;
-}
-
-.both {
+.featured-cars {
   display: flex;
   flex-direction: column;
-}
-
-.centerTitle {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 49px;
-  text-align: right;
-  letter-spacing: 0.02em;
-  color: #092a35;
-}
-
-.lastTitle {
-  font-style: normal;
-  font-weight: 200;
-  font-size: 46px;
-  line-height: 49px;
-  text-align: right;
-  letter-spacing: 0.02em;
-  color: #092a35;
-  margin: 0;
-}
-
-.desc {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 28px;
-  text-align: right;
-  letter-spacing: 0.01em;
-  color: #6e7e83;
-  width: 500px;
-}
-
-.circles {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 0px;
+  padding: 50px 0;
 }
 
-.mainCircle {
-  width: 400px;
-  height: 400px;
-  flex-shrink: 0;
-  border-radius: 425px;
-  border: 3.931px solid #f7fafb;
-}
-
-.firstCircle {
-  animation: animName 90s linear infinite;
-  width: 400px;
-  height: 400px;
-  position: absolute;
-}
-
-@keyframes animName {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.dot1 {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  border-radius: 17px;
-  opacity: 0.5299999713897705;
-  background: #7ed602;
-  position: relative;
-  top: 372px;
-  right: -100px;
-  margin: 0;
-}
-
-.secondCircle {
-  width: 320px;
-  height: 320px;
-  flex-shrink: 0;
-  border-radius: 347px;
-  border: 3.931px solid #d8e2e4;
-  margin: 39px;
-  animation: aniName 90s linear infinite;
-  position: absolute;
-}
-
-@keyframes aniName {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.dot2 {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
-  border-radius: 29px;
-  background: #ff950a;
-  position: relative;
-  top: 100px;
-}
-
-.dot3 {
-  width: 12px;
-  height: 12px;
-  flex-shrink: 0;
-  border-radius: 21px;
-  opacity: 0.7400000095367432;
-  background: #f3379c;
-  position: relative;
-  top: 90px;
-  left: 302px;
-  margin: 0;
-}
-
-.thirdCircle {
-  width: 260px;
-  height: 260px;
-  flex-shrink: 0;
-  border-radius: 320.592px;
-  border: 3.931px solid #b1c4c9;
-  margin: 70px 10px 80px 67px;
-  position: absolute;
-  animation: animationName 90s linear infinite;
-}
-
-.dot4 {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  border-radius: 15px;
-  background: #02bcd2;
-  position: relative;
-  top: 48px;
-  left: 226px;
-}
-
-@keyframes animationName {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.fourthCircle > * {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  animation: 12s autoplay2 infinite ease-in-out;
-}
-
-.fourthCircle {
+.car-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 190px;
-  height: 190px;
-  flex-shrink: 0;
-  background: #fff;
-  border-radius: 180px;
-  box-shadow: 0px 3.706301689147949px 34.46355056762695px 0px
-    rgba(204, 204, 204, 0.16);
+  gap: 20px;
+  margin-top: 30px;
 }
 
-.innerCircleAnim {
-  display: flex;
-  align-self: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 191px;
-  height: 191px;
-  border-radius: 50%;
-  background-color: transparent;
-  z-index: 9999;
-  border: 1px solid transparent;
-  background-image: linear-gradient(116.9deg, #000000 0%, transparent 70%);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+.car-card {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
 }
 
-.innerCircleWrapper {
-  animation: innerCircleAnimation 3s linear infinite;
-  position: relative;
-  top: 50%;
+.view-all-btn {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@keyframes innerCircleAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.view-all-btn:hover {
+  background: #e65c00;
 }
 
-.animationText {
-  color: #f3379c;
-  text-align: center;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 0;
-  font-size: 50px;
-}
-
-.anii {
-  height: 160px;
-  width: 190px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.animationContent {
-  color: var(--dark-color-3, #6e7e83);
-  text-align: center;
-  font-size: 30px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin: 0;
-}
-
-@keyframes autoplay2 {
-  0% {
-    top: 100%;
-  }
-
-  4% {
-    top: 0%;
-  }
-
-  33.33% {
-    top: 0%;
-  }
-
-  37.33% {
-    top: -100%;
-  }
-
-  100% {
-    top: -100%;
-  }
-}
-
-.fourthCircle > *:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.fourthCircle > *:nth-child(2) {
-  animation-delay: 4s;
-}
-
-.fourthCircle > *:nth-child(3) {
-  animation-delay: 8s;
-}
-
-.fourthCircle > *:nth-child(4) {
-  animation-delay: 12s;
-}
 
 /*  --------------------------------     ABOUT   -------------------------------- */
 
