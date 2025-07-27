@@ -5,6 +5,7 @@ import 'react-slideshow-image/dist/styles.css'
 import img1 from '/Img/4K.jpg'
 import img2 from '/Img/4k2.jpg'
 import img3 from '/Img/MB.jpg'
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
 
@@ -50,7 +51,7 @@ const Home = () => {
                 </Slide>
             </div>
 
-            {/* --------------------- */}
+            {/* ------------------------------------------------ */}
             <div className="homepage-content">
                 <section className="featured-cars">
                     <h2>Featured Cars This Week</h2>
@@ -68,7 +69,7 @@ const Home = () => {
                             <p>₹9.5L – 2024 Model</p>
                         </div>
                     </div>
-                    <button className="view-all-btn">View All Cars →</button>
+                    <NavLink to="/car" className="view-all-btn">View All Cars →</NavLink>
                 </section>
 
             </div>

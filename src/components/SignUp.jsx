@@ -103,13 +103,13 @@ const SignUp = () => {
             <button type="submit" className="Btn">
               Sign Up
             </button>
-            <p className="alreadyLine">
+            {/* <p className="alreadyLine">
               Already have an account ?
               <NavLink to="/" className="signUpBtn">
                 {" "}
                 Log In
               </NavLink>
-            </p>
+            </p> */}
           </div>
         </form>
       </div>
