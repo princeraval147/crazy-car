@@ -14,7 +14,6 @@ function Cars() {
   const [models, setModels] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
-  const [selectedPrice, setSelectedPrice] = useState("");
   const [selectedFuelType, setSelectedFuelType] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const carsPerPage = 10;
@@ -97,7 +96,7 @@ function Cars() {
               isOptionEqualToValue={(option, value) =>
                 option.value === value.value
               } // To avoid warning in console
-              disableClearable
+              // disableClearable
               className="searchTxt"
               disablePortal
               options={brands}
@@ -115,7 +114,7 @@ function Cars() {
               isOptionEqualToValue={(option, value) =>
                 option.value === value.value
               } // To avoid warning in console
-              disableClearable
+              // disableClearable
               className="searchTxt"
               disablePortal
               options={models}
@@ -126,9 +125,6 @@ function Cars() {
               value={selectedModel}
               onChange={(e, newVal) => setSelectedModel(newVal)}
             />
-            {/* <button className="Btn" onClick={handleSearch}>
-              Search
-            </button> */}
           </div>
         </div>
       </div>
@@ -179,9 +175,6 @@ function Cars() {
           <label htmlFor="Diesel">Diesel</label>
         </div>
         <div className="filterBtns">
-          {/* <button className="Btn" onClick={handleSearch}>
-            Apply Filter
-          </button> */}
           <button className="ClearBtn" onClick={clearFilters}>
             Clear Filter
           </button>
