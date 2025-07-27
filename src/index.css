@@ -35,7 +35,7 @@ a {
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  padding: 15px 25px;
+  padding: 10px 20px;
   text-align: center;
   text-transform: none;
 }
@@ -44,7 +44,7 @@ a {
   background-color: orangered;
   color: #000;
   transition: 0.5s;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .hoverEffct {
@@ -102,7 +102,7 @@ a.active {
 }
 
 .LogoImg {
-  height: 90px;
+  height: 80px;
 }
 
 .links {
@@ -259,10 +259,15 @@ a:hover svg {
 }
 
 .car-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   background: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
-  width: 200px;
+  width: 300px;
 }
 
 .view-all-btn {
@@ -431,7 +436,7 @@ a:hover svg {
 
 .searchDetail {
   display: flex;
-  width: 70%;
+  width: 55%;
   padding: 30px;
   background: rgba(245, 222, 179, 0.733);
   border-radius: 20px 10px;
