@@ -12,7 +12,6 @@ import {
   Tooltip,
   Modal,
 } from "@mui/material";
-import { IoMdSettings } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
 import LoginModal from "./LoginModal";
@@ -160,7 +159,7 @@ const Header = () => {
                           aria-expanded={open ? "true" : undefined}
                         >
                           <Avatar sx={{ width: 40, height: 40 }}>
-                            {isAdmin ? "A" : "U"}
+                            {/* {isAdmin ? "A" : "U"} */}
                           </Avatar>
                           <span className="HelloUser">Hello, {username}</span>
                         </IconButton>
@@ -204,19 +203,6 @@ const Header = () => {
                       anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
                     >
                       <MenuItem onClick={handleClose}>
-                        <Avatar />
-                        <NavLink to="#" style={{ color: "#212121" }}>
-                          Profile
-                        </NavLink>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Avatar />
-                        <NavLink to="#" style={{ color: "#212121" }}>
-                          My account
-                        </NavLink>
-                      </MenuItem>
-                      <Divider />
-                      <MenuItem onClick={handleClose}>
                         <ListItemIcon>
                           <IoPersonAdd />
                         </ListItemIcon>
@@ -224,14 +210,7 @@ const Header = () => {
                           Add another account
                         </NavLink>
                       </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <ListItemIcon>
-                          <IoMdSettings size={24} />
-                        </ListItemIcon>
-                        <NavLink to="#" style={{ color: "#212121" }}>
-                          Settings
-                        </NavLink>
-                      </MenuItem>
+                      <Divider />
                       <MenuItem onClick={handlerLogout}>
                         <ListItemIcon>
                           <MdLogout size={24} />
