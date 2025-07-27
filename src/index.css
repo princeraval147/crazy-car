@@ -320,7 +320,7 @@ a:hover svg {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 70px;
+  margin: 30px;
 }
 
 .signUp {
@@ -338,14 +338,14 @@ a:hover svg {
 }
 
 .form {
-  height: 600px;
+  height: 550px;
   width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   -webkit-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 1px 65px 4px rgba(0, 0, 0, 0.75);
