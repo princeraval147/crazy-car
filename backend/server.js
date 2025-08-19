@@ -74,6 +74,20 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+const { MongoClient } = require("mongodb");
+const uri = process.env.MONGODB_URI; // stored safely in backend
+const client = new MongoClient(uri);
+app.get("/api/data", async (req, res) => {
+  try {
+    await client.connect();
+    const db = client.db("testDB");
+    const data = await db.collection("cars").find({}).toArray();
+    res.json(data);
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -533,6 +547,8 @@ app.get("/car-rating-analysis", async (req, res) => {
         carId: car._id,
         brand: car.brand,
         model: car.model,
+        price: car.price,
+        year: car.year,
         totalRatings,
         averageRating,
       };
