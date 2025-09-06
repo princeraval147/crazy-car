@@ -14,9 +14,10 @@ function Cars() {
   const [models, setModels] = useState([]);
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const [selectedFuelType, setSelectedFuelType] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const carsPerPage = 10;
+  const carsPerPage = 12;
 
   // Fetch car data on initial render
   useEffect(() => {
@@ -54,16 +55,89 @@ function Cars() {
     }
   }, [selectedBrand, originalCarsData]);
 
+  // useEffect(() => {
+  //   const filteredCars = originalCarsData.filter(
+  //     (car) =>
+  //       (selectedBrand ? car.brand === selectedBrand : true) &&
+  //       (selectedModel ? car.model === selectedModel : true) &&
+  //       (selectedFuelType ? car.fuelType === selectedFuelType : true)
+  //   );
+  //   setCarsData(filteredCars);
+  //   setCurrentPage(1); // Reset to first page after filtering
+  // }, [selectedBrand, selectedModel, selectedFuelType, originalCarsData]);
+
+  function parsePrice(priceStr) {
+    if (!priceStr) return 0;
+
+    let num = 0;
+
+    if (priceStr.includes("Crore")) {
+      num = parseFloat(priceStr.replace("Crores", "").replace("Crore", "").trim());
+      return isNaN(num) ? 0 : num * 10000000; // 1 Crore = 1 Cr = 1,00,00,000
+    }
+
+    if (priceStr.includes("Lakh")) {
+      num = parseFloat(priceStr.replace("Lakhs", "").replace("Lakh", "").trim());
+      return isNaN(num) ? 0 : num * 100000; // 1 Lakh = 1,00,000
+    }
+
+    return 0;
+  }
+
   useEffect(() => {
-    const filteredCars = originalCarsData.filter(
-      (car) =>
-        (selectedBrand ? car.brand === selectedBrand : true) &&
-        (selectedModel ? car.model === selectedModel : true) &&
-        (selectedFuelType ? car.fuelType === selectedFuelType : true)
-    );
+    const filteredCars = originalCarsData.filter((car) => {
+      const brandMatch = selectedBrand ? car.brand === selectedBrand : true;
+      const modelMatch = selectedModel ? car.model === selectedModel : true;
+      const fuelMatch = selectedFuelType ? car.fuelType === selectedFuelType : true;
+
+      // Convert price string to number
+      const price = parsePrice(car.price);
+
+      let priceMatch = true;
+      if (selectedPriceRange) {
+        switch (selectedPriceRange) {
+          case "1-5":
+            priceMatch = price >= 100000 && price <= 500000;
+            break;
+          case "5-10":
+            priceMatch = price > 500000 && price <= 1000000;
+            break;
+          case "10-15":
+            priceMatch = price > 1000000 && price <= 1500000;
+            break;
+          case "15-20":
+            priceMatch = price > 1500000 && price <= 2000000;
+            break;
+          case "20-25":
+            priceMatch = price > 2000000 && price <= 2500000;
+            break;
+          case "25-50":
+            priceMatch = price > 2500000 && price <= 5000000;
+            break;
+          case "50-100":
+            priceMatch = price > 5000000 && price <= 10000000;
+            break;
+          case "1-2cr":
+            priceMatch = price > 10000000 && price <= 20000000;
+            break;
+          case "2-5cr":
+            priceMatch = price > 20000000 && price <= 50000000;
+            break;
+          case "above-5cr":
+            priceMatch = price > 50000000;
+            break;
+          default:
+            priceMatch = true;
+        }
+      }
+
+      return brandMatch && modelMatch && fuelMatch && priceMatch;
+    });
+
     setCarsData(filteredCars);
-    setCurrentPage(1); // Reset to first page after filtering
-  }, [selectedBrand, selectedModel, selectedFuelType, originalCarsData]);
+    setCurrentPage(1);
+  }, [selectedBrand, selectedModel, selectedFuelType, selectedPriceRange, originalCarsData]);
+
 
   // Handle Clear Filter
   const clearFilters = () => {
@@ -71,6 +145,7 @@ function Cars() {
     setSelectedModel("");
     setSelectedFuelType("");
     setCarsData(originalCarsData);
+    setSelectedPriceRange("")
   };
 
   // Pagination Logic
@@ -131,14 +206,22 @@ function Cars() {
 
       <div className="carsFilter">
         <div className="byPrice">
-          <select className="selectionList">
-            <option hidden>Select Price Range</option>
-            <option value="1-5">1 Lakh to 5 Lakh</option>
-            <option value="5-10">5 Lakh to 10 Lakh</option>
-            <option value="10-15">10 Lakh to 15 Lakh</option>
-            <option value="15-20">15 Lakh to 20 Lakh</option>
-            <option value="20-25">20 Lakh to 25 Lakh</option>
-            <option value="below-25">Above 25 Lakh</option>
+          <select
+            className="selectionList"
+            value={selectedPriceRange}
+            onChange={(e) => setSelectedPriceRange(e.target.value)}
+          >
+            <option value="">Select Price Range</option>
+            <option value="1-5">1 Lakh to 5 Lakhs</option>
+            <option value="5-10">5 Lakhs to 10 Lakhs</option>
+            <option value="10-15">10 Lakhs to 15 Lakhs</option>
+            <option value="15-20">15 Lakhs to 20 Lakhs</option>
+            <option value="20-25">20 Lakhs to 25 Lakhs</option>
+            <option value="25-50">25 Lakhs to 50 Lakhs</option>
+            <option value="50-100">50 Lakhs to 1 Crore</option>
+            <option value="1-2cr">1 Crore to 2 Crores</option>
+            <option value="2-5cr">2 Crores to 5 Crores</option>
+            <option value="above-5cr">Above 5 Crores</option>
           </select>
         </div>
 
@@ -194,7 +277,8 @@ function Cars() {
       >
         {carsData.length === 0 ? (
           <div className="Loading">
-            <CircularProgress />
+            {/* <CircularProgress /> */}
+            <p>No Matching Data</p>
           </div>
         ) : (
           currentCars.map((car) => (
