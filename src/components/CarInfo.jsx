@@ -190,14 +190,14 @@ const CarInfo = () => {
             <strong>Body Type:</strong> <span>{car.bodyType}</span>
           </div>
           <div className="infoItem">
-            <strong>Safety Features:</strong>{" "}
+            <strong>Safety Features:</strong>
             <span>{car.safetyFeatures.join(", ")}</span>
           </div>
           <div className="infoItem">
             <strong>Boot Space:</strong> <span>{car.bootSpace} liters</span>
           </div>
           <div className="infoItem">
-            <strong>Additional Features:</strong>{" "}
+            <strong>Additional Features:</strong>
             <span>{car.features.join(", ")}</span>
           </div>
           <div className="infoItem">
